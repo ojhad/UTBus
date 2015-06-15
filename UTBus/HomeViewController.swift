@@ -15,6 +15,29 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        let bundle = NSBundle.mainBundle()
+        let URL: NSURL? = bundle.URLForResource("data", withExtension: ".json");
+        let data: NSData? = NSData(contentsOfURL: URL!)
+
+        var parseError: NSError?
+        let parsedObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data!,
+            options: NSJSONReadingOptions.AllowFragments,
+            error:&parseError)
+        
+        //println("Printing Time: \(parsedObject)")
+        
+        if let route = parsedObject as? NSDictionary {
+            println("Success Route\n")
+            if let day = route["monday"] as? NSArray {
+                println("Success day\n")
+                if let time = day[0] as? NSDictionary{
+                    println("Success time\n")
+                    if let timeVal = time["time"] as? NSString{
+                        println("First Time: \(time)")
+                    }
+                }
+            }
+        }
         
     }
 
