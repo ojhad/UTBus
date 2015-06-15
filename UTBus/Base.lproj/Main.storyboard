@@ -15,14 +15,6 @@
                     <view key="view" contentMode="scaleToFill" id="Awn-ao-cr7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMm-K7-mRr">
-                                <rect key="frame" x="94" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="376-rT-Sfs"/>
@@ -88,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="245.5" y="1739.5"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="bU2-Cm-jsl">
             <objects>
                 <viewController id="rTc-3n-mHt" sceneMemberID="viewController">
@@ -99,17 +91,9 @@
                     <view key="view" contentMode="scaleToFill" id="cvu-L8-JtZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNe-x1-f2E">
-                                <rect key="frame" x="178" y="451" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="gIJ-IE-ZxF"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,4 +123,7 @@
             <point key="canvasLocation" x="-582" y="540"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bus Filled-25" width="25" height="25"/>
+    </resources>
 </document>
