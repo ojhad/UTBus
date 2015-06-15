@@ -12,6 +12,8 @@
 		BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C01B2F4D550051F7F9 /* Images.xcassets */; };
 		BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */; };
 		BC0881D01B2F4D560051F7F9 /* UTBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */; };
+		BC6FF7161B2F5A710037334B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* data.json */; };
+		BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		BC0881C91B2F4D560051F7F9 /* UTBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881CE1B2F4D560051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTBusTests.swift; sourceTree = "<group>"; };
+		BC6FF7151B2F5A710037334B /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 			children = (
 				BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */,
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
+				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BC0881C01B2F4D550051F7F9 /* Images.xcassets */,
 				BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */,
+				BC6FF7151B2F5A710037334B /* data.json */,
 				BC0881B71B2F4D550051F7F9 /* Supporting Files */,
 			);
 			path = UTBus;
@@ -192,6 +198,7 @@
 				BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */,
 				BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */,
 				BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */,
+				BC6FF7161B2F5A710037334B /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */,
+				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				BC0881D51B2F4D560051F7F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC0881D61B2F4D560051F7F9 /* Build configuration list for PBXNativeTarget "UTBusTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				BC0881D81B2F4D560051F7F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

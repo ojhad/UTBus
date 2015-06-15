@@ -83,7 +83,7 @@
         <!--Home-->
         <scene sceneID="bU2-Cm-jsl">
             <objects>
-                <viewController id="rTc-3n-mHt" sceneMemberID="viewController">
+                <viewController id="rTc-3n-mHt" customClass="HomeViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9fm-zD-2cM"/>
                         <viewControllerLayoutGuide type="bottom" id="RjR-cj-IPS"/>
