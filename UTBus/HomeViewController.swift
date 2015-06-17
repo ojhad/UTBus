@@ -82,9 +82,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         cell.textLabel!.text = time as? String
         
-        
-        cell.textLabel!.text = time as? String
-        
         return cell
     }
     
