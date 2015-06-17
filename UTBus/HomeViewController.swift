@@ -12,7 +12,10 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    var items: [String] = ["We", "Heart", "Swift"]
+    let textCellIdentifier = "TextCell"
+    
+    var swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,47 +49,50 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             }
         }*/
         
-//        let source: dataParser = dataParser.new()
-//        
-//        let argument: String = "monday"
-//        
-//        let days: NSArray = source.getArrayOfTimesForDay(argument)
-//        
-//        println("\(days)")
+        let source: dataParser = dataParser.new()
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let days: NSArray = source.getArrayOfTimesForDay("monday")
         
+        //let time: String = days[0] as! String
+        
+        let time1: NSDictionary? = days[0] as? NSDictionary
+        
+        
+        println("\(time1)")
+        
+        let time = time1["time"]
+        
+        //swiftBlogs.append(time)
+        
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    // MARK:  UITextFieldDelegate Methods
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return swiftBlogs.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        let row = indexPath.row
+        cell.textLabel?.text = swiftBlogs[row] as? String
         
         return cell
     }
     
+    // MARK:  UITableViewDelegate Methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        println(swiftBlogs[row])
     }
-    
-    
-    
-
-    
-
-
 }
