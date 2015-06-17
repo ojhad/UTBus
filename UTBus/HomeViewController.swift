@@ -41,9 +41,18 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
         let row = indexPath.row
-        cell.textLabel?.text = days[row] as? String
-        //println("\(days[row])")
+        
+        let temp: AnyObject = days[row]
+        
+        let time = temp["time"]
+        
+        cell.textLabel!.text = time as? String
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.textLabel?.textColor = UIColor.blackColor()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
