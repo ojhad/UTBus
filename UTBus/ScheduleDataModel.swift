@@ -10,7 +10,7 @@ import Foundation
 
 class ScheduleDataModel {
     
-    let locations: Array<ScheduleLocation>
+    let locations: Dictionary <String, ScheduleLocation>
     
     init (data: NSData) {
         var parseError: NSError?
@@ -19,13 +19,13 @@ class ScheduleDataModel {
             error:&parseError)
         
         
-        var newLocations = Array<ScheduleLocation>()
+        var newLocations = Dictionary <String, ScheduleLocation>()
         
         if let route = parsedObject as? Dictionary<String, AnyObject> {
             for (locationName, details) in route {
                 if let detailsDict = details as? Dictionary<String, AnyObject> {
                     let newLocation = ScheduleLocation(name: locationName, timeData: detailsDict)
-                    newLocations.append(newLocation)
+                    newLocations[locationName] = newLocation
                 }
             }
         }
@@ -34,9 +34,13 @@ class ScheduleDataModel {
         
         locations = newLocations
         
-        
-        
-        
-        
+    }
+    
+    func nextDeparture(location: String) -> NSDate? {
+        return nextDepartureAfter(NSDate(), location: location)
+    }
+    
+    func nextDepartureAfter(date: NSDate, location: String) -> NSDate? {
+        return locations[location]?.nextDepartureAfter(date)
     }
 }

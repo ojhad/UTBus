@@ -26,4 +26,23 @@ class ScheduleLocation {
         }
         timelines = newTimelines
     }
+    
+
+    
+    func nextDepartureAfter(date: NSDate) -> NSDate? {
+        var result :NSDate?
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        
+        let nowComponents = calendar.components(NSCalendarUnit.WeekdayCalendarUnit, fromDate: date)
+        
+        
+        
+        for item in timelines {
+            if nowComponents.weekday == item.dayOfWeek.weekday {
+                result = item.nextDepartureAfter(date)
+                break
+            }
+        }
+        return result
+    }
 }
