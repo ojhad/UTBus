@@ -10,13 +10,47 @@ import UIKit
 
 class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
-    
     let textCellIdentifier = "TextCell"
     
     var source: dataParser!
     var days: NSArray = []
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var segmentedControlRoutes: UISegmentedControl!
+    
+    //UTM or UTSG
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            days=source.getArrayOfTimesForDay("monday")
+        case 1:
+            days=source.getArrayOfTimesForDay("saturday")
+            
+        default:
+            break;
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func indexChangedRoutes(sender: UISegmentedControl) {
+        switch segmentedControlRoutes.selectedSegmentIndex
+        {
+        case 0:
+            segmentedControl.setTitle("Instructional Centre (UTM)", forSegmentAtIndex: 0)
+            segmentedControl.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
+        case 1:
+            segmentedControl.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
+            segmentedControl.setTitle("Sheridan", forSegmentAtIndex: 1)
+            
+        default:
+            break;
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,12 +82,15 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         cell.textLabel!.text = time as? String
         
+        
+        cell.textLabel!.text = time as? String
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
+        
         let row = indexPath.row
     }
 }
