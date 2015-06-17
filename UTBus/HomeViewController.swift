@@ -44,17 +44,11 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         let temp: AnyObject = days[row]
         
-        let day: NSArray = source.getArrayOfTimesForDay(argument)
+        let time = temp["time"]
         
-        println("\(day)")
-        
-        
+        cell.textLabel!.text = time as? String
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.textLabel?.textColor = UIColor.blackColor()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
