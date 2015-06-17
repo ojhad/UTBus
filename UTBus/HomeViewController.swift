@@ -46,9 +46,11 @@ class HomeViewController: UIViewController {
         
         let argument: String = "monday"
         
-        let days: NSArray = source.getArrayOfTimesForDay(argument)
+        let day: NSArray = source.getArrayOfTimesForDay(argument)
         
-        println("\(days)")
+        println("\(day)")
+        
+        
         
     }
 
