@@ -8,8 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var items: [String] = ["We", "Heart", "Swift"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,30 +46,47 @@ class HomeViewController: UIViewController {
             }
         }*/
         
-        let source: dataParser = dataParser.new()
+//        let source: dataParser = dataParser.new()
+//        
+//        let argument: String = "monday"
+//        
+//        let days: NSArray = source.getArrayOfTimesForDay(argument)
+//        
+//        println("\(days)")
         
-        let argument: String = "monday"
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        let days: NSArray = source.getArrayOfTimesForDay(argument)
-        
-        println("\(days)")
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-    */
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
+    }
+    
+    
+    
+
+    
+
 
 }
