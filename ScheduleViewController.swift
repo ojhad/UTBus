@@ -17,8 +17,8 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     
     var dataModel: ScheduleDataModel?
     
-    var dataLeftTableView = ["a", "b", "c"]
-    var dataRightTableView = ["d", "e", "f", "g"]
+    var dataLeftTableView = ["6:10", "12:30", "18:15"]
+    var dataRightTableView = ["8:50", "9:40", "10:10", "11:40"]
     
     
     override func viewDidLoad() {
@@ -65,6 +65,10 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("timeCell", forIndexPath: indexPath) as! UITableViewCell
         
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.textLabel?.textAlignment = NSTextAlignment.Center;
+
+        
         if tableView == self.tvLeft{
             
             cell.textLabel?.text = dataLeftTableView[indexPath.row]
@@ -73,7 +77,7 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             
             cell.textLabel?.text = dataRightTableView[indexPath.row]
-            
+
         }
         
         return cell
