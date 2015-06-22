@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        UINavigationBar.appearance().tintColor = UIColor.redColor()
+        UITabBar.appearance().tintColor = UIColor.redColor()
+        UISegmentedControl.appearance().tintColor = UIColor.redColor()
+        
         return true
     }
 
