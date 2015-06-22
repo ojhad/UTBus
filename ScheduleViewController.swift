@@ -16,6 +16,9 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var lblTitleLeft: UILabel!
     @IBOutlet weak var lblTitleRight: UILabel!
     
+    var timeOfTappedCell: String?
+    var locationOfTappedCell: String?
+    
     
     var dataModel: ScheduleDataModel?
     
@@ -83,6 +86,32 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (tableView == tvLeft){
+            timeOfTappedCell = dataLeftTableView[indexPath.row]
+            locationOfTappedCell = "Mississauga"
+        }
+        else{
+            timeOfTappedCell = dataRightTableView[indexPath.row]
+            locationOfTappedCell = lblTitleRight.text
+        }
+        
+        self.performSegueWithIdentifier("create_notification", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "create_notification"){
+            var VC: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
+            
+            VC.busTime = timeOfTappedCell
+            VC.busLocation = locationOfTappedCell
+        }
+    
     }
     
     @IBAction func changedSegmentedControl(sender: AnyObject) {
