@@ -32,7 +32,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="St. George" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-U6-z9P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mississauga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-U6-z9P">
                                 <rect key="frame" x="0.0" y="72" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mississauga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-Ko-xRt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="St. George" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-Ko-xRt">
                                 <rect key="frame" x="187" y="70" width="188" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -90,6 +90,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t3M-yN-ARe">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="qgD-JN-JgL">
+                            <rect key="frame" x="108" y="6" width="159" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="St. George"/>
+                                <segment title="Sheridan"/>
+                            </segments>
+                            <connections>
+                                <action selector="changedSegmentedControl:" destination="MNw-yz-nf8" eventType="valueChanged" id="fyK-Ll-nus"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="j8n-40-6uq">
                             <connections>
                                 <segue destination="osZ-MH-Fm4" kind="show" identifier="search_schedule" id="Vap-PC-6y2"/>
@@ -98,6 +110,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="lblTitleLeft" destination="2Aq-U6-z9P" id="AHT-0g-9LJ"/>
+                        <outlet property="lblTitleRight" destination="XPs-Ko-xRt" id="ieL-q9-0vj"/>
                         <outlet property="tvLeft" destination="QbB-ON-wSJ" id="0Ar-aE-5IA"/>
                         <outlet property="tvRight" destination="pbD-au-9hr" id="J1v-6L-3F0"/>
                     </connections>
@@ -125,7 +139,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFT-Mk-Nd1">
-                                <rect key="frame" x="124" y="423" width="127" height="30"/>
+                                <rect key="frame" x="124" y="403" width="127" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="fQb-yO-fjV"/>
@@ -149,7 +163,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="selected date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBL-Vv-gne">
-                                <rect key="frame" x="16" y="361" width="343" height="21"/>
+                                <rect key="frame" x="16" y="345" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kE2-wE-2Nr"/>
                                 </constraints>
@@ -163,8 +177,8 @@
                             <constraint firstItem="NNJ-VE-5bK" firstAttribute="top" secondItem="4bn-uD-Fw2" secondAttribute="bottom" constant="44" id="63D-rs-KYG"/>
                             <constraint firstItem="4bn-uD-Fw2" firstAttribute="leading" secondItem="Lyg-M2-wlA" secondAttribute="leadingMargin" id="7uE-op-6pZ"/>
                             <constraint firstItem="dBL-Vv-gne" firstAttribute="centerX" secondItem="sFT-Mk-Nd1" secondAttribute="centerX" id="IHj-j0-1hw"/>
-                            <constraint firstItem="sFT-Mk-Nd1" firstAttribute="top" secondItem="dBL-Vv-gne" secondAttribute="bottom" constant="41" id="KQR-hv-Rhy"/>
-                            <constraint firstItem="dBL-Vv-gne" firstAttribute="top" secondItem="NNJ-VE-5bK" secondAttribute="bottom" constant="31" id="Ptd-9T-C0J"/>
+                            <constraint firstItem="sFT-Mk-Nd1" firstAttribute="top" secondItem="dBL-Vv-gne" secondAttribute="bottom" constant="37" id="KQR-hv-Rhy"/>
+                            <constraint firstItem="dBL-Vv-gne" firstAttribute="top" secondItem="NNJ-VE-5bK" secondAttribute="bottom" constant="15" id="Ptd-9T-C0J"/>
                             <constraint firstItem="NNJ-VE-5bK" firstAttribute="leading" secondItem="Lyg-M2-wlA" secondAttribute="leading" id="Q9R-IO-BL8"/>
                             <constraint firstItem="dBL-Vv-gne" firstAttribute="leading" secondItem="4bn-uD-Fw2" secondAttribute="leading" id="T0S-DY-T3z"/>
                             <constraint firstItem="4bn-uD-Fw2" firstAttribute="top" secondItem="Lgo-k1-aFh" secondAttribute="bottom" constant="32" id="ZIK-vf-tda"/>

@@ -13,6 +13,8 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tvLeft: UITableView!
     @IBOutlet weak var tvRight: UITableView!
+    @IBOutlet weak var lblTitleLeft: UILabel!
+    @IBOutlet weak var lblTitleRight: UILabel!
     
     
     var dataModel: ScheduleDataModel?
@@ -83,6 +85,20 @@ class ScheduleViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    @IBAction func changedSegmentedControl(sender: AnyObject) {
+        
+        var control: UISegmentedControl? = sender as! UISegmentedControl
+        
+        if (control?.selectedSegmentIndex == 0){
+            lblTitleLeft.text = "Mississauga"
+            lblTitleRight.text = "St. George"
+        }
+        else{
+            lblTitleLeft.text = "Mississauga"
+            lblTitleRight.text = "Sheridan"
+        }
+        
+    }
     
     
     
