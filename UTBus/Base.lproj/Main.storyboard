@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="832.5" y="270.5"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="DjX-9H-Qk2">
             <objects>
-                <viewController id="6Kx-3P-tcp" sceneMemberID="viewController">
+                <viewController id="6Kx-3P-tcp" customClass="MapViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QCA-HA-OnX"/>
                         <viewControllerLayoutGuide type="bottom" id="b06-FJ-Vim"/>
@@ -80,21 +80,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JI-TL-Dqd">
-                                <rect key="frame" x="266" y="369" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-9b-AY1">
+                                <rect key="frame" x="0.0" y="86" width="375" height="532"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-ym-tUm">
+                                <rect key="frame" x="82" y="28" width="224" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Green Line">
+                                        <attributes>
+                                            <color key="NSColor" red="0.01314094064744198" green="0.91068892045454541" blue="0.091561072004390801" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=": Sheridan Route">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-Hq-8dg">
+                                <rect key="frame" x="82" y="57" width="211" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Red Line">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98484848484848486" green="0.14909773128341716" blue="0.1036380524270358" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=": St. George Route">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Rdp-fE-z0f"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map-25" id="Rdp-fE-z0f"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Map" destination="wH4-9b-AY1" id="VhU-WY-Nkj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPv-0o-xhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.5" y="1015.5"/>
+            <point key="canvasLocation" x="245.5" y="1083.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="1N0-v6-Ph6">
@@ -122,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnl-Vr-xKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.5" y="1739.5"/>
+            <point key="canvasLocation" x="-486.5" y="1687.5"/>
         </scene>
         <!--Home-->
         <scene sceneID="bU2-Cm-jsl">
@@ -170,7 +210,13 @@
                                     <fragment>
                                         <string key="content"> 
 
- *NEW*Departure from Sheridan added Tues &amp; Thurs at 5:15pmSummer (Reduced) Service: Mon. May 4-Sat. August 29, 2015//*NEW*Reduced Sheridan Summer service begins Mon. May 11, 2015SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *registered for summer courses* and paid their fees are permitted to board the shuttle at no additional charge via TCard. Any student, including UTM students, who are *NOT registered* for the summer semester must present a ticket/buspass.</string>
+ *NEW*Departure from Sheridan added Tues &amp; Thurs at 5:15pm
+
+Summer (Reduced) Service: Mon. May 4-Sat. August 29, 2015
+
+*NEW*Reduced Sheridan Summer service begins Mon. May 11, 2015
+
+SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *registered for summer courses* and paid their fees are permitted to board the shuttle at no additional charge via TCard. Any student, including UTM students, who are *NOT registered* for the summer semester must present a ticket/buspass.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -258,5 +304,6 @@
     <resources>
         <image name="Bus Filled-25" width="25" height="25"/>
         <image name="Clock-25" width="25" height="25"/>
+        <image name="Map-25" width="25" height="25"/>
     </resources>
 </document>

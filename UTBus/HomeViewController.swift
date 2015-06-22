@@ -10,15 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    let textCellIdentifier = "TextCell"
-    
     var source: dataParser!
     var days: NSArray = []
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var segmentedControlRoutes: UISegmentedControl!
-    
     //UTM or UTSG
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -29,7 +26,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             days=source.getArrayOfTimesForDay("monday")
         case 1:
             days=source.getArrayOfTimesForDay("saturday")
-            
         default:
             break;
         }
@@ -51,13 +47,13 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             break;
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
         source = dataParser.new()
         days=source.getArrayOfTimesForDay("monday")
-        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -72,22 +68,14 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! UITableViewCell
         
         let row = indexPath.row
-        
         let temp: AnyObject = days[row]
-        
         let time = temp["time"]
         
         cell.textLabel!.text = time as? String
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
     }
 }
