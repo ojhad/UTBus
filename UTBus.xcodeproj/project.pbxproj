@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902A64B51B39C809007BA265 /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902A64B41B39C809007BA265 /* locations.plist */; };
 		90E0E4771B38711000291C1F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E0E4761B38711000291C1F /* MapViewController.swift */; };
 		BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */; };
 		BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0881BD1B2F4D550051F7F9 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		902A64B41B39C809007BA265 /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		90E0E4761B38711000291C1F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BC0881B41B2F4D550051F7F9 /* UTBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881B81B2F4D550051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				BCD6FC751B31FCB200308F1E /* ScheduleViewController.swift */,
 				90E0E4761B38711000291C1F /* MapViewController.swift */,
 				BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */,
+				902A64B41B39C809007BA265 /* locations.plist */,
 				BCD6FC7D1B3203B000308F1E /* Data Model */,
 				BC0881C01B2F4D550051F7F9 /* Images.xcassets */,
 				BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */,
@@ -223,6 +226,7 @@
 			files = (
 				BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */,
 				BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */,
+				902A64B51B39C809007BA265 /* locations.plist in Resources */,
 				BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */,
 				BC6FF7161B2F5A710037334B /* data.json in Resources */,
 			);

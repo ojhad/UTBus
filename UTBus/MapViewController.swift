@@ -1,37 +1,63 @@
 import MapKit
 import UIKit
+import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var Map: MKMapView!
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
-        self.Map.delegate = self;
+        self.Map.delegate = self
         
         Map.showsUserLocation = true
         
-        let userLocation = Map.userLocation
+        // Ask for Authorisation from the user
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        //parse data from plist file
+        let path = NSBundle.mainBundle().pathForResource("locations", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        
+        let locsUTSG: AnyObject = dict!.objectForKey("UTSG")!
+        let locsUTM: AnyObject = dict!.objectForKey("UTM")!
+        let locsSheridan: AnyObject = dict!.objectForKey("Sheridan")!
         
         let locations = [
-            CLLocation(latitude: 43.662138, longitude: -79.394073),
-            CLLocation(latitude: 43.55147, longitude: -79.663718),
-            CLLocation(latitude: 43.656418, longitude: -79.740349)]
+            CLLocation(latitude: locsUTSG[0] as! Double, longitude: locsUTSG[1] as! Double),//UTSG
+            CLLocation(latitude: locsUTM[0] as! Double, longitude: locsUTM[1] as! Double),//UTM
+            CLLocation(latitude: locsSheridan[0] as! Double, longitude: locsSheridan[1] as! Double)]//Sheridan
         
-        let locationsGeorge = [
-            CLLocation(latitude: 43.662138, longitude: -79.394073),
-            CLLocation(latitude: 43.55147, longitude: -79.663718)]
+        let locationsGeorge = [locations[0], locations[1]]
         
-        let locationsSheridan = [
-            CLLocation(latitude: 43.55147, longitude: -79.663718),
-            CLLocation(latitude: 43.656418, longitude: -79.740349)]
+        let locationsSheridan = [locations[1], locations[2]]
         
-        centerMapOnLocation(CLLocation(latitude: 43.55147, longitude: -79.663718))
+        centerMapOnLocation(locations[1])
+        
         makePins(locations)
-        makeRoutes(locationsGeorge)
-        makeRoutes(locationsSheridan)
+        
+        //true = St. George route
+        //false = Sheridan route
+        makeRoutes(locationsGeorge, route: true)
+        makeRoutes(locationsSheridan, route: false)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var locValue:CLLocationCoordinate2D = manager.location.coordinate
+        
+        println("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func makePins(locations: [CLLocation!]) {
-        for var i=0; i<3; ++i {
+        for var i=0; i<locations.count; ++i {
             var coordinates = locations.map({ (location: CLLocation!) -> CLLocationCoordinate2D in
                 return location.coordinate
             })
@@ -54,12 +80,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func makeRoutes(locations: [CLLocation!]){
+    func makeRoutes(locations: [CLLocation!], route: Bool){
         var coordinates = locations.map({ (location: CLLocation!) -> CLLocationCoordinate2D in
             return location.coordinate
         })
         
         var polyline = MKPolyline(coordinates: &coordinates, count: locations.count)
+        if route==true{
+            polyline.title="George"
+        }
+        else{
+            polyline.title="Sheridan"
+        }
+        
         self.Map.addOverlay(polyline)
     }
     
@@ -71,21 +104,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         Map.setRegion(coordinateRegion, animated: true)
     }
     
-    var count=0
-    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!{
-        
         if (overlay is MKPolyline) {
             var pr = MKPolylineRenderer(overlay: overlay);
             
-            if count==0 {
+            if overlay.title=="George" {
                 pr.strokeColor = UIColor.redColor()
             }
             else{
                 pr.strokeColor = UIColor.greenColor()
             }
-            
-            ++count;
             
             return pr;
         }

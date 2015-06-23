@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  UTBus
-//
-//  Created by Dilip Ojha on 2015-06-15.
-//  Copyright (c) 2015 madlab. All rights reserved.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
@@ -73,7 +65,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let row = indexPath.row
         let temp: AnyObject = days[row]
         let time = temp["time"]
-        
         cell.textLabel!.text = time as? String
         
         return cell
