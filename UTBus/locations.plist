@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Center</key>
+	<array>
+		<real>43.658185</real>
+		<real>-79.58084100000001</real>
+	</array>
+	<key>UTM</key>
+	<array>
+		<real>43.55147</real>
+		<real>-79.663718</real>
+	</array>
+	<key>Sheridan</key>
+	<array>
+		<real>43.656418</real>
+		<real>-79.74034899999999</real>
+	</array>
+	<key>UTSG</key>
+	<array>
+		<real>43.662138</real>
+		<real>-79.39407300000001</real>
+	</array>
+</dict>
+</plist>

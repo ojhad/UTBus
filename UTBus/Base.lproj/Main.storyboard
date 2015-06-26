@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="1277.5" y="270.5"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="DjX-9H-Qk2">
             <objects>
-                <viewController id="6Kx-3P-tcp" sceneMemberID="viewController">
+                <viewController id="6Kx-3P-tcp" customClass="MapViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QCA-HA-OnX"/>
                         <viewControllerLayoutGuide type="bottom" id="b06-FJ-Vim"/>
@@ -220,17 +220,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JI-TL-Dqd">
-                                <rect key="frame" x="266" y="369" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbd-nh-c4S">
+                                <rect key="frame" x="166" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-cF-5Kj">
+                                <rect key="frame" x="166" y="69" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-3G-srO">
+                                <rect key="frame" x="0.0" y="106" width="375" height="512"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Rdp-fE-z0f"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="Rdp-fE-z0f"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Map" destination="aVa-3G-srO" id="axm-FI-6ZS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPv-0o-xhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,13 +346,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ZJ-8C-t5c" id="XNf-zQ-olx">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="O27-lb-2VX">
+                                                <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="O27-lb-2VX">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="457028095.31332201">
                                                         <!--2015-06-26 16:14:55 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="O27-lb-2VX" secondAttribute="trailing" constant="-8" id="0DR-LF-h2g"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O27-lb-2VX" secondAttribute="bottom" constant="-8" id="3ZP-Jl-kq6"/>
+                                                <constraint firstItem="O27-lb-2VX" firstAttribute="top" secondItem="XNf-zQ-olx" secondAttribute="topMargin" constant="-8" id="czn-TU-I9a"/>
+                                                <constraint firstItem="O27-lb-2VX" firstAttribute="leading" secondItem="XNf-zQ-olx" secondAttribute="leadingMargin" constant="-8" id="m8o-qh-LBR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
