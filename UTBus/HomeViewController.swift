@@ -60,7 +60,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Times", forIndexPath: indexPath) as! UITableViewCell
         
         let row = indexPath.row
         let temp: AnyObject = days[row]

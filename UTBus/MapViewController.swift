@@ -1,59 +1,43 @@
 import MapKit
 import UIKit
-import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var Map: MKMapView!
-    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         self.Map.delegate = self
         
         Map.showsUserLocation = true
         
-        // Ask for Authorisation from the user
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-        
-        //parse data from plist file
-        let path = NSBundle.mainBundle().pathForResource("locations", ofType: "plist")
-        let dict = NSDictionary(contentsOfFile: path!)
-        
-        let locsUTSG: AnyObject = dict!.objectForKey("UTSG")!
-        let locsUTM: AnyObject = dict!.objectForKey("UTM")!
-        let locsSheridan: AnyObject = dict!.objectForKey("Sheridan")!
-        
-        let locations = [
-            CLLocation(latitude: locsUTSG[0] as! Double, longitude: locsUTSG[1] as! Double),//UTSG
-            CLLocation(latitude: locsUTM[0] as! Double, longitude: locsUTM[1] as! Double),//UTM
-            CLLocation(latitude: locsSheridan[0] as! Double, longitude: locsSheridan[1] as! Double)]//Sheridan
+        let locations = initRoute()
         
         let locationsGeorge = [locations[0], locations[1]]
-        
         let locationsSheridan = [locations[1], locations[2]]
-        
-        centerMapOnLocation(locations[1])
         
         makePins(locations)
         
-        //true = St. George route
-        //false = Sheridan route
+        //true = St. George route --- false = Sheridan route
         makeRoutes(locationsGeorge, route: true)
         makeRoutes(locationsSheridan, route: false)
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var locValue:CLLocationCoordinate2D = manager.location.coordinate
+    func initRoute()->[CLLocation!]{
+        let path = NSBundle.mainBundle().pathForResource("locations", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
         
-        println("locations = \(locValue.latitude) \(locValue.longitude)")
+        let locations = [
+            CLLocation(latitude: dict!.objectForKey("UTSG")![0] as! Double,
+                longitude: dict!.objectForKey("UTSG")![1] as! Double),//UTSG
+            CLLocation(latitude: dict!.objectForKey("UTM")![0] as! Double,
+                longitude: dict!.objectForKey("UTM")![1] as! Double),//UTM
+            CLLocation(latitude: dict!.objectForKey("Sheridan")![0] as! Double,
+                longitude: dict!.objectForKey("Sheridan")![1] as! Double),//Sheridan
+        ]
+        
+        centerMapOnLocation(CLLocation(latitude: dict!.objectForKey("Center")![0] as! Double,
+            longitude: dict!.objectForKey("Center")![1] as! Double))
+        
+        return locations
     }
     
     func makePins(locations: [CLLocation!]) {
@@ -86,13 +70,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
         
         var polyline = MKPolyline(coordinates: &coordinates, count: locations.count)
+        
         if route==true{
             polyline.title="George"
         }
         else{
             polyline.title="Sheridan"
         }
-        
         self.Map.addOverlay(polyline)
     }
     
@@ -100,7 +84,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let regionRadius: CLLocationDistance = 20000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
-        
         Map.setRegion(coordinateRegion, animated: true)
     }
     
@@ -117,7 +100,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             return pr;
         }
-        
         return nil
     }
 }
