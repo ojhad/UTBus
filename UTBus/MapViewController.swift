@@ -1,24 +1,43 @@
 import MapKit
 import UIKit
+import CoreLocation
+import AddressBook
+import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var Map: MKMapView!
     
     override func viewDidLoad() {
         self.Map.delegate = self
-        
         Map.showsUserLocation = true
         
         let locations = initRoute()
-        
         let locationsGeorge = [locations[0], locations[1]]
-        let locationsSheridan = [locations[1], locations[2]]
+        let locationsSheridan = [locations[2], locations[1]]
+        
         
         makePins(locations)
-        
-        //true = St. George route --- false = Sheridan route
+        // true = St. George route --- false = Sheridan route
         makeRoutes(locationsGeorge, route: true)
         makeRoutes(locationsSheridan, route: false)
+        
+        
+//        let coords = CLLocationCoordinate2DMake(43.6483, -79.784911)
+//        
+//        let address = [kABPersonAddressStreetKey as String: "350 5th Avenue",
+//            kABPersonAddressCityKey as String: "New York",
+//            kABPersonAddressStateKey as String: "NY",
+//            kABPersonAddressZIPKey as String: "10118",
+//            kABPersonAddressCountryCodeKey as String: "US"]
+//
+//        let place = MKPlacemark(coordinate: coords, addressDictionary: address)
+//        
+//        let mapItem = MKMapItem(placemark: place)
+//        
+//        let options = [MKLaunchOptionsDirectionsModeKey:
+//        MKLaunchOptionsDirectionsModeWalking]
+//        
+//        mapItem.openInMapsWithLaunchOptions(options)
     }
     
     func initRoute()->[CLLocation!]{
@@ -77,6 +96,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         else{
             polyline.title="Sheridan"
         }
+        
         self.Map.addOverlay(polyline)
     }
     
@@ -100,6 +120,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             
             return pr;
         }
+        
         return nil
     }
 }

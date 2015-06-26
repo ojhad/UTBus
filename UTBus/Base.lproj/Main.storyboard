@@ -136,26 +136,6 @@
             </objects>
             <point key="canvasLocation" x="245.5" y="1083.5"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="1N0-v6-Ph6">
-            <objects>
-                <viewController id="ZwG-tB-h30" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GCh-aG-dmR"/>
-                        <viewControllerLayoutGuide type="bottom" id="UpV-ev-RvY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1dj-He-v02">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rCc-Qn-zNu"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pnl-Vr-xKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-486.5" y="1687.5"/>
-        </scene>
         <!--Today-->
         <scene sceneID="bU2-Cm-jsl">
             <objects>
@@ -249,7 +229,7 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281.5" y="-460.5"/>
+            <point key="canvasLocation" x="131.5" y="-510.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TUz-xy-ROQ">
@@ -266,7 +246,6 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                         <segue destination="rTc-3n-mHt" kind="relationship" relationship="viewControllers" id="RUg-ga-HM1"/>
                         <segue destination="GaS-p7-gRb" kind="relationship" relationship="viewControllers" id="GoH-V7-2ZR"/>
                         <segue destination="6Kx-3P-tcp" kind="relationship" relationship="viewControllers" id="qgt-tC-pge"/>
-                        <segue destination="ZwG-tB-h30" kind="relationship" relationship="viewControllers" id="Xlx-dT-vbw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQf-nm-INN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,6 +255,7 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
         <!--Schedule-->
         <scene sceneID="CMO-MW-hCq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wol-FR-PUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GaS-p7-gRb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="Clock-25" id="376-rT-Sfs"/>
                     <toolbarItems/>
@@ -288,7 +268,6 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                         <segue destination="MNw-yz-nf8" kind="relationship" relationship="rootViewController" id="4iJ-gh-xi0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wol-FR-PUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245.5" y="270.5"/>
         </scene>
