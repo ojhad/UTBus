@@ -15,7 +15,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         let locationsGeorge = [locations[0], locations[1]]
         let locationsSheridan = [locations[2], locations[1]]
         
-        
         makePins(locations)
         // true = St. George route --- false = Sheridan route
         makeRoutes(locationsGeorge, route: true)
@@ -59,6 +58,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         return locations
     }
     
+    
     func makePins(locations: [CLLocation!]) {
         for var i=0; i<locations.count; ++i {
             var coordinates = locations.map({ (location: CLLocation!) -> CLLocationCoordinate2D in
@@ -79,7 +79,14 @@ class MapViewController: UIViewController, MKMapViewDelegate{
                 objectAnnotation.title = "Sheridan"
             }
             
+            
             self.Map.addAnnotation(objectAnnotation)
+        }
+    }
+    
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!){
+        if let annotation = view.annotation as? MKPointAnnotation {
+            println(view.annotation.title == "Hart House (UTSG)")
         }
     }
     

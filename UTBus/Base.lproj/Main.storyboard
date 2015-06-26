@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUA-lW-n3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.5" y="270.5"/>
+            <point key="canvasLocation" x="940.5" y="246.5"/>
         </scene>
         <!--Map-->
         <scene sceneID="DjX-9H-Qk2">
@@ -80,9 +80,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-9b-AY1">
-                                <rect key="frame" x="0.0" y="86" width="375" height="532"/>
-                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-ym-tUm">
                                 <rect key="frame" x="82" y="28" width="224" height="21"/>
                                 <attributedString key="attributedText">
@@ -123,6 +120,9 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-9b-AY1">
+                                <rect key="frame" x="0.0" y="86" width="375" height="532"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPv-0o-xhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.5" y="1083.5"/>
+            <point key="canvasLocation" x="285.5" y="1055.5"/>
         </scene>
         <!--Today-->
         <scene sceneID="bU2-Cm-jsl">
@@ -229,7 +229,7 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.5" y="-510.5"/>
+            <point key="canvasLocation" x="285.5" y="-542.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TUz-xy-ROQ">
@@ -250,12 +250,11 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQf-nm-INN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-582" y="540"/>
+            <point key="canvasLocation" x="-550.5" y="270.5"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="CMO-MW-hCq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wol-FR-PUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GaS-p7-gRb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="Clock-25" id="376-rT-Sfs"/>
                     <toolbarItems/>
@@ -268,8 +267,9 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                         <segue destination="MNw-yz-nf8" kind="relationship" relationship="rootViewController" id="4iJ-gh-xi0"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wol-FR-PUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.5" y="270.5"/>
+            <point key="canvasLocation" x="285.5" y="246.5"/>
         </scene>
     </scenes>
     <resources>
