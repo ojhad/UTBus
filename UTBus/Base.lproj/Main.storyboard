@@ -236,6 +236,48 @@
             </objects>
             <point key="canvasLocation" x="245.5" y="1015.5"/>
         </scene>
+        <!--Scheduled Reminders-->
+        <scene sceneID="bh6-Lu-s0l">
+            <objects>
+                <tableViewController id="Pdt-cn-8qr" customClass="RemindersTableViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="x0Q-fV-bni">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="standard_cell" textLabel="GOF-gi-qe1" detailTextLabel="Phj-sf-6w0" style="IBUITableViewCellStyleSubtitle" id="jW0-CA-QxR">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jW0-CA-QxR" id="J9O-I9-bJP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GOF-gi-qe1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Phj-sf-6w0">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pdt-cn-8qr" id="eeI-DT-I7Q"/>
+                            <outlet property="delegate" destination="Pdt-cn-8qr" id="a8e-Qp-iuM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scheduled Reminders" id="08R-Ml-OeS"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77n-fY-6y1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.5" y="1874.5"/>
+        </scene>
         <!--Create Reminder View Controller-->
         <scene sceneID="u4Y-WG-1AM">
             <objects>
@@ -287,22 +329,18 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Set Reminder Time" id="FhW-hO-2qS">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2ZJ-8C-t5c">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="193" id="2ZJ-8C-t5c">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ZJ-8C-t5c" id="XNf-zQ-olx">
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NKZ-Be-Yj5">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NKZ-Be-Yj5" id="zAq-kL-RJt">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pxT-sh-gEV">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxT-sh-gEV" id="n4X-cV-Rac">
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="O27-lb-2VX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="457028095.31332201">
+                                                        <!--2015-06-26 16:14:55 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -313,17 +351,11 @@
                             <outlet property="delegate" destination="jOF-w9-A7Y" id="FUQ-d0-X2y"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Create" id="zEM-Cv-SEx">
-                            <connections>
-                                <action selector="tappedCreate:" destination="jOF-w9-A7Y" id="N5F-5d-Bfb"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="bbtnCreate" destination="zEM-Cv-SEx" id="ECc-aA-ohQ"/>
+                        <outlet property="datePicker" destination="O27-lb-2VX" id="c9g-ie-Xe9"/>
                         <outlet property="lblBusLocation" destination="WG4-Nh-xkf" id="M5t-2E-20l"/>
                         <outlet property="lblBusTime" destination="CX6-qS-nk0" id="UIV-fh-Ip6"/>
                     </connections>
@@ -331,34 +363,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cT-ef-Bjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832.5" y="1015.5"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="1N0-v6-Ph6">
-            <objects>
-                <viewController id="ZwG-tB-h30" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GCh-aG-dmR"/>
-                        <viewControllerLayoutGuide type="bottom" id="UpV-ev-RvY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1dj-He-v02">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-Zf-ezw">
-                                <rect key="frame" x="29" y="567" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rCc-Qn-zNu"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pnl-Vr-xKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="245.5" y="1739.5"/>
         </scene>
         <!--Home-->
         <scene sceneID="bU2-Cm-jsl">
@@ -465,7 +469,7 @@
                         <segue destination="rTc-3n-mHt" kind="relationship" relationship="viewControllers" id="RUg-ga-HM1"/>
                         <segue destination="GaS-p7-gRb" kind="relationship" relationship="viewControllers" id="GoH-V7-2ZR"/>
                         <segue destination="6Kx-3P-tcp" kind="relationship" relationship="viewControllers" id="qgt-tC-pge"/>
-                        <segue destination="ZwG-tB-h30" kind="relationship" relationship="viewControllers" id="Xlx-dT-vbw"/>
+                        <segue destination="BNA-i2-zYY" kind="relationship" relationship="viewControllers" id="Crz-fi-XHj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQf-nm-INN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -491,8 +495,28 @@
             </objects>
             <point key="canvasLocation" x="245.5" y="270.5"/>
         </scene>
+        <!--Reminders-->
+        <scene sceneID="pMK-FK-kSS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BNA-i2-zYY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reminders" image="Bird Filled-25" id="WdD-Ot-X1I"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UDq-8e-ZHg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pdt-cn-8qr" kind="relationship" relationship="rootViewController" id="zb0-Dy-ld8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omP-X3-Xx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245.5" y="1874.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Bird Filled-25" width="25" height="25"/>
         <image name="Bus Filled-25" width="25" height="25"/>
         <image name="Clock-25" width="25" height="25"/>
     </resources>
