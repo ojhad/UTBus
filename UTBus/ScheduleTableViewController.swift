@@ -14,6 +14,8 @@ class ScheduleTableViewController: UITableViewController {
     
     var timeOfTappedCell: String = ""
     var locationOfTappedCell: String = ""
+    
+    var dateOfInterest: NSDate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,11 +101,11 @@ class ScheduleTableViewController: UITableViewController {
         
         if segue.identifier == "create_reminder"{
             
-            var VC: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
+            var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
             
-            VC.busTime = timeOfTappedCell
-            VC.busLocation = locationOfTappedCell
-            
+            vc.busTime = timeOfTappedCell
+            vc.busLocation = locationOfTappedCell
+            vc.dateOfInterest = self.dateOfInterest
         }
         
     }

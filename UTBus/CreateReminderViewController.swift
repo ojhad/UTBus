@@ -13,6 +13,8 @@ class CreateReminderViewController: UITableViewController {
     var busTime: String?
     var busLocation: String?
     
+    var dateOfInterest: NSDate?
+    
     @IBOutlet weak var lblBusLocation: UILabel!
     @IBOutlet weak var lblBusTime: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -44,5 +46,44 @@ class CreateReminderViewController: UITableViewController {
         
     }
     
-
+    func setReminderTimeWithTime(minutes: Double){
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        var time: NSDate = dateFormatter.dateFromString(busTime!)!
+        
+        var newTime = time.dateByAddingTimeInterval(-60*minutes)
+        
+        var requiredTime: String? = dateFormatter.stringFromDate(newTime)
+        
+        dateFormatter.dateFormat = "MM:dd:yyyy"
+        var requiredDay: String? = dateFormatter.stringFromDate(dateOfInterest!)
+        
+        let finalDateString: String? = requiredDay! + ":" + requiredTime!
+        
+        dateFormatter.dateFormat = "MM:dd:yyyy:HH:mm"
+        
+        let finalDate: NSDate? = dateFormatter.dateFromString(finalDateString!)
+        
+        datePicker.setDate(finalDate!, animated: true)
+    }
+    
+    @IBAction func tappedRemind30MinutesBefore(sender: AnyObject) {
+        
+        self.setReminderTimeWithTime(30);
+        
+    }
+    
+    @IBAction func tappedRemind1HourBefore(sender: AnyObject) {
+        
+        self.setReminderTimeWithTime(60);
+        
+    }
+    
+    @IBAction func tappedRemind2HoursBefore(sender: AnyObject) {
+        
+        self.setReminderTimeWithTime(120);
+        
+    }
+    
 }

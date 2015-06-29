@@ -110,12 +110,13 @@ class SearchScheduleViewController: UIViewController {
         
         if segue.identifier == "show_detail_schedule"{
             
-            var VC: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
+            var vc: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
             
             var index = segControlLocation.selectedSegmentIndex
             
-            VC.navigationItem.title = segControlLocation.titleForSegmentAtIndex(index)
+            vc.navigationItem.title = segControlLocation.titleForSegmentAtIndex(index)
             
+            vc.dateOfInterest = pickerDate.date
         }
     }
 

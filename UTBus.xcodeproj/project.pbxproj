@@ -111,10 +111,8 @@
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
 				BC8163B81B3DC450005DB95E /* RemindersTableViewController.swift */,
 				BC8643A11B3DC11D004BC339 /* Reminders */,
-				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
-				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
-				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
+				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
 				BCD6FC751B31FCB200308F1E /* ScheduleViewController.swift */,
 				BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
@@ -161,6 +159,16 @@
 				BC86439F1B3DBE38004BC339 /* ReminderList.swift */,
 			);
 			name = Reminders;
+			sourceTree = "<group>";
+		};
+		BCAF00091B41BEAD002E8FF4 /* Schedule Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
+				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
+				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
+			);
+			name = "Schedule Tab";
 			sourceTree = "<group>";
 		};
 		BCD6FC7D1B3203B000308F1E /* Data Model */ = {
