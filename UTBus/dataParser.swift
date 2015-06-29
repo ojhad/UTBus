@@ -1,19 +1,19 @@
-//
-//  dataParser.swift
-//  UTBus
-//
-//  Created by Dilip Ojha on 2015-06-15.
-//  Copyright (c) 2015 madlab. All rights reserved.
-//
-
 import Foundation
 
 class dataParser: NSObject {
     
-    func getArrayOfTimesForDay(getDay: String) -> NSArray {
-        
+    func getArrayOfTimesForDay(day: String, route: String) -> NSArray {
         let bundle = NSBundle.mainBundle()
-        let URL: NSURL? = bundle.URLForResource("data", withExtension: ".json");
+        let URL: NSURL?
+        
+        
+        if(route=="St. George"){
+            URL=bundle.URLForResource("routeStGeorge", withExtension: ".json");
+        }
+        else{
+            URL=bundle.URLForResource("routeSheridan", withExtension: ".json");
+        }
+        
         let data: NSData? = NSData(contentsOfURL: URL!)
         
         var parseError: NSError?
@@ -22,13 +22,12 @@ class dataParser: NSObject {
             error:&parseError)
         
         if let main = parsedObject as? NSDictionary {
-            if let route = main["mississauga"] as? NSDictionary {
-                if let day = route[getDay] as? NSArray{
+            if let route = main[route] as? NSDictionary {
+                if let day = route[day] as? NSArray{
                      return day
                 }
             }
         }
-        
         
         let temp: NSArray = NSArray.new()
         

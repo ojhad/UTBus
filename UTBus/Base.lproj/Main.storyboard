@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5w-AJ-ENX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5w-AJ-ENX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -387,29 +387,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCO-mJ-smn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="256"/>
                                 <color key="backgroundColor" red="1" green="0.89954377689999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="SERVICE UPDATES">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> 
-
- *NEW*Departure from Sheridan added Tues &amp; Thurs at 5:15pm
-
-Summer (Reduced) Service: Mon. May 4-Sat. August 29, 2015
-
-*NEW*Reduced Sheridan Summer service begins Mon. May 11, 2015
-
-SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *registered for summer courses* and paid their fees are permitted to board the shuttle at no additional charge via TCard. Any student, including UTM students, who are *NOT registered* for the summer semester must present a ticket/buspass.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QEf-Ju-Isr">
@@ -451,6 +429,7 @@ SUMMER ACCESS: Effective May 6, 2015 only U of T Mississauga students who are *r
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <connections>
+                        <outlet property="ServiceUpdates" destination="TCO-mJ-smn" id="obL-kw-B07"/>
                         <outlet property="segmentedControl" destination="Z7K-GR-VgL" id="AtZ-5K-40o"/>
                         <outlet property="segmentedControlRoutes" destination="QEf-Ju-Isr" id="Elx-wC-L4l"/>
                         <outlet property="tableView" destination="AAV-nt-ixG" id="Cv9-cw-GLo"/>
