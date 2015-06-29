@@ -21,15 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var navBarAppearance = UINavigationBar.appearance()
         
         navBarAppearance.tintColor = UIColor.whiteColor()
-        navBarAppearance.barTintColor = UIColor.blueColor()
+        navBarAppearance.barTintColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
         
         navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         
-        UITabBar.appearance().tintColor = UIColor.blueColor()
-        UISegmentedControl.appearance().tintColor = UIColor.blueColor()
+        UITabBar.appearance().tintColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
+        UISegmentedControl.appearance().tintColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
         
