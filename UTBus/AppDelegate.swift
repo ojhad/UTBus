@@ -18,10 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        var navBarAppearance = UINavigationBar.appearance()
         
-        UINavigationBar.appearance().tintColor = UIColor.redColor()
-        UITabBar.appearance().tintColor = UIColor.redColor()
-        UISegmentedControl.appearance().tintColor = UIColor.redColor()
+        navBarAppearance.tintColor = UIColor.whiteColor()
+        navBarAppearance.barTintColor = UIColor.blueColor()
+        
+        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
+        
+        UITabBar.appearance().tintColor = UIColor.blueColor()
+        UISegmentedControl.appearance().tintColor = UIColor.blueColor()
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
         

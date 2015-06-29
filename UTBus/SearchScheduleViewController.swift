@@ -10,10 +10,11 @@ import UIKit
 
 class SearchScheduleViewController: UIViewController {
     
-    @IBOutlet weak var lblSelectedDate: UILabel!
     @IBOutlet weak var pickerDate: UIDatePicker!
     @IBOutlet weak var btnSetTodaysDate: UIButton!
-    @IBOutlet weak var bbtnDone: UIBarButtonItem!
+    @IBOutlet weak var segControlRoute: UISegmentedControl!
+    @IBOutlet weak var segControlLocation: UISegmentedControl!
+    @IBOutlet weak var btnSearch: UIButton!
     
     var todaysDate: NSString?
     
@@ -27,14 +28,16 @@ class SearchScheduleViewController: UIViewController {
         //set up UI components
         
         btnSetTodaysDate.layer.cornerRadius = 10
+        btnSetTodaysDate.layer.borderColor = UIColor.blackColor().CGColor
+        btnSetTodaysDate.layer.borderWidth = 3.0
         
-        btnSetTodaysDate.backgroundColor = UIColor.blueColor()
-        btnSetTodaysDate.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btnSetTodaysDate.backgroundColor = UIColor.whiteColor()
+        btnSetTodaysDate.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         
-        self.navigationItem.rightBarButtonItem = bbtnDone
+        btnSearch.layer.cornerRadius = 10;
         
-        
-        //set lblSelectedDate and lblSelectedTime to today's date
+        btnSetTodaysDate.alpha = 0.0;
+        btnSetTodaysDate.enabled = false;
         
         //selected date
         
@@ -43,9 +46,6 @@ class SearchScheduleViewController: UIViewController {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
         var dateString = dateFormatter.stringFromDate(currentDate)
-        
-        lblSelectedDate.text = dateString;
-        lblSelectedDate.textColor = UIColor.redColor()
         
         todaysDate = dateString;
         
@@ -59,17 +59,22 @@ class SearchScheduleViewController: UIViewController {
         dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
         var dateString = dateFormatter.stringFromDate(newDate)
         
-        lblSelectedDate.text = dateString;
         
         if (dateString == todaysDate){
-            lblSelectedDate.textColor = UIColor.redColor()
-            btnSetTodaysDate.backgroundColor = UIColor.blueColor()
-            btnSetTodaysDate.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.btnSetTodaysDate.alpha = 0.0
+                self.btnSetTodaysDate.enabled = false;
+            })
+            
         }
         else{
-            lblSelectedDate.textColor = UIColor.blueColor()
-            btnSetTodaysDate.backgroundColor = UIColor.redColor()
-            btnSetTodaysDate.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.btnSetTodaysDate.alpha = 1.0
+                self.btnSetTodaysDate.enabled = true;
+            })
+           
         }
         
         
@@ -85,7 +90,33 @@ class SearchScheduleViewController: UIViewController {
         
     }
 
-    @IBAction func bbtnDoneTapped(sender: AnyObject) {
-        print("tappedDONE")
+    @IBAction func changedSegmentedControlRoute(sender: AnyObject) {
+        switch segControlRoute.selectedSegmentIndex
+        {
+        case 0:
+            segControlLocation.setTitle("Instructional Centre (UTM)", forSegmentAtIndex: 0)
+            segControlLocation.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
+        case 1:
+            segControlLocation.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
+            segControlLocation.setTitle("Sheridan", forSegmentAtIndex: 1)
+            
+        default:
+            break;
+        }
+        
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "show_detail_schedule"{
+            
+            var VC: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
+            
+            var index = segControlLocation.selectedSegmentIndex
+            
+            VC.navigationItem.title = segControlLocation.titleForSegmentAtIndex(index)
+            
+        }
+    }
+
 }
