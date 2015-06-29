@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9062AAF21B41DFD40088753B /* routeSheridan.json in Resources */ = {isa = PBXBuildFile; fileRef = 9062AAF11B41DFD40088753B /* routeSheridan.json */; };
 		9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EEC11B41ABA7001EB895 /* Pin.swift */; };
+		9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EECB1B41D2BB001EB895 /* InterfaceController.swift */; };
+		9099EECE1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EECD1B41D2BB001EB895 /* Images.xcassets */; };
+		9099EED21B41D2BB001EB895 /* UTBus WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9099EED11B41D2BB001EB895 /* UTBus WatchKit App.app */; };
+		9099EEDA1B41D2BB001EB895 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9099EED81B41D2BB001EB895 /* Interface.storyboard */; };
+		9099EEDC1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EEDB1B41D2BB001EB895 /* Images.xcassets */; };
+		9099EEDF1B41D2BB001EB895 /* UTBus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */; };
 		BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0881BD1B2F4D550051F7F9 /* Main.storyboard */; };
 		BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C01B2F4D550051F7F9 /* Images.xcassets */; };
 		BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */; };
 		BC0881D01B2F4D560051F7F9 /* UTBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */; };
 		BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */; };
-		BC6FF7161B2F5A710037334B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* data.json */; };
+		BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* routeStGeorge.json */; };
 		BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */; };
 		BC8163B91B3DC450005DB95E /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8163B81B3DC450005DB95E /* RemindersTableViewController.swift */; };
 		BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8163BC1B3DE473005DB95E /* MapViewController.swift */; };
@@ -30,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9099EED31B41D2BB001EB895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0881AC1B2F4D550051F7F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9099EED01B41D2BB001EB895;
+			remoteInfo = "UTBus WatchKit App";
+		};
+		9099EEDD1B41D2BB001EB895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0881AC1B2F4D550051F7F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9099EEC61B41D2BB001EB895;
+			remoteInfo = "UTBus WatchKit Extension";
+		};
 		BC0881CA1B2F4D560051F7F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BC0881AC1B2F4D550051F7F9 /* Project object */;
@@ -39,8 +60,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9099EEE61B41D2BB001EB895 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9099EEDF1B41D2BB001EB895 /* UTBus WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9062AAF11B41DFD40088753B /* routeSheridan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeSheridan.json; sourceTree = "<group>"; };
 		9099EEC11B41ABA7001EB895 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "UTBus WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9099EECA1B41D2BB001EB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9099EECB1B41D2BB001EB895 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9099EECD1B41D2BB001EB895 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9099EED11B41D2BB001EB895 /* UTBus WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UTBus WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9099EED71B41D2BB001EB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9099EED91B41D2BB001EB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9099EEDB1B41D2BB001EB895 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC0881B41B2F4D550051F7F9 /* UTBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881B81B2F4D550051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +95,7 @@
 		BC0881CE1B2F4D560051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTBusTests.swift; sourceTree = "<group>"; };
 		BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
-		BC6FF7151B2F5A710037334B /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		BC6FF7151B2F5A710037334B /* routeStGeorge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeStGeorge.json; sourceTree = "<group>"; };
 		BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BC8163B81B3DC450005DB95E /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
 		BC8163BC1B3DE473005DB95E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +111,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9099EEC41B41D2BB001EB895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC0881B11B2F4D550051F7F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,11 +135,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9099EEC81B41D2BB001EB895 /* UTBus WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9099EECB1B41D2BB001EB895 /* InterfaceController.swift */,
+				9099EECD1B41D2BB001EB895 /* Images.xcassets */,
+				9099EEC91B41D2BB001EB895 /* Supporting Files */,
+			);
+			path = "UTBus WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9099EEC91B41D2BB001EB895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9099EECA1B41D2BB001EB895 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9099EED51B41D2BB001EB895 /* UTBus WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				9099EED81B41D2BB001EB895 /* Interface.storyboard */,
+				9099EEDB1B41D2BB001EB895 /* Images.xcassets */,
+				9099EED61B41D2BB001EB895 /* Supporting Files */,
+			);
+			path = "UTBus WatchKit App";
+			sourceTree = "<group>";
+		};
+		9099EED61B41D2BB001EB895 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9099EED71B41D2BB001EB895 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BC0881AB1B2F4D550051F7F9 = {
 			isa = PBXGroup;
 			children = (
 				BC0881B61B2F4D550051F7F9 /* UTBus */,
 				BC0881CC1B2F4D560051F7F9 /* UTBusTests */,
+				9099EEC81B41D2BB001EB895 /* UTBus WatchKit Extension */,
+				9099EED51B41D2BB001EB895 /* UTBus WatchKit App */,
 				BC0881B51B2F4D550051F7F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +187,8 @@
 			children = (
 				BC0881B41B2F4D550051F7F9 /* UTBus.app */,
 				BC0881C91B2F4D560051F7F9 /* UTBusTests.xctest */,
+				9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */,
+				9099EED11B41D2BB001EB895 /* UTBus WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +211,8 @@
 				BCD6FC7D1B3203B000308F1E /* Data Model */,
 				BC0881C01B2F4D550051F7F9 /* Images.xcassets */,
 				BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */,
-				BC6FF7151B2F5A710037334B /* data.json */,
+				BC6FF7151B2F5A710037334B /* routeStGeorge.json */,
+				9062AAF11B41DFD40088753B /* routeSheridan.json */,
 				BC0881B71B2F4D550051F7F9 /* Supporting Files */,
 			);
 			path = UTBus;
@@ -173,6 +265,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9099EEC61B41D2BB001EB895 /* UTBus WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9099EEE31B41D2BB001EB895 /* Build configuration list for PBXNativeTarget "UTBus WatchKit Extension" */;
+			buildPhases = (
+				9099EEC31B41D2BB001EB895 /* Sources */,
+				9099EEC41B41D2BB001EB895 /* Frameworks */,
+				9099EEC51B41D2BB001EB895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9099EED41B41D2BB001EB895 /* PBXTargetDependency */,
+			);
+			name = "UTBus WatchKit Extension";
+			productName = "UTBus WatchKit Extension";
+			productReference = 9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		9099EED01B41D2BB001EB895 /* UTBus WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9099EEE01B41D2BB001EB895 /* Build configuration list for PBXNativeTarget "UTBus WatchKit App" */;
+			buildPhases = (
+				9099EECF1B41D2BB001EB895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UTBus WatchKit App";
+			productName = "UTBus WatchKit App";
+			productReference = 9099EED11B41D2BB001EB895 /* UTBus WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		BC0881B31B2F4D550051F7F9 /* UTBus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC0881D31B2F4D560051F7F9 /* Build configuration list for PBXNativeTarget "UTBus" */;
@@ -180,10 +305,12 @@
 				BC0881B01B2F4D550051F7F9 /* Sources */,
 				BC0881B11B2F4D550051F7F9 /* Frameworks */,
 				BC0881B21B2F4D550051F7F9 /* Resources */,
+				9099EEE61B41D2BB001EB895 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9099EEDE1B41D2BB001EB895 /* PBXTargetDependency */,
 			);
 			name = UTBus;
 			productName = UTBus;
@@ -217,6 +344,13 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = madlab;
 				TargetAttributes = {
+					9099EEC61B41D2BB001EB895 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 3RWTRYXPAB;
+					};
+					9099EED01B41D2BB001EB895 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					BC0881B31B2F4D550051F7F9 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 3RWTRYXPAB;
@@ -242,20 +376,41 @@
 			targets = (
 				BC0881B31B2F4D550051F7F9 /* UTBus */,
 				BC0881C81B2F4D560051F7F9 /* UTBusTests */,
+				9099EEC61B41D2BB001EB895 /* UTBus WatchKit Extension */,
+				9099EED01B41D2BB001EB895 /* UTBus WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9099EEC51B41D2BB001EB895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9099EED21B41D2BB001EB895 /* UTBus WatchKit App.app in Resources */,
+				9099EECE1B41D2BB001EB895 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9099EECF1B41D2BB001EB895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9099EEDA1B41D2BB001EB895 /* Interface.storyboard in Resources */,
+				9099EEDC1B41D2BB001EB895 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC0881B21B2F4D550051F7F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */,
+				9062AAF21B41DFD40088753B /* routeSheridan.json in Resources */,
 				BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */,
 				BC8163BF1B3DE5E3005DB95E /* locations.plist in Resources */,
 				BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */,
-				BC6FF7161B2F5A710037334B /* data.json in Resources */,
+				BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +424,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9099EEC31B41D2BB001EB895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC0881B01B2F4D550051F7F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +464,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9099EED41B41D2BB001EB895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9099EED01B41D2BB001EB895 /* UTBus WatchKit App */;
+			targetProxy = 9099EED31B41D2BB001EB895 /* PBXContainerItemProxy */;
+		};
+		9099EEDE1B41D2BB001EB895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9099EEC61B41D2BB001EB895 /* UTBus WatchKit Extension */;
+			targetProxy = 9099EEDD1B41D2BB001EB895 /* PBXContainerItemProxy */;
+		};
 		BC0881CB1B2F4D560051F7F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BC0881B31B2F4D550051F7F9 /* UTBus */;
@@ -309,6 +482,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9099EED81B41D2BB001EB895 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9099EED91B41D2BB001EB895 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		BC0881BD1B2F4D550051F7F9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -328,6 +509,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9099EEE11B41D2BB001EB895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = UTBus_WatchKit_Extension;
+				INFOPLIST_FILE = "UTBus WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		9099EEE21B41D2BB001EB895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = UTBus_WatchKit_Extension;
+				INFOPLIST_FILE = "UTBus WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		9099EEE41B41D2BB001EB895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UTBus WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9099EEE51B41D2BB001EB895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
+				INFOPLIST_FILE = "UTBus WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		BC0881D11B2F4D560051F7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -472,6 +713,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9099EEE01B41D2BB001EB895 /* Build configuration list for PBXNativeTarget "UTBus WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9099EEE11B41D2BB001EB895 /* Debug */,
+				9099EEE21B41D2BB001EB895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9099EEE31B41D2BB001EB895 /* Build configuration list for PBXNativeTarget "UTBus WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9099EEE41B41D2BB001EB895 /* Debug */,
+				9099EEE51B41D2BB001EB895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BC0881AF1B2F4D550051F7F9 /* Build configuration list for PBXProject "UTBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

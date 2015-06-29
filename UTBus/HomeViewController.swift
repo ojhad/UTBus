@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  UTBus
-//
-//  Created by Dilip Ojha on 2015-06-15.
-//  Copyright (c) 2015 madlab. All rights reserved.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
@@ -17,6 +9,8 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var ServiceUpdates: UITextView!
+    
     @IBOutlet weak var segmentedControlRoutes: UISegmentedControl!
     
     //UTM or UTSG
@@ -26,9 +20,9 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            days=source.getArrayOfTimesForDay("monday")
+            days=source.getArrayOfTimesForDay(getDay(), route: "St. George")
         case 1:
-            days=source.getArrayOfTimesForDay("saturday")
+            days=source.getArrayOfTimesForDay(getDay(), route: "Sheridan")
             
         default:
             break;
@@ -45,22 +39,51 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             segmentedControl.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
         case 1:
             segmentedControl.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
-            segmentedControl.setTitle("Sheridan", forSegmentAtIndex: 1)
+            segmentedControl.setTitle("Sheridan College", forSegmentAtIndex: 1)
             
         default:
             break;
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         source = dataParser.new()
-        days=source.getArrayOfTimesForDay("monday")
-        
+        days=source.getArrayOfTimesForDay(getDay(), route: "St. George")
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let url = NSURL(string: "https://m.utm.utoronto.ca/shuttle.php")
+        var error: NSError?
+        let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
+        
+        if (error != nil) {
+            ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\nSomething went wrong..."
+        } else {
+            let start=html!.rangeOfString("<div class='notice'>").location
+                + html!.rangeOfString("<div class='notice'>").length
+            
+            let substring: NSString = html!.substringFromIndex(start)
+            let end=substring.rangeOfString("</div>").location
+            
+            var serviceUpdates=substring.substringToIndex(end)
+            
+            serviceUpdates=serviceUpdates.stringByReplacingOccurrencesOfString("// ", withString: "\n\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            
+            ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\n" + serviceUpdates
+        }
+    }
+    
+    
+    func getDay() -> String{
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let day = dateFormatter.stringFromDate(date)
+        
+        return day.lowercaseString
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -75,14 +98,9 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
         let row = indexPath.row
-        
         let temp: AnyObject = days[row]
-        
         let time = temp["time"]
-        
-        cell.textLabel!.text = time as? String
-        
-        
+
         cell.textLabel!.text = time as? String
         
         return cell
