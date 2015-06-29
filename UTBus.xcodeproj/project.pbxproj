@@ -34,6 +34,7 @@
 		BCD6FC7A1B3203AA00308F1E /* ScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC771B3203AA00308F1E /* ScheduleDataModel.swift */; };
 		BCD6FC7B1B3203AA00308F1E /* ScheduleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC781B3203AA00308F1E /* ScheduleLocation.swift */; };
 		BCD6FC7C1B3203AA00308F1E /* ScheduleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC791B3203AA00308F1E /* ScheduleTimeline.swift */; };
+		BCF70EF81B41B424003191E8 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		BCD6FC771B3203AA00308F1E /* ScheduleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataModel.swift; sourceTree = "<group>"; };
 		BCD6FC781B3203AA00308F1E /* ScheduleLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLocation.swift; sourceTree = "<group>"; };
 		BCD6FC791B3203AA00308F1E /* ScheduleTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTimeline.swift; sourceTree = "<group>"; };
+		BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +202,8 @@
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
 				BC8163B81B3DC450005DB95E /* RemindersTableViewController.swift */,
 				BC8643A11B3DC11D004BC339 /* Reminders */,
-				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
-				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
+				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
 				BCD6FC751B31FCB200308F1E /* ScheduleViewController.swift */,
 				BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
@@ -250,6 +251,16 @@
 				BC86439F1B3DBE38004BC339 /* ReminderList.swift */,
 			);
 			name = Reminders;
+			sourceTree = "<group>";
+		};
+		BCAF00091B41BEAD002E8FF4 /* Schedule Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
+				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
+				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
+			);
+			name = "Schedule Tab";
 			sourceTree = "<group>";
 		};
 		BCD6FC7D1B3203B000308F1E /* Data Model */ = {
@@ -440,6 +451,7 @@
 				BC8163B91B3DC450005DB95E /* RemindersTableViewController.swift in Sources */,
 				BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */,
 				BCBBE6671B2F6A8D00C88B27 /* dataParser.swift in Sources */,
+				BCF70EF81B41B424003191E8 /* ScheduleTableViewController.swift in Sources */,
 				BCB816691B386F7300360DC4 /* SearchScheduleViewController.swift in Sources */,
 				BC8643A01B3DBE38004BC339 /* ReminderList.swift in Sources */,
 				BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */,
