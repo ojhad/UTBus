@@ -11,7 +11,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         self.Map.delegate = self
         Map.showsUserLocation = true
         
-        let locations = initRoute()
+        let locations = initRoute();
         let locationsGeorge = [locations[0], locations[1]]
         let locationsSheridan = [locations[2], locations[1]]
         
@@ -19,24 +19,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         // true = St. George route --- false = Sheridan route
         makeRoutes(locationsGeorge, route: true)
         makeRoutes(locationsSheridan, route: false)
-        
-        
-//        let coords = CLLocationCoordinate2DMake(43.6483, -79.784911)
-//        
-//        let address = [kABPersonAddressStreetKey as String: "350 5th Avenue",
-//            kABPersonAddressCityKey as String: "New York",
-//            kABPersonAddressStateKey as String: "NY",
-//            kABPersonAddressZIPKey as String: "10118",
-//            kABPersonAddressCountryCodeKey as String: "US"]
-//
-//        let place = MKPlacemark(coordinate: coords, addressDictionary: address)
-//        
-//        let mapItem = MKMapItem(placemark: place)
-//        
-//        let options = [MKLaunchOptionsDirectionsModeKey:
-//        MKLaunchOptionsDirectionsModeWalking]
-//        
-//        mapItem.openInMapsWithLaunchOptions(options)
     }
     
     func initRoute()->[CLLocation!]{
@@ -65,28 +47,27 @@ class MapViewController: UIViewController, MKMapViewDelegate{
                 return location.coordinate
             })
             
-            let pinLocation = CLLocation(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude)
-            var objectAnnotation = MKPointAnnotation()
-            objectAnnotation.coordinate = pinLocation.coordinate
-            
             if i==0{
-                objectAnnotation.title = "Hart House (UTSG)"
+                let pin = Pin(title: "Hart House",
+                    locationName: "UTSG",
+                    coordinate:
+                    CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
+                self.Map.addAnnotation(pin)
             }
             else if i==1{
-                objectAnnotation.title = "Instructional Centre (UTM)"
+                let pin = Pin(title: "Instructional Centre",
+                    locationName: "UTM",
+                    coordinate:
+                    CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
+                self.Map.addAnnotation(pin)
             }
             else{
-                objectAnnotation.title = "Sheridan"
+                let pin = Pin(title: "Sheridan College",
+                    locationName: "Sheridan",
+                    coordinate:
+                    CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
+                self.Map.addAnnotation(pin)
             }
-            
-            
-            self.Map.addAnnotation(objectAnnotation)
-        }
-    }
-    
-    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!){
-        if let annotation = view.annotation as? MKPointAnnotation {
-            println(view.annotation.title == "Hart House (UTSG)")
         }
     }
     
@@ -129,5 +110,61 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         }
         
         return nil
+    }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if let annotation = annotation as? Pin {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+                as? MKPinAnnotationView {
+                    dequeuedView.annotation = annotation
+                    view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                
+                let directions = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+                directions.frame.size.width = 45
+                directions.frame.size.height = 45
+                directions.setImage(UIImage(named: "GPS Device-25"), forState: .Normal)
+                
+                view.rightCalloutAccessoryView = directions
+            }
+            
+            return view
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!,
+        calloutAccessoryControlTapped control: UIControl!) {
+            let location = view.annotation as! Pin
+            
+            var locations = initRoute();
+            var coordinates = locations.map({ (location: CLLocation!) -> CLLocationCoordinate2D in
+                return location.coordinate
+            })
+            
+            var coords = CLLocationCoordinate2DMake(coordinates[0].latitude, coordinates[0].longitude)
+            var address = [kABPersonAddressStreetKey as String: "Hart House"]
+            
+            if view.annotation.title == "Instructional Centre"{
+                coords = CLLocationCoordinate2DMake(coordinates[1].latitude, coordinates[1].longitude)
+                address = [kABPersonAddressStreetKey as String: "Instructional Centre"]
+                
+            }
+            else if view.annotation.title == "Sheridan College"{
+                coords = CLLocationCoordinate2DMake(coordinates[2].latitude, coordinates[2].longitude)
+                address = [kABPersonAddressStreetKey as String: "Sheridan College"]
+            }
+            
+            let place = MKPlacemark(coordinate: coords, addressDictionary: address)
+            let mapItem = MKMapItem(placemark: place)
+            let options = [MKLaunchOptionsDirectionsModeKey:
+            MKLaunchOptionsDirectionsModeWalking]
+            
+            mapItem.openInMapsWithLaunchOptions(options)
     }
 }
