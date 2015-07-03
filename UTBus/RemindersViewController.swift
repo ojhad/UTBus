@@ -1,5 +1,5 @@
 //
-//  RemindersTableViewController.swift
+//  RemindersViewController.swift
 //  UTBus
 //
 //  Created by Dilip Ojha on 2015-06-26.
@@ -8,13 +8,27 @@
 
 import UIKit
 
-class RemindersTableViewController: UITableViewController {
+class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     var currentReminders: [Reminder] = []
+    
+    var editReminder: Reminder?
 
+    @IBOutlet weak var tvReminders: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var background: UIImageView = UIImageView.new()
+        background.frame = self.view.frame
+        background.backgroundColor = UIColor.blackColor()
+        background.image = UIImage(named: "utm3")
+        background.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        self.view.addSubview(background)
+        self.view.sendSubviewToBack(background)
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,6 +36,17 @@ class RemindersTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "ReminderListShouldRefresh", object: nil)
+        
+        tvReminders.dataSource = self;
+        tvReminders.delegate = self;
+        
+        tvReminders.backgroundView?.backgroundColor = UIColor.clearColor()
+        tvReminders.backgroundColor = UIColor.clearColor()
+        
+        tvReminders.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        tvReminders.registerNib(UINib(nibName: "ReminderTableViewCell", bundle: nil), forCellReuseIdentifier: "reminderCell")
+    
 
     }
     
@@ -35,15 +60,16 @@ class RemindersTableViewController: UITableViewController {
         if (currentReminders.count >= 64) {
             println("Maximum Set Notifications Reached!")
         }
-        tableView.reloadData()
+        tvReminders.reloadData()
     }
 
     // MARK: - Table view data source
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true // all cells are editable
     }
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
             // delete the row from the data source
@@ -55,41 +81,63 @@ class RemindersTableViewController: UITableViewController {
         }
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return currentReminders.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("standard_cell", forIndexPath: indexPath) as! UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reminderCell", forIndexPath: indexPath) as! ReminderTableViewCell
         
         var item: Reminder = currentReminders[indexPath.row]
         
-        cell.textLabel!.text = "Departing \(item.busLocation) at \(item.busTime)"
+        cell.lblTitle.text = "Departing \(item.busLocation) at \(item.busTime)"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "'Set For' MMM dd 'at' h:mm a"
-        cell.detailTextLabel?.text = dateFormatter.stringFromDate(item.notificationTime)
+        cell.lblSubtitle.text = dateFormatter.stringFromDate(item.notificationTime)
+        
+        
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundView?.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
+        
+        var whiteCard: UIImageView = UIImageView.new()
+        whiteCard.frame = CGRectMake(5, 5, 361, 58)
+        
+        cell.addSubview(whiteCard)
+        
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var customCell: ReminderTableViewCell = cell as! ReminderTableViewCell
+        
         var item: Reminder = currentReminders[indexPath.row]
         
         if (item.isOverdue) { // the current time is later than the to-do item's deadline
-            cell.detailTextLabel?.textColor = UIColor.redColor()
+            customCell.lblSubtitle.textColor = UIColor.redColor()
         } else {
-            cell.detailTextLabel?.textColor = UIColor.blackColor()
+            customCell.lblSubtitle.textColor = UIColor.blackColor()
         }
+
+    }
+    
+    func  tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        editReminder = currentReminders[indexPath.row]
+        
+        self.performSegueWithIdentifier("edit_reminder", sender: self)
 
     }
 
@@ -128,14 +176,23 @@ class RemindersTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "edit_reminder"{
+            
+            var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
+            
+            vc.isNewReminder = false;
+            vc.editReminder = self.editReminder
+        }
+        
     }
-    */
+
 
 }

@@ -1,6 +1,6 @@
 {
-    "Sheridan": {
-        "monday": [
+    "Deerfield Hall North": {
+        "Monday": [
                    {
                    "time": "8:45"
                    },
@@ -23,7 +23,7 @@
                    "time": "17:45"
                    }
                    ],
-        "tuesday": [
+        "Tuesday": [
                     {
                     "time": "8:45"
                     },
@@ -34,7 +34,7 @@
                     "time": "16:15"
                     }
                     ],
-        "wednesday": [
+        "Wednesday": [
                       {
                       "time": "8:45"
                       },
@@ -57,7 +57,7 @@
                       "time": "17:45"
                       }
                       ],
-        "thursday": [
+        "Thursday": [
                      {
                      "time": "8:45"
                      },
@@ -66,6 +66,59 @@
                      },
                      {
                      "time": "16:15"
+                     }
+                     ]
+    },
+    
+    "Sheridan": {
+        "Monday": [
+                   {
+                   "time": "13:15"
+                   },
+                   {
+                   "time": "14:15"
+                   },
+                   {
+                   "time": "15:15"
+                   },
+                   {
+                   "time": "16:45"
+                   },
+                   {
+                   "time": "18:25"
+                   }
+                   ],
+        "Tuesday": [
+                    {
+                    "time": "13:15"
+                    },
+                    {
+                    "time": "16:45"
+                    }
+                    ],
+        "Wednesday": [
+                      {
+                      "time": "13:15"
+                      },
+                      {
+                      "time": "14:15"
+                      },
+                      {
+                      "time": "15:15"
+                      },
+                      {
+                      "time": "16:45"
+                      },
+                      {
+                      "time": "18:25"
+                      }
+                      ],
+        "Thursday": [
+                     {
+                     "time": "13:15"
+                     },
+                     {
+                     "time": "16:45"
                      }
                      ]
     }

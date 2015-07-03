@@ -20,10 +20,9 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            days=source.getArrayOfTimesForDay(getDay(), route: "St. George")
+            days = source.getArrayOfTimesForDay("St. George", location: "Hart House (UTSG)", day: getDay())
         case 1:
-            days=source.getArrayOfTimesForDay(getDay(), route: "Sheridan")
-            
+            days = source.getArrayOfTimesForDay("Sheridan", location: "Sheridan", day: getDay())
         default:
             break;
         }
@@ -50,7 +49,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         source = dataParser.new()
-        days=source.getArrayOfTimesForDay(getDay(), route: "St. George")
+        days = source.getArrayOfTimesForDay("St. George", location: "Hart House (UTSG)", day: getDay())
         
         tableView.delegate = self
         tableView.dataSource = self

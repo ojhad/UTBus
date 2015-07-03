@@ -35,6 +35,7 @@ class SearchScheduleViewController: UIViewController {
         btnSetTodaysDate.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         
         btnSearch.layer.cornerRadius = 10;
+        btnSearch.backgroundColor =  UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0);
         
         btnSetTodaysDate.alpha = 0.0;
         btnSetTodaysDate.enabled = false;
@@ -48,6 +49,10 @@ class SearchScheduleViewController: UIViewController {
         var dateString = dateFormatter.stringFromDate(currentDate)
         
         todaysDate = dateString;
+        
+        //customized segmented control
+        
+        segControlRoute.setBackgroundImage(UIImage(contentsOfFile: "blue_segment.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
         
     }
     
@@ -112,11 +117,15 @@ class SearchScheduleViewController: UIViewController {
             
             var vc: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
             
-            var index = segControlLocation.selectedSegmentIndex
+            let indexRoute = segControlRoute.selectedSegmentIndex
+            let indexLocation = segControlLocation.selectedSegmentIndex
+
             
-            vc.navigationItem.title = segControlLocation.titleForSegmentAtIndex(index)
-            
+            vc.currentRoute = segControlRoute.titleForSegmentAtIndex(indexRoute)!
+            vc.currentLocation = segControlLocation.titleForSegmentAtIndex(indexLocation)!
             vc.dateOfInterest = pickerDate.date
+            
+            
         }
     }
 

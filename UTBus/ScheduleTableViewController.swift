@@ -10,12 +10,17 @@ import UIKit
 
 class ScheduleTableViewController: UITableViewController {
     
-    var dataTableView = ["6:10", "12:30", "18:15", "8:50", "9:40", "10:10", "11:40"]
+    var dataTableView: NSArray = []
+    
+    var currentRoute: String = ""
+    var currentLocation: String = ""
+
     
     var timeOfTappedCell: String = ""
-    var locationOfTappedCell: String = ""
     
     var dateOfInterest: NSDate?
+    
+    let source: dataParser = dataParser.new()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,15 @@ class ScheduleTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.title = currentLocation
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        var dayString: String = dateFormatter.stringFromDate(dateOfInterest!)
+                
+        dataTableView = source.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
+        
     }
 
     // MARK: - Table view data source
@@ -43,8 +57,9 @@ class ScheduleTableViewController: UITableViewController {
   
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        timeOfTappedCell = dataTableView[indexPath.row]
-        locationOfTappedCell = self.navigationItem.title!
+        let temp: AnyObject = dataTableView[indexPath.row]
+        let time = temp["time"]
+        timeOfTappedCell = (time as? String)!
         
         self.performSegueWithIdentifier("create_reminder", sender: self)
     }
@@ -52,9 +67,12 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        
+        let temp: AnyObject = dataTableView[indexPath.row]
+        let time = temp["time"]
 
-        cell.textLabel!.text = dataTableView[indexPath.row]
-
+        cell.textLabel!.text = time as? String
+    
         return cell
     }
     
@@ -103,8 +121,9 @@ class ScheduleTableViewController: UITableViewController {
             
             var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
             
+            vc.isNewReminder = true
             vc.busTime = timeOfTappedCell
-            vc.busLocation = locationOfTappedCell
+            vc.busLocation = currentLocation
             vc.dateOfInterest = self.dateOfInterest
         }
         
