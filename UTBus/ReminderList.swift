@@ -23,7 +23,7 @@ class ReminderList {
         
         var reminderDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? Dictionary() // if todoItems hasn't been set in user defaults, initialize todoDictionary to an empty dictionary using nil-coalescing operator (??)
         
-        reminderDictionary[item.UUID] = ["notificationTime": item.notificationTime, "busLocation": item.busLocation, "busTime": item.busTime]
+        reminderDictionary[item.UUID] = ["notificationTime": item.notificationTime, "busLocation": item.busLocation, "busTime": item.busTime, "repeat": item.repeat]
         
         NSUserDefaults.standardUserDefaults().setObject(reminderDictionary, forKey: ITEMS_KEY) // save/overwrite todo item list
         
@@ -35,6 +35,17 @@ class ReminderList {
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["UUID": item.UUID, ] // assign a unique identifier to the notification so that we can retrieve it later
         notification.category = "TODO_CATEGORY"
+        
+        if(item.repeat == true){
+            
+            let componentsMonth = NSDateComponents()
+            let week = 1
+            
+            componentsMonth.weekOfMonth = week
+            
+            notification.repeatInterval = .CalendarUnitWeekOfMonth
+        }
+        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
@@ -62,12 +73,12 @@ class ReminderList {
             var date: NSDate = item.objectForKey("notificationTime") as! NSDate
             var location: String = item.objectForKey("busLocation") as! String
             var time: String = item.objectForKey("busTime") as! String
-            
+            var repeat: Bool = item.objectForKey("repeat") as! Bool
             
             let key: String = keysArray[i]
             i++
             
-            var newReminder: Reminder = Reminder(notificationTime: date, busLocation: location, busTime: time, UUID: key)
+            var newReminder: Reminder = Reminder(notificationTime: date, busLocation: location, busTime: time, UUID: key,repeat: repeat)
             
             reminderArray.append(newReminder)
         }
