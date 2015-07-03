@@ -1,6 +1,6 @@
 {
     "Sheridan": {
-        "monday": [
+        "Monday": [
                    {
                    "time": "8:45"
                    },
@@ -23,7 +23,7 @@
                    "time": "17:45"
                    }
                    ],
-        "tuesday": [
+        "Tuesday": [
                     {
                     "time": "8:45"
                     },
@@ -34,7 +34,7 @@
                     "time": "16:15"
                     }
                     ],
-        "wednesday": [
+        "Wednesday": [
                       {
                       "time": "8:45"
                       },
@@ -57,7 +57,7 @@
                       "time": "17:45"
                       }
                       ],
-        "thursday": [
+        "Thursday": [
                      {
                      "time": "8:45"
                      },

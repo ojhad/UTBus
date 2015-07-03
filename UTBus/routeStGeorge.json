@@ -1,6 +1,6 @@
 {
-    "St. George": {
-        "monday": [
+    "Hart House (UTSG)": {
+        "Monday": [
                    {
                    "time": "6:15"
                    },
@@ -71,7 +71,7 @@
                    "time": "21:15"
                    }
                    ],
-        "tuesday": [
+        "Tuesday": [
                     {
                     "time": "6:15"
                     },
@@ -142,7 +142,7 @@
                     "time": "21:15"
                     }
                     ],
-        "wednesday": [
+        "Wednesday": [
                       {
                       "time": "6:15"
                       },
@@ -213,7 +213,7 @@
                       "time": "21:15"
                       }
                       ],
-        "thursday": [
+        "Thursday": [
                      {
                      "time": "6:15"
                      },
@@ -284,7 +284,7 @@
                      "time": "21:15"
                      }
                      ],
-        "friday": [
+        "Friday": [
                    {
                    "time": "6:15"
                    },
@@ -352,7 +352,7 @@
                    "time": "20:35"
                    }
                    ],
-        "saturday": [
+        "Saturday": [
                      {
                      "time": "9:00"
                      },

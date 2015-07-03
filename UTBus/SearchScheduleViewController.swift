@@ -50,6 +50,10 @@ class SearchScheduleViewController: UIViewController {
         
         todaysDate = dateString;
         
+        //customized segmented control
+        
+        segControlRoute.setBackgroundImage(UIImage(contentsOfFile: "blue_segment.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
+        
     }
     
     func pickerChangedDate(){
@@ -113,11 +117,15 @@ class SearchScheduleViewController: UIViewController {
             
             var vc: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
             
-            var index = segControlLocation.selectedSegmentIndex
+            let indexRoute = segControlRoute.selectedSegmentIndex
+            let indexLocation = segControlLocation.selectedSegmentIndex
+
             
-            vc.navigationItem.title = segControlLocation.titleForSegmentAtIndex(index)
-            
+            vc.currentRoute = segControlRoute.titleForSegmentAtIndex(indexRoute)!
+            vc.currentLocation = segControlLocation.titleForSegmentAtIndex(indexLocation)!
             vc.dateOfInterest = pickerDate.date
+            
+            
         }
     }
 
