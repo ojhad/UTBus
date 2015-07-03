@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9062AAF21B41DFD40088753B /* routeSheridan.json in Resources */ = {isa = PBXBuildFile; fileRef = 9062AAF11B41DFD40088753B /* routeSheridan.json */; };
+		908B89DF1B46F3DE008F5897 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B89DE1B46F3DE008F5897 /* TableController.swift */; };
 		9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EEC11B41ABA7001EB895 /* Pin.swift */; };
 		9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EECB1B41D2BB001EB895 /* InterfaceController.swift */; };
 		9099EECE1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EECD1B41D2BB001EB895 /* Images.xcassets */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		9062AAF11B41DFD40088753B /* routeSheridan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeSheridan.json; sourceTree = "<group>"; };
+		908B89DE1B46F3DE008F5897 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		9099EEC11B41ABA7001EB895 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "UTBus WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9099EECA1B41D2BB001EB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		9099EEC81B41D2BB001EB895 /* UTBus WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				908B89DE1B46F3DE008F5897 /* TableController.swift */,
 				9099EECB1B41D2BB001EB895 /* InterfaceController.swift */,
 				9099EECD1B41D2BB001EB895 /* Images.xcassets */,
 				9099EEC91B41D2BB001EB895 /* Supporting Files */,
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908B89DF1B46F3DE008F5897 /* TableController.swift in Sources */,
 				9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

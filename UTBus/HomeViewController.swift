@@ -74,6 +74,8 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\n" + serviceUpdates
         }
+        
+        //getFuture(getDay(), times: days)
     }
     
     
@@ -84,6 +86,23 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let day = dateFormatter.stringFromDate(date)
         
         return day.lowercaseString
+    }
+    
+    func getFuture(day:String, times: NSArray){
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let time = formatter.stringFromDate(date)
+        
+        
+        for var index = 0; index < times.count; ++index {
+            let temp: AnyObject = times[index]
+            let realTimes = temp["time"]
+            if(time>realTimes as! String){
+                println(realTimes as! String)
+            }
+        }
+    
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
