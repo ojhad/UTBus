@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>UTBus WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>UTBus.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9099EED01B41D2BB001EB895</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BC0881B31B2F4D550051F7F9</key>
 		<dict>
 			<key>primary</key>

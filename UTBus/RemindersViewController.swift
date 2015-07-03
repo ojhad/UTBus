@@ -11,6 +11,8 @@ import UIKit
 class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     var currentReminders: [Reminder] = []
+    
+    var editReminder: Reminder?
 
     @IBOutlet weak var tvReminders: UITableView!
     
@@ -130,6 +132,14 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         }
 
     }
+    
+    func  tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        editReminder = currentReminders[indexPath.row]
+        
+        self.performSegueWithIdentifier("edit_reminder", sender: self)
+
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -166,14 +176,23 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "edit_reminder"{
+            
+            var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
+            
+            vc.isNewReminder = false;
+            vc.editReminder = self.editReminder
+        }
+        
     }
-    */
+
 
 }

@@ -35,6 +35,7 @@ class SearchScheduleViewController: UIViewController {
         btnSetTodaysDate.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         
         btnSearch.layer.cornerRadius = 10;
+        btnSearch.backgroundColor =  UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0);
         
         btnSetTodaysDate.alpha = 0.0;
         btnSetTodaysDate.enabled = false;

@@ -435,6 +435,7 @@
 				BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */,
 				BC8163BF1B3DE5E3005DB95E /* locations.plist in Resources */,
 				BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */,
+				BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */,
 				BC6FF7161B2F5A710037334B /* data.json in Resources */,
 				BCAF000D1B41E59B002E8FF4 /* ReminderTableViewCell.xib in Resources */,
 			);

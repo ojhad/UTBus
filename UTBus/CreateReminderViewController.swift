@@ -15,6 +15,10 @@ class CreateReminderViewController: UITableViewController {
     
     var dateOfInterest: NSDate?
     
+    var editReminder: Reminder?
+    
+    var isNewReminder: Bool?
+    
     @IBOutlet weak var lblBusLocation: UILabel!
     @IBOutlet weak var lblBusTime: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -24,17 +28,40 @@ class CreateReminderViewController: UITableViewController {
         
         self.navigationItem.title = "Reminder"
         
+        if(isNewReminder == true){
+        
         lblBusTime.text = busTime
         lblBusLocation.text = busLocation
         
         let bbtnCreate = UIBarButtonItem(title: "Create", style: .Plain, target: self, action: "tappedCreate")
-
         self.navigationItem.rightBarButtonItem = bbtnCreate
+
+            
+        }
+        else{
+            
+        lblBusTime.text = editReminder?.busTime
+        lblBusLocation.text = editReminder?.busLocation
+            
+        let date = editReminder?.notificationTime
+            
+        datePicker.setDate(date!, animated: true)
+            
+        let bbtnCreate = UIBarButtonItem(title: "Save Changes", style: .Plain, target: self, action: "tappedCreate")
+        self.navigationItem.rightBarButtonItem = bbtnCreate
+            
+        }
         
         
     }
     
     func tappedCreate(){
+        
+        if(isNewReminder == false){
+            
+            ReminderList.sharedInstance.removeItem(editReminder!)
+            
+        }
         
         var newDate = datePicker.date;
         

@@ -103,6 +103,7 @@ class ScheduleTableViewController: UITableViewController {
             
             var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
             
+            vc.isNewReminder = true
             vc.busTime = timeOfTappedCell
             vc.busLocation = locationOfTappedCell
             vc.dateOfInterest = self.dateOfInterest

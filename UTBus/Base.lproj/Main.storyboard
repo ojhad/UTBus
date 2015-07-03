@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5w-AJ-ENX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5w-AJ-ENX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -19,24 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="NNJ-VE-5bK">
-                                <rect key="frame" x="0.0" y="231" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="253" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="456683522.06917101">
                                     <!--2015-06-22 16:32:02 +0000-->
                                 </date>
                             </datePicker>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-uD-Fw2">
-                                <rect key="frame" x="16" y="96" width="343" height="29"/>
-                                <segments>
-                                    <segment title="St.George Route"/>
-                                    <segment title="Sheridan Route"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changedSegmentedControlRoute:" destination="osZ-MH-Fm4" eventType="valueChanged" id="ijk-eo-6nH"/>
-                                    <action selector="indexChangedRoutes:" destination="rTc-3n-mHt" eventType="valueChanged" id="KV7-4D-oWe"/>
-                                </connections>
-                            </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VRS-QE-V7L">
-                                <rect key="frame" x="16" y="138" width="343" height="29"/>
+                                <rect key="frame" x="16" y="152" width="343" height="29"/>
                                 <segments>
                                     <segment title="Instructional Centre (UTM)"/>
                                     <segment title="Hart House (UTSG)"/>
@@ -46,7 +35,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGr-WN-ifR">
-                                <rect key="frame" x="13" y="455" width="348" height="89"/>
+                                <rect key="frame" x="13" y="475" width="348" height="89"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="48"/>
                                 <state key="normal" title="SEARCH">
@@ -57,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFT-Mk-Nd1">
-                                <rect key="frame" x="124" y="200" width="127" height="30"/>
+                                <rect key="frame" x="124" y="215" width="127" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Set Today's Date">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,6 +56,17 @@
                                     <action selector="tappedButtonSetTodaysDate:" destination="osZ-MH-Fm4" eventType="touchUpInside" id="pwS-B4-39N"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-uD-Fw2">
+                                <rect key="frame" x="16" y="105" width="343" height="29"/>
+                                <segments>
+                                    <segment title="St.George Route"/>
+                                    <segment title="Sheridan Route"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changedSegmentedControlRoute:" destination="osZ-MH-Fm4" eventType="valueChanged" id="ijk-eo-6nH"/>
+                                    <action selector="indexChangedRoutes:" destination="rTc-3n-mHt" eventType="valueChanged" id="KV7-4D-oWe"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -554,11 +554,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tvReminders" destination="dEE-5d-7bR" id="mxR-GO-m1m"/>
+                        <segue destination="jOF-w9-A7Y" kind="show" identifier="edit_reminder" id="NIE-as-7cL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOh-Ya-wdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720.5" y="1871.5"/>
+            <point key="canvasLocation" x="724.5" y="1874.5"/>
         </scene>
     </scenes>
     <resources>
@@ -568,4 +569,7 @@
         <image name="Clock-25" width="25" height="25"/>
         <image name="Map Filled-25" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NIE-as-7cL"/>
+    </inferredMetricsTieBreakers>
 </document>
