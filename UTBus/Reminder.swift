@@ -17,11 +17,14 @@ class Reminder: NSObject {
     
     var UUID: String
     
-    init(notificationTime: NSDate,busLocation: String,busTime: String, UUID: String){
+    var repeat: Bool
+    
+    init(notificationTime: NSDate,busLocation: String,busTime: String, UUID: String, repeat: Bool){
         self.notificationTime = notificationTime
         self.busLocation = busLocation
         self.busTime = busTime
         self.UUID = UUID
+        self.repeat = repeat
     }
     
     var isOverdue: Bool {

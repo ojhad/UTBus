@@ -22,6 +22,9 @@ class CreateReminderViewController: UITableViewController {
     @IBOutlet weak var lblBusLocation: UILabel!
     @IBOutlet weak var lblBusTime: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var switchRepeat: UISwitch!
+    @IBOutlet weak var lblSwitch: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +53,37 @@ class CreateReminderViewController: UITableViewController {
         let bbtnCreate = UIBarButtonItem(title: "Save Changes", style: .Plain, target: self, action: "tappedCreate")
         self.navigationItem.rightBarButtonItem = bbtnCreate
             
+            
         }
+        
+        if(editReminder?.repeat == true){
+            switchRepeat.on = true
+        }
+        else{
+            switchRepeat.on = false
+        }
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        var dayString: String = dateFormatter.stringFromDate(datePicker.date)
+        
+        lblSwitch.text = "Repeat Every \(dayString)"
         
         
     }
+    
+    
+    @IBAction func changedDatePicker(sender: AnyObject) {
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        var dayString: String = dateFormatter.stringFromDate(datePicker.date)
+        
+        lblSwitch.text = "Repeat Every \(dayString)"
+        
+        
+    }
+    
     
     func tappedCreate(){
         
@@ -65,7 +95,9 @@ class CreateReminderViewController: UITableViewController {
         
         var newDate = datePicker.date;
         
-        var newReminder: Reminder = Reminder(notificationTime: newDate, busLocation: lblBusLocation.text!, busTime: lblBusTime.text!, UUID: NSUUID().UUIDString)
+        let shouldRepeat = switchRepeat.on
+        
+        var newReminder: Reminder = Reminder(notificationTime: newDate, busLocation: lblBusLocation.text!, busTime: lblBusTime.text!, UUID: NSUUID().UUIDString,repeat: shouldRepeat)
         
         ReminderList.sharedInstance.addItem(newReminder)
         

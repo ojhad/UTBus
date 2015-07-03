@@ -60,7 +60,7 @@
                                 <rect key="frame" x="71" y="455" width="233" height="67"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
-                                <state key="normal" title="SEARCH">
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -212,7 +212,7 @@
         <scene sceneID="u4Y-WG-1AM">
             <objects>
                 <tableViewController id="jOF-w9-A7Y" customClass="CreateReminderViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6ls-c5-i6m">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6ls-c5-i6m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,6 +259,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Set Reminder Time" id="FhW-hO-2qS">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="oDm-ii-g7U">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oDm-ii-g7U" id="wT7-fU-8bq">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat every weekday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZT-N9-KWw">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRq-hq-RDF">
+                                                    <rect key="frame" x="163" y="37" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="ZhV-GV-hLN">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZhV-GV-hLN" id="wfd-EW-ffd">
@@ -320,6 +337,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="457028095.31332201">
                                                         <!--2015-06-26 16:14:55 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="changedDatePicker:" destination="jOF-w9-A7Y" eventType="valueChanged" id="sti-aw-OFM"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -345,6 +365,8 @@
                         <outlet property="datePicker" destination="O27-lb-2VX" id="c9g-ie-Xe9"/>
                         <outlet property="lblBusLocation" destination="WG4-Nh-xkf" id="M5t-2E-20l"/>
                         <outlet property="lblBusTime" destination="CX6-qS-nk0" id="UIV-fh-Ip6"/>
+                        <outlet property="lblSwitch" destination="NZT-N9-KWw" id="Hu5-w0-mkW"/>
+                        <outlet property="switchRepeat" destination="pRq-hq-RDF" id="GMF-sO-dS0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cT-ef-Bjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
