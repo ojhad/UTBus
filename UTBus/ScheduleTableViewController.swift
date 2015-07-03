@@ -39,6 +39,12 @@ class ScheduleTableViewController: UITableViewController {
                 
         dataTableView = source.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
         
+        println("data count: \(dataTableView.count)")
+        
+        if(dataTableView.count == 0){
+            showAlert("No Bus Times Available!", message: "There are no bus times for \(dayString).")
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -76,41 +82,26 @@ class ScheduleTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Alert
+    
+    func showAlert(title: String, message: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let defaultActionHandler = { (action:UIAlertAction!) -> Void in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: defaultActionHandler)
+        
+        alert.addAction(defaultAction)
+        
+        
+        
+        presentViewController(alert, animated: true, completion: nil)
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -128,6 +119,8 @@ class ScheduleTableViewController: UITableViewController {
         }
         
     }
+    
+    
     
 
 }
