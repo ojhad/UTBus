@@ -14,7 +14,7 @@ class dataParser: NSObject {
             URL=bundle.URLForResource("routeSheridan", withExtension: ".json");
         }
         
-        println("Route: \(route)")
+        //println("Route: \(route)")
         
         let data: NSData? = NSData(contentsOfURL: URL!)
         
@@ -24,7 +24,7 @@ class dataParser: NSObject {
             error:&parseError)
         
         if let main = parsedObject as? NSDictionary {
-            println("PULLED DATA: \(parsedObject)")
+            //println("PULLED DATA: \(parsedObject)")
             if let place = main[location] as? NSDictionary {
                 if let day = place[day] as? NSArray{
                      return day

@@ -7,6 +7,10 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var source: dataParser!
     var days: NSArray = []
     
+    //St. George
+    var route=1
+    var location=1
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var ServiceUpdates: UITextView!
@@ -20,9 +24,30 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            days = source.getArrayOfTimesForDay("St. George", location: "Hart House (UTSG)", day: getDay())
+            if route==1 {
+                days =
+                getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
+            }
+            else{
+               days =
+                getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
+            }
+            
+            location=1
+            
         case 1:
-            days = source.getArrayOfTimesForDay("Sheridan", location: "Sheridan", day: getDay())
+            
+            if route==1 {
+                days =
+                 getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House (UTSG)", day: getDay()))
+            }
+            else{
+                days =
+                getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
+            }
+            
+            location=2
+            
         default:
             break;
         }
@@ -34,22 +59,53 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         switch segmentedControlRoutes.selectedSegmentIndex
         {
         case 0:
+            
             segmentedControl.setTitle("Instructional Centre (UTM)", forSegmentAtIndex: 0)
             segmentedControl.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
+            route=1
+            
+            if location==1 {
+                days =
+                getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
+            }
+            else{
+                
+                
+                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House (UTSG)", day: getDay()))
+            }
+            
         case 1:
             segmentedControl.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
             segmentedControl.setTitle("Sheridan College", forSegmentAtIndex: 1)
+            route=2
+            
+            
+            if location==1 {
+                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
+                
+            }
+            else{
+                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
+                
+            }
             
         default:
             break;
         }
+        
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.view.backgroundColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
+        
         source = dataParser.new()
-        days = source.getArrayOfTimesForDay("St. George", location: "Hart House (UTSG)", day: getDay())
+        
+        days=getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
+        
+        println(days)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -71,10 +127,10 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             serviceUpdates=serviceUpdates.stringByReplacingOccurrencesOfString("// ", withString: "\n\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
             
-            ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\n" + serviceUpdates
+            ServiceUpdates.text = serviceUpdates
         }
         
-        //getFuture(getDay(), times: days)
+        
     }
     
     
@@ -84,24 +140,31 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         dateFormatter.dateFormat = "EEEE"
         let day = dateFormatter.stringFromDate(date)
         
-        return day.lowercaseString
+        return day
     }
     
-    func getFuture(day:String, times: NSArray){
+    func getFuture(day:String, times: NSArray) ->NSArray{
+        var nextTimes = [String]()
+        
         let date = NSDate()
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm"
-        let time = formatter.stringFromDate(date)
+        let currentTime = formatter.stringFromDate(date)
         
+        var count=0
         
-        for var index = 0; index < times.count; ++index {
+        for var index=0; index<times.count; ++index{
             let temp: AnyObject = times[index]
-            let realTimes = temp["time"]
-            if(time>realTimes as! String){
-                println(realTimes as! String)
+            let realTime = temp["time"]
+            let final = realTime as! String
+            
+            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<3{
+                nextTimes.append(final)
+                ++count
             }
         }
     
+        return nextTimes as NSArray
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -116,10 +179,8 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
         let row = indexPath.row
-        let temp: AnyObject = days[row]
-        let time = temp["time"]
 
-        cell.textLabel!.text = time as? String
+        cell.textLabel!.text = days[row] as? String
         
         return cell
     }
