@@ -491,11 +491,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <navigationItem key="navigationItem" title="Times for Today" id="dbd-5B-9aG">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="IFC-BR-yTc"/>
                         <barButtonItem key="rightBarButtonItem" image="Restart-25" id="l5b-1Q-zUy">
                             <connections>
-                                <segue destination="25y-ac-qq5" kind="popoverPresentation" popoverAnchorBarButtonItem="l5b-1Q-zUy" id="X7F-mo-meU">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="25y-ac-qq5" kind="show" id="aEt-uZ-SbQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -511,22 +510,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662.5" y="-870.5"/>
+            <point key="canvasLocation" x="645.5" y="-902.5"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Service Updates-->
         <scene sceneID="ZMm-Ze-XVQ">
             <objects>
-                <viewController id="25y-ac-qq5" customClass="HomeViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="25y-ac-qq5" customClass="Updates" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FO7-bE-Kpv"/>
                         <viewControllerLayoutGuide type="bottom" id="XEd-QY-5BR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wEv-He-8A7">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-EY-1oP">
-                                <rect key="frame" x="0.0" y="28" width="300" height="252"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lrp-b2-94D">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -534,12 +533,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="300"/>
+                    <navigationItem key="navigationItem" title="Service Updates" id="hJV-FK-a7V">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Jhh-2g-aST"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="service" destination="Lrp-b2-94D" id="Yp9-bD-95f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gts-Zg-L3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="-983"/>
+            <point key="canvasLocation" x="1135.5" y="-865.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TUz-xy-ROQ">

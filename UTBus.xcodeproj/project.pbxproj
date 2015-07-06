@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9023310D1B4B0336006520F5 /* Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023310C1B4B0336006520F5 /* Updates.swift */; };
 		9062AAF21B41DFD40088753B /* routeSheridan.json in Resources */ = {isa = PBXBuildFile; fileRef = 9062AAF11B41DFD40088753B /* routeSheridan.json */; };
 		908B89DF1B46F3DE008F5897 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B89DE1B46F3DE008F5897 /* TableController.swift */; };
 		9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EEC11B41ABA7001EB895 /* Pin.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9023310C1B4B0336006520F5 /* Updates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updates.swift; sourceTree = "<group>"; };
 		9062AAF11B41DFD40088753B /* routeSheridan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeSheridan.json; sourceTree = "<group>"; };
 		908B89DE1B46F3DE008F5897 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		9099EEC11B41ABA7001EB895 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */,
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
+				9023310C1B4B0336006520F5 /* Updates.swift */,
 				BCAF000E1B41E5A5002E8FF4 /* Reminder Tab */,
 				BC8643A11B3DC11D004BC339 /* Reminders */,
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
@@ -478,6 +481,7 @@
 				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
 				BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */,
 				BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */,
+				9023310D1B4B0336006520F5 /* Updates.swift in Sources */,
 				BCAF000C1B41E59B002E8FF4 /* ReminderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

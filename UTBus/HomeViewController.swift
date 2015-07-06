@@ -9,7 +9,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var schedule: NSArray = []
     var schedule2: NSArray = []
     
-    
     var timeOfTappedCell: String?
     var departingLocationOfTappedCell: String?
     var dateOfInterest: NSDate?
@@ -59,8 +58,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-        
         source = dataParser.new()
         
         schedule =
@@ -73,28 +70,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         tableView2.delegate = self
         tableView2.dataSource = self
-        
-        let url = NSURL(string: "https://m.utm.utoronto.ca/shuttle.php")
-        var error: NSError?
-        let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
-        
-        if (error != nil) {
-            //ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\nSomething went wrong..."
-        } else {
-            let start=html!.rangeOfString("<div class='notice'>").location
-                + html!.rangeOfString("<div class='notice'>").length
-            
-            let substring: NSString = html!.substringFromIndex(start)
-            let end=substring.rangeOfString("</div>").location
-            
-            var serviceUpdates=substring.substringToIndex(end)
-            
-            serviceUpdates=serviceUpdates.stringByReplacingOccurrencesOfString("// ", withString: "\n\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            
-            //ServiceUpdates.text = serviceUpdates
-        }
-        
-        
     }
     
     
@@ -140,7 +115,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         if tableView.isEqual(self.tableView){
             let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
             
@@ -161,25 +135,37 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             return cell
         
         }
-        
-        
-        
     }
-    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        //timeOfTappedCell = ? String
-        //departingLocationOfTappedCell = ? String
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath);
+        timeOfTappedCell = currentCell!.textLabel!.text
+        
+        if tableView.isEqual(self.tableView){
+            if segmentedControlRoutes.selectedSegmentIndex==0{
+                departingLocationOfTappedCell = "Instructional Centre"
+            }
+            else{
+                departingLocationOfTappedCell = "Deerfield Hall North"
+            }
+        }
+        else{
+            if segmentedControlRoutes.selectedSegmentIndex==0{
+                departingLocationOfTappedCell = "Hart House"
+            }
+            else{
+                departingLocationOfTappedCell = "Sheridan"
+            }
+        }
+        
         dateOfInterest = NSDate()
         
         self.performSegueWithIdentifier("create_reminder", sender: self)
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
         if segue.identifier == "create_reminder"{
         
             var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
@@ -189,7 +175,5 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             vc.busLocation = departingLocationOfTappedCell
             vc.dateOfInterest = dateOfInterest
         }
-    
     }
-    
 }
