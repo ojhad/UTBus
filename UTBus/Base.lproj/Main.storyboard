@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPv-0o-xhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487.5" y="1389.5"/>
+            <point key="canvasLocation" x="-967.5" y="2301.5"/>
         </scene>
         <!--Create Reminder View Controller-->
         <scene sceneID="u4Y-WG-1AM">
@@ -387,7 +387,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUH-Vk-g9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124.5" y="-432.5"/>
+            <point key="canvasLocation" x="-148.5" y="-816.5"/>
         </scene>
         <!--Times for Today-->
         <scene sceneID="bU2-Cm-jsl">
@@ -468,7 +468,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
-                    <navigationItem key="navigationItem" title="Times for Today" id="dbd-5B-9aG"/>
+                    <navigationItem key="navigationItem" title="Times for Today" id="dbd-5B-9aG">
+                        <barButtonItem key="rightBarButtonItem" image="Restart-25" id="l5b-1Q-zUy">
+                            <connections>
+                                <segue destination="25y-ac-qq5" kind="popoverPresentation" popoverAnchorBarButtonItem="l5b-1Q-zUy" id="X7F-mo-meU">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="label1" destination="rw1-VQ-a35" id="5pc-Y1-h3k"/>
@@ -480,7 +488,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150.5" y="-486.5"/>
+            <point key="canvasLocation" x="662.5" y="-870.5"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ZMm-Ze-XVQ">
+            <objects>
+                <viewController id="25y-ac-qq5" customClass="HomeViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FO7-bE-Kpv"/>
+                        <viewControllerLayoutGuide type="bottom" id="XEd-QY-5BR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wEv-He-8A7">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-EY-1oP">
+                                <rect key="frame" x="0.0" y="28" width="300" height="252"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gts-Zg-L3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="-983"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TUz-xy-ROQ">
@@ -540,7 +576,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omP-X3-Xx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.5" y="1874.5"/>
+            <point key="canvasLocation" x="181.5" y="2130.5"/>
         </scene>
         <!--Personal Schedule-->
         <scene sceneID="aGs-T6-fOO">
@@ -579,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOh-Ya-wdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724.5" y="1874.5"/>
+            <point key="canvasLocation" x="876.5" y="2290.5"/>
         </scene>
     </scenes>
     <resources>
@@ -588,6 +624,7 @@
         <image name="Calendar Filled-50" width="50" height="50"/>
         <image name="Clock-25" width="25" height="25"/>
         <image name="Map Filled-25" width="25" height="25"/>
+        <image name="Restart-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NIE-as-7cL"/>
