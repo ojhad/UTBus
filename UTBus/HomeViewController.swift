@@ -3,119 +3,77 @@ import UIKit
 class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     let textCellIdentifier = "TextCell"
+    let textCellIdentifier2 = "TextCell2"
     
     var source: dataParser!
-    var days: NSArray = []
+    var schedule: NSArray = []
+    var schedule2: NSArray = []
     
-    //St. George
-    var route=1
-    var location=1
+    
+    @IBOutlet weak var label1: UILabel!
+    
+    @IBOutlet weak var label2: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var ServiceUpdates: UITextView!
+    @IBOutlet weak var tableView2: UITableView!
     
     @IBOutlet weak var segmentedControlRoutes: UISegmentedControl!
-    
-    //UTM or UTSG
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
-    @IBAction func indexChanged(sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            if route==1 {
-                days =
-                getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
-            }
-            else{
-               days =
-                getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
-            }
-            
-            location=1
-            
-        case 1:
-            
-            if route==1 {
-                days =
-                 getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House (UTSG)", day: getDay()))
-            }
-            else{
-                days =
-                getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
-            }
-            
-            location=2
-            
-        default:
-            break;
-        }
-        
-        self.tableView.reloadData()
-    }
     
     @IBAction func indexChangedRoutes(sender: UISegmentedControl) {
         switch segmentedControlRoutes.selectedSegmentIndex
         {
         case 0:
             
-            segmentedControl.setTitle("Instructional Centre (UTM)", forSegmentAtIndex: 0)
-            segmentedControl.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
-            route=1
+            schedule =
+                getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay()))
+        
+            schedule2 = getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay()))
             
-            if location==1 {
-                days =
-                getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
-            }
-            else{
-                
-                
-                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House (UTSG)", day: getDay()))
-            }
+            label1.text="Departing from Instructional Centre"
+            label2.text="Departing from Hart House"
             
         case 1:
-            segmentedControl.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
-            segmentedControl.setTitle("Sheridan College", forSegmentAtIndex: 1)
-            route=2
             
+            schedule = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
+           
+            schedule2 = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
             
-            if location==1 {
-                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
-                
-            }
-            else{
-                days = getFuture(getDay(), times: source.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
-                
-            }
+            label1.text="Departing from Deerfield Hall North"
+            label2.text="Departing from Sheridan"
             
         default:
             break;
         }
         
         self.tableView.reloadData()
+        self.tableView2.reloadData()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.view.backgroundColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
         
         source = dataParser.new()
         
-        days=getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre (UTM)", day: getDay()))
+        schedule =
+            getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay()))
         
-        println(days)
+        schedule2 = getFuture(getDay(), times: source.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay()))
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView2.delegate = self
+        tableView2.dataSource = self
         
         let url = NSURL(string: "https://m.utm.utoronto.ca/shuttle.php")
         var error: NSError?
         let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
         
         if (error != nil) {
-            ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\nSomething went wrong..."
+            //ServiceUpdates.text =  "\t\t\t\t\tService Updates\n\nSomething went wrong..."
         } else {
             let start=html!.rangeOfString("<div class='notice'>").location
                 + html!.rangeOfString("<div class='notice'>").length
@@ -127,7 +85,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             serviceUpdates=serviceUpdates.stringByReplacingOccurrencesOfString("// ", withString: "\n\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
             
-            ServiceUpdates.text = serviceUpdates
+            //ServiceUpdates.text = serviceUpdates
         }
         
         
@@ -158,7 +116,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             let realTime = temp["time"]
             let final = realTime as! String
             
-            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<3{
+            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<5 {
                 nextTimes.append(final)
                 ++count
             }
@@ -172,18 +130,36 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return days.count
+        return schedule.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
-        let row = indexPath.row
-
-        cell.textLabel!.text = days[row] as? String
+        if tableView.isEqual(self.tableView){
+            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            
+            let row = indexPath.row
+            
+            cell.textLabel!.text = schedule[row] as? String
+            
+            return cell
         
-        return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier2, forIndexPath: indexPath) as! UITableViewCell
+            
+            let row = indexPath.row
+            
+            cell.textLabel!.text = schedule2[row] as? String
+            
+            return cell
+        
+        }
+        
+        
+        
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
