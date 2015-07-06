@@ -43,6 +43,10 @@ class CreateReminderViewController: UITableViewController {
         }
         else{
             
+        busTime = editReminder?.busTime
+        busLocation = editReminder?.busLocation
+        dateOfInterest = editReminder?.notificationTime
+            
         lblBusTime.text = editReminder?.busTime
         lblBusLocation.text = editReminder?.busLocation
             
@@ -50,7 +54,7 @@ class CreateReminderViewController: UITableViewController {
             
         datePicker.setDate(date!, animated: true)
             
-        let bbtnCreate = UIBarButtonItem(title: "Save Changes", style: .Plain, target: self, action: "tappedCreate")
+        let bbtnCreate = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "tappedCreate")
         self.navigationItem.rightBarButtonItem = bbtnCreate
             
             
