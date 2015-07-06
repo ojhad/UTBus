@@ -2,7 +2,7 @@
     "Deerfield Hall North": {
         "Monday": [
                    {
-                   "time": "8:45"
+                   "time": "08:45"
                    },
                    {
                    "time": "10:15"
@@ -25,7 +25,7 @@
                    ],
         "Tuesday": [
                     {
-                    "time": "8:45"
+                    "time": "08:45"
                     },
                     {
                     "time": "12:15"
@@ -36,7 +36,7 @@
                     ],
         "Wednesday": [
                       {
-                      "time": "8:45"
+                      "time": "08:45"
                       },
                       {
                       "time": "10:15"
@@ -59,7 +59,7 @@
                       ],
         "Thursday": [
                      {
-                     "time": "8:45"
+                     "time": "08:45"
                      },
                      {
                      "time": "12:15"
