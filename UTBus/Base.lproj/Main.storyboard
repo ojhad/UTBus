@@ -402,7 +402,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departing from Instructional Centre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-VQ-a35">
-                                <rect key="frame" x="16" y="130" width="343" height="21"/>
+                                <rect key="frame" x="16" y="130" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -416,7 +416,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.89954377689999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell2" editingAccessoryType="detailDisclosureButton" textLabel="yzA-5c-51Q" rowHeight="42" style="IBUITableViewCellStyleDefault" id="WFV-LV-Ef8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell2" textLabel="yzA-5c-51Q" rowHeight="42" style="IBUITableViewCellStyleDefault" id="WFV-LV-Ef8">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFV-LV-Ef8" id="fRl-aD-rft">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -437,7 +437,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.89954377691493992" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" editingAccessoryType="detailDisclosureButton" textLabel="AlD-5U-KkP" rowHeight="42" style="IBUITableViewCellStyleDefault" id="ci9-gx-wTR">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" textLabel="AlD-5U-KkP" rowHeight="42" style="IBUITableViewCellStyleDefault" id="ci9-gx-wTR">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ci9-gx-wTR" id="w62-RH-EmX">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -492,7 +492,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <navigationItem key="navigationItem" title="Times for Today" id="dbd-5B-9aG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IFC-BR-yTc"/>
-                        <barButtonItem key="rightBarButtonItem" image="Restart-25" id="l5b-1Q-zUy">
+                        <barButtonItem key="rightBarButtonItem" image="Question Mark-25" id="l5b-1Q-zUy">
                             <connections>
                                 <segue destination="25y-ac-qq5" kind="show" id="aEt-uZ-SbQ"/>
                             </connections>
@@ -651,7 +651,7 @@
         <image name="Calendar Filled-50" width="50" height="50"/>
         <image name="Clock-25" width="25" height="25"/>
         <image name="Map Filled-25" width="25" height="25"/>
-        <image name="Restart-25" width="25" height="25"/>
+        <image name="Question Mark-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BF0-iI-mmR"/>
