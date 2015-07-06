@@ -10,6 +10,11 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var schedule2: NSArray = []
     
     
+    var timeOfTappedCell: String?
+    var departingLocationOfTappedCell: String?
+    var dateOfInterest: NSDate?
+
+
     @IBOutlet weak var label1: UILabel!
     
     @IBOutlet weak var label2: UILabel!
@@ -164,6 +169,26 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let row = indexPath.row
+        //timeOfTappedCell = ? String
+        //departingLocationOfTappedCell = ? String
+        dateOfInterest = NSDate()
+        
+        self.performSegueWithIdentifier("create_reminder", sender: self)
+        
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+        if segue.identifier == "create_reminder"{
+        
+            var vc: CreateReminderViewController = segue.destinationViewController as! CreateReminderViewController
+            
+            vc.isNewReminder = true
+            vc.busTime = timeOfTappedCell
+            vc.busLocation = departingLocationOfTappedCell
+            vc.dateOfInterest = dateOfInterest
+        }
+    
+    }
+    
 }

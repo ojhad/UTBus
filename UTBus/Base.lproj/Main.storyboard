@@ -401,17 +401,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Departing from Instructional Centre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-VQ-a35">
-                                <rect key="frame" x="16" y="130" width="284" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departing from Instructional Centre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-VQ-a35">
+                                <rect key="frame" x="16" y="130" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Departing from Hart House" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-Lh-Fck">
-                                <rect key="frame" x="16" y="374" width="216" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departing from Hart House" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-Lh-Fck">
+                                <rect key="frame" x="16" y="374" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-sm-vRb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IM2-sm-vRb">
                                 <rect key="frame" x="0.0" y="403" width="375" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.89954377689999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,7 +432,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AAV-nt-ixG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AAV-nt-ixG">
                                 <rect key="frame" x="0.0" y="159" width="375" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.89954377691493992" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -453,7 +453,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QEf-Ju-Isr">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QEf-Ju-Isr">
                                 <rect key="frame" x="16" y="84" width="343" height="29"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
@@ -466,6 +466,28 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IM2-sm-vRb" firstAttribute="top" secondItem="6aV-Lh-Fck" secondAttribute="bottom" constant="8" id="5rh-Xy-wrz"/>
+                            <constraint firstItem="6aV-Lh-Fck" firstAttribute="trailing" secondItem="cvu-L8-JtZ" secondAttribute="trailingMargin" id="CO4-mT-Kq8"/>
+                            <constraint firstItem="6aV-Lh-Fck" firstAttribute="top" secondItem="AAV-nt-ixG" secondAttribute="bottom" constant="8" id="QgD-xe-kIn"/>
+                            <constraint firstAttribute="centerX" secondItem="6aV-Lh-Fck" secondAttribute="centerX" id="R9t-GA-jMM"/>
+                            <constraint firstAttribute="centerX" secondItem="IM2-sm-vRb" secondAttribute="centerX" id="RF0-TU-dFN"/>
+                            <constraint firstItem="AAV-nt-ixG" firstAttribute="leading" secondItem="cvu-L8-JtZ" secondAttribute="leadingMargin" constant="-16" id="ROD-Hm-Xbh"/>
+                            <constraint firstAttribute="centerX" secondItem="rw1-VQ-a35" secondAttribute="centerX" id="TyL-kU-6zL"/>
+                            <constraint firstItem="rw1-VQ-a35" firstAttribute="trailing" secondItem="cvu-L8-JtZ" secondAttribute="trailingMargin" id="YB8-mK-LuL"/>
+                            <constraint firstItem="AAV-nt-ixG" firstAttribute="top" secondItem="rw1-VQ-a35" secondAttribute="bottom" constant="8" id="Zp4-oK-U5L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IM2-sm-vRb" secondAttribute="trailing" constant="-16" id="aEn-zX-A7b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AAV-nt-ixG" secondAttribute="trailing" constant="-16" id="bhl-2O-EhV"/>
+                            <constraint firstItem="6aV-Lh-Fck" firstAttribute="leading" secondItem="cvu-L8-JtZ" secondAttribute="leadingMargin" id="eLS-9B-TI2"/>
+                            <constraint firstItem="QEf-Ju-Isr" firstAttribute="leading" secondItem="cvu-L8-JtZ" secondAttribute="leadingMargin" id="gUf-ey-24F"/>
+                            <constraint firstItem="QEf-Ju-Isr" firstAttribute="top" secondItem="9fm-zD-2cM" secondAttribute="bottom" constant="20" id="gm4-vv-UBy"/>
+                            <constraint firstItem="IM2-sm-vRb" firstAttribute="leading" secondItem="cvu-L8-JtZ" secondAttribute="leadingMargin" constant="-16" id="jMn-1p-dcZ"/>
+                            <constraint firstItem="rw1-VQ-a35" firstAttribute="leading" secondItem="cvu-L8-JtZ" secondAttribute="leadingMargin" id="tkb-mD-1ZC"/>
+                            <constraint firstAttribute="centerX" secondItem="QEf-Ju-Isr" secondAttribute="centerX" id="v1s-3Y-MsM"/>
+                            <constraint firstItem="QEf-Ju-Isr" firstAttribute="trailing" secondItem="cvu-L8-JtZ" secondAttribute="trailingMargin" id="wq0-zh-YGM"/>
+                            <constraint firstAttribute="centerX" secondItem="AAV-nt-ixG" secondAttribute="centerX" id="yK4-IQ-7oE"/>
+                            <constraint firstItem="rw1-VQ-a35" firstAttribute="top" secondItem="QEf-Ju-Isr" secondAttribute="bottom" constant="18" id="ycJ-rx-1hv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <navigationItem key="navigationItem" title="Times for Today" id="dbd-5B-9aG"/>
@@ -476,11 +498,12 @@
                         <outlet property="segmentedControlRoutes" destination="QEf-Ju-Isr" id="Elx-wC-L4l"/>
                         <outlet property="tableView" destination="AAV-nt-ixG" id="Cv9-cw-GLo"/>
                         <outlet property="tableView2" destination="IM2-sm-vRb" id="mRJ-WU-xg7"/>
+                        <segue destination="jOF-w9-A7Y" kind="show" identifier="create_reminder" id="BF0-iI-mmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxm-sx-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150.5" y="-486.5"/>
+            <point key="canvasLocation" x="332.5" y="-432.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TUz-xy-ROQ">
@@ -590,6 +613,6 @@
         <image name="Map Filled-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NIE-as-7cL"/>
+        <segue reference="BF0-iI-mmR"/>
     </inferredMetricsTieBreakers>
 </document>
