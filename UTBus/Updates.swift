@@ -1,16 +1,8 @@
-//
-//  Updates.swift
-//  UTBus
-//
-//  Created by Rodolfo Martinez on 2015-07-06.
-//  Copyright (c) 2015 madlab. All rights reserved.
-//
-
 import UIKit
 
 class Updates: UIViewController{
 
-    @IBOutlet weak var service: UITextView!
+    @IBOutlet weak var service: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +12,7 @@ class Updates: UIViewController{
         let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
         
         if (error != nil) {
-            service.text =  "\t\t\t\t\tService Updates\n\nSomething went wrong..."
+            service.text =  "Something went wrong..."
         } else {
             let start=html!.rangeOfString("<div class='notice'>").location
                 + html!.rangeOfString("<div class='notice'>").length
@@ -34,8 +26,5 @@ class Updates: UIViewController{
             
             service.text = serviceUpdates
         }
-        
-        
     }
-
 }

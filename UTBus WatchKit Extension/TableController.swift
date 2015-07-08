@@ -9,6 +9,8 @@
 import WatchKit
 
 class TableController: NSObject{
-
+    
+    @IBOutlet weak var location: WKInterfaceLabel!
+    @IBOutlet weak var picture: WKInterfaceImage!
     
 }

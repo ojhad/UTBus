@@ -1,39 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Locations-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_App" customModuleProvider="target">
+                <controller title="Locations" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="tm2-9s-VDq">
+                        <table alignment="left" id="pIc-QK-OV3">
                             <items>
-                                <tableRow id="cf7-Om-LkD">
-                                    <group key="rootItem" width="1" alignment="left" id="XiJ-rY-0oB"/>
+                                <tableRow identifier="LocationsRow" id="8HQ-4C-NJG" customClass="TableController" customModule="UTBus_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="KZh-3s-5U0">
+                                        <items>
+                                            <label alignment="left" text="Campus" id="Wt8-pm-qhH"/>
+                                            <imageView width="50" height="50" alignment="right" verticalAlignment="center" id="gHH-dX-bAr"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="BWL-S5-KSd" kind="push" id="wQA-bx-3Bb"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="location" destination="Wt8-pm-qhH" id="guE-j2-QcH"/>
+                                        <outlet property="picture" destination="gHH-dX-bAr" id="vfz-Rd-wOn"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
-                        <segue destination="9dU-SK-t5l" kind="relationship" relationship="nextPage" id="Mst-1Q-NH5"/>
+                        <outlet property="locationsTable" destination="pIc-QK-OV3" id="m3z-1Y-wjF"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="206" y="181"/>
         </scene>
         <!--Interface Controller-->
-        <scene sceneID="YRa-jg-7Oq">
+        <scene sceneID="jQV-cR-mRX">
             <objects>
-                <controller id="9dU-SK-t5l">
+                <controller id="BWL-S5-KSd">
                     <items>
-                        <switch width="1" alignment="left" value="YES" title="HELLo" id="Rp6-ZB-N7v"/>
+                        <label alignment="left" text="To " id="DSP-yG-H3X"/>
+                        <separator alignment="left" id="OSt-dS-mJp"/>
+                        <table alignment="left" id="US5-rl-OhS">
+                            <items>
+                                <tableRow id="cik-nL-ajL">
+                                    <group key="rootItem" width="1" alignment="left" id="bRq-DR-8WM"/>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="349"/>
+            <point key="canvasLocation" x="462" y="181"/>
         </scene>
     </scenes>
 </document>
