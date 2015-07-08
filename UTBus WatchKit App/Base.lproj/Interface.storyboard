@@ -5,33 +5,56 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Locations-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_Extension">
+                <controller title="Locations" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="K6c-bC-OZR">
+                        <table alignment="left" id="pIc-QK-OV3">
                             <items>
-                                <tableRow id="EuL-Es-cec" customClass="TableController" customModule="UTBus_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5UP-fF-3la">
+                                <tableRow identifier="LocationsRow" id="8HQ-4C-NJG" customClass="TableController" customModule="UTBus_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="KZh-3s-5U0">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Campus" id="IKN-o8-wUl"/>
-                                            <imageView alignment="left" image="utm3" id="fR0-ix-qfQ"/>
+                                            <label alignment="left" text="Campus" id="Wt8-pm-qhH"/>
+                                            <imageView width="50" height="50" alignment="right" verticalAlignment="center" id="gHH-dX-bAr"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="BWL-S5-KSd" kind="push" id="wQA-bx-3Bb"/>
+                                        </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="location" destination="IKN-o8-wUl" id="2LC-PY-W0J"/>
+                                        <outlet property="location" destination="Wt8-pm-qhH" id="guE-j2-QcH"/>
+                                        <outlet property="picture" destination="gHH-dX-bAr" id="vfz-Rd-wOn"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
-                        <outlet property="locationsTable" destination="K6c-bC-OZR" id="vJC-sV-Vdl"/>
+                        <outlet property="locationsTable" destination="pIc-QK-OV3" id="m3z-1Y-wjF"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="206" y="181"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="jQV-cR-mRX">
+            <objects>
+                <controller id="BWL-S5-KSd">
+                    <items>
+                        <label alignment="left" text="To " id="DSP-yG-H3X"/>
+                        <separator alignment="left" id="OSt-dS-mJp"/>
+                        <table alignment="left" id="US5-rl-OhS">
+                            <items>
+                                <tableRow id="cik-nL-ajL">
+                                    <group key="rootItem" width="1" alignment="left" id="bRq-DR-8WM"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="462" y="181"/>
         </scene>
     </scenes>
 </document>
