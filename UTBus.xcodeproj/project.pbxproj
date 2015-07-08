@@ -17,13 +17,14 @@
 		9099EEDA1B41D2BB001EB895 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9099EED81B41D2BB001EB895 /* Interface.storyboard */; };
 		9099EEDC1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EEDB1B41D2BB001EB895 /* Images.xcassets */; };
 		9099EEDF1B41D2BB001EB895 /* UTBus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		909D09AF1B4D940100095E20 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909D09AE1B4D940100095E20 /* Parser.swift */; };
+		90B0E3571B4D861A00C8D3F2 /* routeStGeorge.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* routeStGeorge.json */; };
 		BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */; };
 		BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0881BD1B2F4D550051F7F9 /* Main.storyboard */; };
 		BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C01B2F4D550051F7F9 /* Images.xcassets */; };
 		BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */; };
 		BC0881D01B2F4D560051F7F9 /* UTBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */; };
 		BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */; };
-		BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* routeStGeorge.json */; };
 		BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */; };
 		BC8163B91B3DC450005DB95E /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8163B81B3DC450005DB95E /* RemindersViewController.swift */; };
 		BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8163BC1B3DE473005DB95E /* MapViewController.swift */; };
@@ -33,10 +34,6 @@
 		BCAF000C1B41E59B002E8FF4 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF000A1B41E59B002E8FF4 /* ReminderTableViewCell.swift */; };
 		BCAF000D1B41E59B002E8FF4 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAF000B1B41E59B002E8FF4 /* ReminderTableViewCell.xib */; };
 		BCB816691B386F7300360DC4 /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */; };
-		BCBBE6671B2F6A8D00C88B27 /* dataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */; };
-		BCD6FC7A1B3203AA00308F1E /* ScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC771B3203AA00308F1E /* ScheduleDataModel.swift */; };
-		BCD6FC7B1B3203AA00308F1E /* ScheduleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC781B3203AA00308F1E /* ScheduleLocation.swift */; };
-		BCD6FC7C1B3203AA00308F1E /* ScheduleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6FC791B3203AA00308F1E /* ScheduleTimeline.swift */; };
 		BCF70EF81B41B424003191E8 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +88,7 @@
 		9099EED71B41D2BB001EB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9099EED91B41D2BB001EB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		9099EEDB1B41D2BB001EB895 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		909D09AE1B4D940100095E20 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BC0881B41B2F4D550051F7F9 /* UTBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881B81B2F4D550051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,10 +109,6 @@
 		BCAF000A1B41E59B002E8FF4 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		BCAF000B1B41E59B002E8FF4 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
 		BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
-		BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataParser.swift; sourceTree = "<group>"; };
-		BCD6FC771B3203AA00308F1E /* ScheduleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataModel.swift; sourceTree = "<group>"; };
-		BCD6FC781B3203AA00308F1E /* ScheduleLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLocation.swift; sourceTree = "<group>"; };
-		BCD6FC791B3203AA00308F1E /* ScheduleTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTimeline.swift; sourceTree = "<group>"; };
 		BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,8 +140,8 @@
 		9099EEC81B41D2BB001EB895 /* UTBus WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				908B89DE1B46F3DE008F5897 /* TableController.swift */,
 				9099EECB1B41D2BB001EB895 /* InterfaceController.swift */,
+				908B89DE1B46F3DE008F5897 /* TableController.swift */,
 				9099EECD1B41D2BB001EB895 /* Images.xcassets */,
 				9099EEC91B41D2BB001EB895 /* Supporting Files */,
 			);
@@ -212,11 +206,9 @@
 				BC8643A11B3DC11D004BC339 /* Reminders */,
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
-				BCBBE6661B2F6A8D00C88B27 /* dataParser.swift */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
 				9099EEC11B41ABA7001EB895 /* Pin.swift */,
 				BC8163BE1B3DE5E3005DB95E /* locations.plist */,
-				BCD6FC7D1B3203B000308F1E /* Data Model */,
 				BC0881C01B2F4D550051F7F9 /* Images.xcassets */,
 				BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */,
 				BC6FF7151B2F5A710037334B /* routeStGeorge.json */,
@@ -266,6 +258,7 @@
 				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
 				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
 				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
+				909D09AE1B4D940100095E20 /* Parser.swift */,
 			);
 			name = "Schedule Tab";
 			sourceTree = "<group>";
@@ -278,16 +271,6 @@
 				BC8163B81B3DC450005DB95E /* RemindersViewController.swift */,
 			);
 			name = "Reminder Tab";
-			sourceTree = "<group>";
-		};
-		BCD6FC7D1B3203B000308F1E /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				BCD6FC771B3203AA00308F1E /* ScheduleDataModel.swift */,
-				BCD6FC781B3203AA00308F1E /* ScheduleLocation.swift */,
-				BCD6FC791B3203AA00308F1E /* ScheduleTimeline.swift */,
-			);
-			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +352,7 @@
 		BC0881AC1B2F4D550051F7F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = madlab;
 				TargetAttributes = {
 					9099EEC61B41D2BB001EB895 = {
@@ -438,8 +421,7 @@
 				BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */,
 				BC8163BF1B3DE5E3005DB95E /* locations.plist in Resources */,
 				BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */,
-				BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */,
-				BC6FF7161B2F5A710037334B /* routeStGeorge.json in Resources */,
+				90B0E3571B4D861A00C8D3F2 /* routeStGeorge.json in Resources */,
 				BCAF000D1B41E59B002E8FF4 /* ReminderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,17 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCD6FC7A1B3203AA00308F1E /* ScheduleDataModel.swift in Sources */,
 				BC8163B91B3DC450005DB95E /* RemindersViewController.swift in Sources */,
 				BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */,
-				BCBBE6671B2F6A8D00C88B27 /* dataParser.swift in Sources */,
 				BCF70EF81B41B424003191E8 /* ScheduleTableViewController.swift in Sources */,
 				BCB816691B386F7300360DC4 /* SearchScheduleViewController.swift in Sources */,
+				909D09AF1B4D940100095E20 /* Parser.swift in Sources */,
 				BC8643A01B3DBE38004BC339 /* ReminderList.swift in Sources */,
 				BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */,
 				9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */,
-				BCD6FC7B1B3203AA00308F1E /* ScheduleLocation.swift in Sources */,
-				BCD6FC7C1B3203AA00308F1E /* ScheduleTimeline.swift in Sources */,
 				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
 				BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */,
 				BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */,

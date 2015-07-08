@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
@@ -8,32 +8,29 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="UTBus_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="tm2-9s-VDq">
+                        <table alignment="left" id="K6c-bC-OZR">
                             <items>
-                                <tableRow id="cf7-Om-LkD">
-                                    <group key="rootItem" width="1" alignment="left" id="XiJ-rY-0oB"/>
+                                <tableRow id="EuL-Es-cec" customClass="TableController" customModule="UTBus_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="5UP-fF-3la">
+                                        <items>
+                                            <label alignment="left" text="HELLo" id="IKN-o8-wUl"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="location" destination="IKN-o8-wUl" id="2LC-PY-W0J"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
-                        <segue destination="9dU-SK-t5l" kind="relationship" relationship="nextPage" id="Mst-1Q-NH5"/>
+                        <outlet property="locationsTable" destination="K6c-bC-OZR" id="vJC-sV-Vdl"/>
                     </connections>
                 </controller>
             </objects>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="YRa-jg-7Oq">
-            <objects>
-                <controller id="9dU-SK-t5l">
-                    <items>
-                        <switch width="1" alignment="left" value="YES" title="HELLo" id="Rp6-ZB-N7v"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="468" y="349"/>
+            <point key="canvasLocation" x="206" y="181"/>
         </scene>
     </scenes>
 </document>

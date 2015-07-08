@@ -1,8 +1,7 @@
 import Foundation
 
-class dataParser: NSObject {
-    
-    func getArrayOfTimesForDay(route: String, location: String, day: String) -> NSArray {
+class Parser{
+    class func getArrayOfTimesForDay(route: String, location: String, day: String) -> NSArray {
         let bundle = NSBundle.mainBundle()
         let URL: NSURL?
         
@@ -14,8 +13,6 @@ class dataParser: NSObject {
             URL=bundle.URLForResource("routeSheridan", withExtension: ".json");
         }
         
-        //println("Route: \(route)")
-        
         let data: NSData? = NSData(contentsOfURL: URL!)
         
         var parseError: NSError?
@@ -24,10 +21,9 @@ class dataParser: NSObject {
             error:&parseError)
         
         if let main = parsedObject as? NSDictionary {
-            //println("PULLED DATA: \(parsedObject)")
             if let place = main[location] as? NSDictionary {
                 if let day = place[day] as? NSArray{
-                     return day
+                    return day
                 }
             }
         }
@@ -35,7 +31,6 @@ class dataParser: NSObject {
         let temp: NSArray = NSArray.new()
         
         return temp
-
+        
     }
-    
 }

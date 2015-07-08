@@ -7,8 +7,12 @@
 //
 
 import WatchKit
+import Foundation
 
 class TableController: NSObject{
 
+    @IBOutlet weak var location: WKInterfaceLabel!
+    
+    
     
 }

@@ -19,8 +19,6 @@ class ScheduleTableViewController: UITableViewController {
     var timeOfTappedCell: String = ""
     
     var dateOfInterest: NSDate?
-    
-    let source: dataParser = dataParser.new()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +35,7 @@ class ScheduleTableViewController: UITableViewController {
         dateFormatter.dateFormat = "EEEE"
         var dayString: String = dateFormatter.stringFromDate(dateOfInterest!)
                 
-        dataTableView = source.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
+        dataTableView = Parser.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
         
         if(dataTableView.count == 0){
             showAlert("No Bus Times Available!", message: "There are no bus times for \(dayString).")
@@ -117,8 +115,4 @@ class ScheduleTableViewController: UITableViewController {
         }
         
     }
-    
-    
-    
-
 }

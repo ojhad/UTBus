@@ -11,6 +11,17 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+    
+    @IBOutlet weak var locationsTable: WKInterfaceTable!
+    
+    
+    func reloadTable() {
+        // 1
+        locationsTable.setNumberOfRows(3, withRowType: "TableContoller")
+        
+        //if let row = locationsTable.rowControllerAtIndex(index) as? TableController {}
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
