@@ -15,10 +15,10 @@ class ScheduleTableViewController: UITableViewController {
     var currentRoute: String = ""
     var currentLocation: String = ""
 
-    
     var timeOfTappedCell: String = ""
     
-    var dateOfInterest: NSDate?
+   // var dateOfInterest: NSDate?
+    var selectedDay: String = ""
     
     let source: dataParser = dataParser.new()
 
@@ -33,14 +33,15 @@ class ScheduleTableViewController: UITableViewController {
         
         self.navigationItem.title = currentLocation
         
-        var dateFormatter = NSDateFormatter()
+        /*var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE"
         var dayString: String = dateFormatter.stringFromDate(dateOfInterest!)
-                
-        dataTableView = source.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
+            */
+        
+        dataTableView = source.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: selectedDay)
         
         if(dataTableView.count == 0){
-            showAlert("No Bus Times Available!", message: "There are no bus times for \(dayString).")
+            showAlert("No Bus Times Available!", message: "There are no bus times for \(selectedDay).")
         }
         
     }
@@ -48,13 +49,11 @@ class ScheduleTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return dataTableView.count
     }
@@ -66,6 +65,8 @@ class ScheduleTableViewController: UITableViewController {
         timeOfTappedCell = (time as? String)!
         
         self.performSegueWithIdentifier("create_reminder", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
     }
 
     
@@ -73,9 +74,16 @@ class ScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
         let temp: AnyObject = dataTableView[indexPath.row]
-        let time = temp["time"]
+        let time: String = temp["time"] as! String
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        var time24Hour: NSDate = dateFormatter.dateFromString(time)!
+        
+        dateFormatter.dateFormat = "hh:mm a"
+        let time12Hour: String = dateFormatter.stringFromDate(time24Hour)
 
-        cell.textLabel!.text = time as? String
+        cell.textLabel!.text = time12Hour
     
         return cell
     }
@@ -113,7 +121,8 @@ class ScheduleTableViewController: UITableViewController {
             vc.isNewReminder = true
             vc.busTime = timeOfTappedCell
             vc.busLocation = currentLocation
-            vc.dateOfInterest = self.dateOfInterest
+            vc.dayOfWeek = selectedDay
+            
         }
         
     }
