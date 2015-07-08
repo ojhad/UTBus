@@ -1,7 +1,7 @@
 import Foundation
 
 class Parser{
-    class func getArrayOfTimesForDay(route: String, location: String, day: String) -> NSArray {
+    class func getArrayOfTimesForDay(route: String, location: String, day: String) -> NSArray? {
         let bundle = NSBundle.mainBundle()
         let URL: NSURL?
         
@@ -28,9 +28,7 @@ class Parser{
             }
         }
         
-        let temp: NSArray = NSArray.new()
-        
-        return temp
+        return nil
         
     }
 }

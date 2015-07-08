@@ -207,6 +207,7 @@
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
+				909D09AE1B4D940100095E20 /* Parser.swift */,
 				9099EEC11B41ABA7001EB895 /* Pin.swift */,
 				BC8163BE1B3DE5E3005DB95E /* locations.plist */,
 				BC0881C01B2F4D550051F7F9 /* Images.xcassets */,
@@ -258,7 +259,6 @@
 				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
 				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
 				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
-				909D09AE1B4D940100095E20 /* Parser.swift */,
 			);
 			name = "Schedule Tab";
 			sourceTree = "<group>";

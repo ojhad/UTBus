@@ -35,7 +35,7 @@ class ScheduleTableViewController: UITableViewController {
         dateFormatter.dateFormat = "EEEE"
         var dayString: String = dateFormatter.stringFromDate(dateOfInterest!)
                 
-        dataTableView = Parser.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)
+        dataTableView = Parser.getArrayOfTimesForDay(currentRoute, location: currentLocation, day: dayString)!
         
         if(dataTableView.count == 0){
             showAlert("No Bus Times Available!", message: "There are no bus times for \(dayString).")

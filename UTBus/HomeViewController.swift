@@ -29,18 +29,18 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         case 0:
             
             schedule =
-                getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay()))
+                getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay())!)
         
-            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay()))
+            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay())!)
             
             label1.text="Departing from Instructional Centre"
             label2.text="Departing from Hart House"
             
         case 1:
             
-            schedule = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay()))
+            schedule = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay())!)
            
-            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay()))
+            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay())!)
             
             label1.text="Departing from Deerfield Hall North"
             label2.text="Departing from Sheridan"
@@ -58,9 +58,9 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         schedule =
-            getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay()))
+            getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay())!)
         
-        schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay()))
+        schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay())!)
         
         tableView.delegate = self
         tableView.dataSource = self

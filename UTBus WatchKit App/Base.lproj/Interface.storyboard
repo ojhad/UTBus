@@ -13,9 +13,10 @@
                         <table alignment="left" id="K6c-bC-OZR">
                             <items>
                                 <tableRow id="EuL-Es-cec" customClass="TableController" customModule="UTBus_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="5UP-fF-3la">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5UP-fF-3la">
                                         <items>
-                                            <label alignment="left" text="HELLo" id="IKN-o8-wUl"/>
+                                            <label alignment="left" verticalAlignment="center" text="Campus" id="IKN-o8-wUl"/>
+                                            <imageView alignment="left" image="utm3" id="fR0-ix-qfQ"/>
                                         </items>
                                     </group>
                                     <connections>

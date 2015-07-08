@@ -1,14 +1,4 @@
-//
-//  InterfaceController.swift
-//  UTBus WatchKit Extension
-//
-//  Created by Rodolfo Martinez on 2015-06-29.
-//  Copyright (c) 2015 madlab. All rights reserved.
-//
-
 import WatchKit
-import Foundation
-
 
 class InterfaceController: WKInterfaceController {
     
