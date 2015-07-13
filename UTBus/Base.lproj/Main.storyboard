@@ -38,7 +38,7 @@
                                     <action selector="indexChangedRoutes:" destination="rTc-3n-mHt" eventType="valueChanged" id="KV7-4D-oWe"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dtw-nh-u4x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dtw-nh-u4x">
                                 <rect key="frame" x="0.0" y="180" width="375" height="308"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -62,11 +62,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dtw-nh-u4x" secondAttribute="trailing" constant="-16" id="1lV-LZ-0Rc"/>
                             <constraint firstItem="4bn-uD-Fw2" firstAttribute="leading" secondItem="Lyg-M2-wlA" secondAttribute="leadingMargin" id="BXH-U2-dK0"/>
                             <constraint firstItem="VRS-QE-V7L" firstAttribute="trailing" secondItem="Lyg-M2-wlA" secondAttribute="trailingMargin" id="H0u-vv-Irv"/>
                             <constraint firstAttribute="centerX" secondItem="4bn-uD-Fw2" secondAttribute="centerX" id="Kuc-1D-3rw"/>
+                            <constraint firstItem="dtw-nh-u4x" firstAttribute="top" secondItem="VRS-QE-V7L" secondAttribute="bottom" constant="25" id="TIC-3U-ORq"/>
+                            <constraint firstItem="dtw-nh-u4x" firstAttribute="leading" secondItem="Lyg-M2-wlA" secondAttribute="leadingMargin" constant="-16" id="XAN-nb-qfs"/>
                             <constraint firstItem="4bn-uD-Fw2" firstAttribute="trailing" secondItem="Lyg-M2-wlA" secondAttribute="trailingMargin" id="axa-59-0Dd"/>
                             <constraint firstItem="VRS-QE-V7L" firstAttribute="leading" secondItem="Lyg-M2-wlA" secondAttribute="leadingMargin" id="g4e-xr-PYD"/>
+                            <constraint firstAttribute="centerX" secondItem="dtw-nh-u4x" secondAttribute="centerX" id="hWW-Oy-iq0"/>
                             <constraint firstAttribute="centerX" secondItem="VRS-QE-V7L" secondAttribute="centerX" id="szT-tq-5tw"/>
                         </constraints>
                     </view>
@@ -154,11 +158,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-3G-srO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-3G-srO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="b06-FJ-Vim" firstAttribute="top" secondItem="aVa-3G-srO" secondAttribute="bottom" id="7mA-Hw-hv9"/>
+                            <constraint firstAttribute="centerY" secondItem="aVa-3G-srO" secondAttribute="centerY" constant="-7.5" id="8BS-WU-5cO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aVa-3G-srO" secondAttribute="trailing" constant="-16" id="F0d-oi-5Dz"/>
+                            <constraint firstItem="aVa-3G-srO" firstAttribute="leading" secondItem="xMg-DH-d7f" secondAttribute="leadingMargin" constant="-16" id="Uhj-jk-Dqx"/>
+                            <constraint firstAttribute="centerX" secondItem="aVa-3G-srO" secondAttribute="centerX" id="aXX-P9-BRR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aVa-3G-srO" secondAttribute="trailing" constant="-16" id="uiB-Af-eiZ"/>
+                            <constraint firstItem="aVa-3G-srO" firstAttribute="top" secondItem="QCA-HA-OnX" secondAttribute="bottom" id="vZe-qb-0JC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="Map Filled-25" id="Rdp-fE-z0f"/>
                     <navigationItem key="navigationItem" title="Map of Routes" id="wlO-ih-k57"/>
