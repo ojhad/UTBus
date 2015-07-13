@@ -4,8 +4,13 @@ class Updates: UIViewController{
 
     @IBOutlet weak var service: UITextView!
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loading.hidesWhenStopped=true
+        self.loading.startAnimating()
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
@@ -17,6 +22,7 @@ class Updates: UIViewController{
             
             dispatch_async(dispatch_get_main_queue()) {
                 // update some UI
+                self.loading.stopAnimating()
                 if (error != nil) {
                     self.service.text =  "Something went wrong..."
                 } else {
