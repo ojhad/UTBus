@@ -10,7 +10,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     var timeOfTappedCell: String?
     var departingLocationOfTappedCell: String?
-    var dateOfInterest: NSDate?
+    var dayOfTheWeek: String?
 
 
     @IBOutlet weak var label1: UILabel!
@@ -123,7 +123,11 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             }
         }
         
-        dateOfInterest = NSDate()
+        let dateOfInterest = NSDate()
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        dayOfTheWeek = dateFormatter.stringFromDate(dateOfInterest)
         
         self.performSegueWithIdentifier("create_reminder", sender: self)
     }
@@ -136,6 +140,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             vc.isNewReminder = true
             vc.busTime = timeOfTappedCell
             vc.busLocation = departingLocationOfTappedCell
+            vc.dayOfWeek = dayOfTheWeek
         }
     }
 }

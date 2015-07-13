@@ -289,15 +289,27 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
         
     }
     
+    @IBAction func tappedDeleteReminder(sender: AnyObject) {
+        
+        ReminderList.sharedInstance.removeItem(editReminder!)
+                
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     // MARK: - Table view data source
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 2 && indexPath.row == 4 {
-            pickerVisible = !pickerVisible
-            tableView.reloadData()
+       
+        /*println("SElected row!")
+        
+        if indexPath.section == 2 {
+            ReminderList.sharedInstance.removeItem(editReminder!)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)*/
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
