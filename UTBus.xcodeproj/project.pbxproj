@@ -677,7 +677,7 @@
 		BC0881D41B2F4D560051F7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
 				INFOPLIST_FILE = UTBus/Info.plist;
@@ -690,7 +690,7 @@
 		BC0881D51B2F4D560051F7F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dilip Ojha (AFM87NBVDV)";
 				INFOPLIST_FILE = UTBus/Info.plist;
