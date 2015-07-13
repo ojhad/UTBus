@@ -74,7 +74,14 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schedule.count
+        if tableView.isEqual(self.tableView){
+            
+            return schedule.count
+        }
+        else{
+            return schedule2.count
+            
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
