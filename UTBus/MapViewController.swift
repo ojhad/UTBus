@@ -9,7 +9,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
         self.Map.delegate = self
         Map.showsUserLocation = true
         

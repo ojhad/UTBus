@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Route Selection-->
+        <!--Route Planner-->
         <scene sceneID="gum-Ur-Pfk">
             <objects>
                 <viewController id="osZ-MH-Fm4" customClass="SearchScheduleViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,7 +75,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Route Selection" id="yAd-FP-pCP">
+                    <navigationItem key="navigationItem" title="Route Planner" id="yAd-FP-pCP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ci8-SK-LX9"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -623,7 +623,7 @@
                     <tabBarItem key="tabBarItem" title="Today" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <navigationItem key="navigationItem" title="Upcoming Schedule" id="dbd-5B-9aG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IFC-BR-yTc"/>
-                        <barButtonItem key="leftBarButtonItem" title="About" id="iIL-Qh-Yd3">
+                        <barButtonItem key="leftBarButtonItem" image="Info-25" id="iIL-Qh-Yd3">
                             <connections>
                                 <segue destination="ZQs-Wf-BcW" kind="show" id="eNq-P9-hgb"/>
                             </connections>
@@ -801,9 +801,10 @@
         <image name="Bus Filled-25" width="25" height="25"/>
         <image name="Calendar Filled-50" width="50" height="50"/>
         <image name="Clock-25" width="25" height="25"/>
+        <image name="Info-25" width="25" height="25"/>
         <image name="Map Filled-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BF0-iI-mmR"/>
+        <segue reference="O26-ch-pJp"/>
     </inferredMetricsTieBreakers>
 </document>
