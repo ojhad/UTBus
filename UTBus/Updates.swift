@@ -10,11 +10,12 @@ class Updates: UIViewController{
         super.viewDidLoad()
         
         self.loading.hidesWhenStopped=true
+        self.loading.startAnimating()
+        
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             // do some task
-            self.loading.startAnimating()
             let url = NSURL(string: "https://m.utm.utoronto.ca/shuttle.php")
             var error: NSError?
             let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
