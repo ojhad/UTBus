@@ -28,7 +28,7 @@ class Parser{
             }
         }
         
-        return nil
+        return NSArray.new()
     }
     
     class func getDay() -> String{
