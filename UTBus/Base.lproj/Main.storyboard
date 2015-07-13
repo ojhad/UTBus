@@ -570,7 +570,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="service" destination="duG-Do-O8M" id="IcN-JB-Wgs"/>
+                        <outlet property="service" destination="Lrp-b2-94D" id="ubY-yJ-hXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gts-Zg-L3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
