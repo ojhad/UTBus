@@ -2,7 +2,7 @@ import UIKit
 
 class Updates: UIViewController{
 
-    @IBOutlet weak var service: UILabel!
+    @IBOutlet weak var service: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
