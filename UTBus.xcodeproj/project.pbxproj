@@ -26,6 +26,7 @@
 		BC0881C11B2F4D550051F7F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C01B2F4D550051F7F9 /* Images.xcassets */; };
 		BC0881C41B2F4D550051F7F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0881C21B2F4D550051F7F9 /* LaunchScreen.xib */; };
 		BC0881D01B2F4D560051F7F9 /* UTBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */; };
+		BC2D9EAB1B543E5900734BDE /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2D9EAA1B543E5900734BDE /* AboutPageViewController.swift */; };
 		BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */; };
 		BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */; };
 		BC8163B91B3DC450005DB95E /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8163B81B3DC450005DB95E /* RemindersViewController.swift */; };
@@ -102,6 +103,7 @@
 		BC0881C91B2F4D560051F7F9 /* UTBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881CE1B2F4D560051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881CF1B2F4D560051F7F9 /* UTBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTBusTests.swift; sourceTree = "<group>"; };
+		BC2D9EAA1B543E5900734BDE /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 		BC6FF7151B2F5A710037334B /* routeStGeorge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeStGeorge.json; sourceTree = "<group>"; };
 		BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */,
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
+				BC2D9EAA1B543E5900734BDE /* AboutPageViewController.swift */,
 				9023310C1B4B0336006520F5 /* Updates.swift */,
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF000E1B41E5A5002E8FF4 /* Reminder Tab */,
@@ -466,6 +469,7 @@
 				BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */,
 				9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */,
 				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
+				BC2D9EAB1B543E5900734BDE /* AboutPageViewController.swift in Sources */,
 				BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */,
 				BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */,
 				9023310D1B4B0336006520F5 /* Updates.swift in Sources */,
