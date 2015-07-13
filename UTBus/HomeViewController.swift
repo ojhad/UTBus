@@ -136,7 +136,6 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
             vc.isNewReminder = true
             vc.busTime = timeOfTappedCell
             vc.busLocation = departingLocationOfTappedCell
-            vc.dateOfInterest = dateOfInterest
         }
     }
 }

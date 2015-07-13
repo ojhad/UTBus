@@ -8,16 +8,34 @@
 
 import UIKit
 
-class CreateReminderViewController: UITableViewController {
+class CreateReminderViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: - Info Requried From Source View Controllers
+    
+    var isNewReminder: Bool?
+    
+    //MARK: If Creating New Reminder
     
     var busTime: String?
     var busLocation: String?
+    var dayOfWeek: String?
     
-    var dateOfInterest: NSDate?
+    //MARK: If Modifying Existing Reminder
+    
+   // var dateOfInterest: NSDate?
     
     var editReminder: Reminder?
     
-    var isNewReminder: Bool?
+    //MARK: - Variables Used by View Controller
+
+    var timeOfNotification: NSDate?
+    
+    var dateOfBus: NSDate?
+    
+    var pickerVisible = false
+
+    
+    //MARK: - IBOutlets
     
     @IBOutlet weak var lblBusLocation: UILabel!
     @IBOutlet weak var lblBusTime: UILabel!
@@ -25,55 +43,175 @@ class CreateReminderViewController: UITableViewController {
     @IBOutlet weak var switchRepeat: UISwitch!
     @IBOutlet weak var lblSwitch: UILabel!
     
+    @IBOutlet weak var deleteReminderCell: UITableViewCell!
+    @IBOutlet var tvCreateReminder: UITableView!
+    @IBOutlet weak var datePickerCell: UITableViewCell!
+    //MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tvCreateReminder.dataSource = self
+        self.tvCreateReminder.delegate = self
+        
         self.navigationItem.title = "Reminder"
         
         if(isNewReminder == true){
-        
-        lblBusTime.text = busTime
-        lblBusLocation.text = busLocation
-        
-        let bbtnCreate = UIBarButtonItem(title: "Create", style: .Plain, target: self, action: "tappedCreate")
-        self.navigationItem.rightBarButtonItem = bbtnCreate
-
             
-        }
-        else{
+            lblBusLocation.text = busLocation
             
-        busTime = editReminder?.busTime
-        busLocation = editReminder?.busLocation
-        dateOfInterest = editReminder?.notificationTime
-            
-        lblBusTime.text = editReminder?.busTime
-        lblBusLocation.text = editReminder?.busLocation
-            
-        let date = editReminder?.notificationTime
-            
-        datePicker.setDate(date!, animated: true)
-            
-        let bbtnCreate = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "tappedCreate")
-        self.navigationItem.rightBarButtonItem = bbtnCreate
-            
-            
-        }
-        
-        if(editReminder?.repeat == true){
-            switchRepeat.on = true
-        }
-        else{
             switchRepeat.on = false
+            
+            let bbtnCreate = UIBarButtonItem(title: "Create", style: .Plain, target: self, action: "tappedCreate")
+            self.navigationItem.rightBarButtonItem = bbtnCreate
+            
+            
+            //extract day of bus departue
+            
+            var today = NSDate()
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            var todaysDayOfTheWeek: String = dateFormatter.stringFromDate(today)
+            
+            if(todaysDayOfTheWeek == dayOfWeek){
+                
+                dateFormatter.dateFormat = "dd/MM/yy "
+                let todayDateString = dateFormatter.stringFromDate(today)
+                
+                let busStringDate = todayDateString + busTime!
+                
+                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                
+                let busDate = dateFormatter.dateFromString(busStringDate)
+                
+                dateOfBus = busDate
+                
+            }
+            else{
+                
+                dateFormatter.dateFormat = "EEEE"
+                
+                var incrementDay: String = todaysDayOfTheWeek
+                var incrementDate: NSDate = today
+                
+                while (incrementDay != dayOfWeek){
+                    
+                    incrementDate = incrementDate.dateByAddingTimeInterval(60*60*24)
+                    incrementDay = dateFormatter.stringFromDate(incrementDate)
+                    
+                }
+                
+                dateFormatter.dateFormat = "dd/MM/yy "
+                let todayDateString = dateFormatter.stringFromDate(incrementDate)
+                
+                let busStringDate = todayDateString + busTime!
+                
+                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                
+                let busDate = dateFormatter.dateFromString(busStringDate)
+                
+                dateOfBus = busDate
+                
+            }
+            
+            datePicker.date = dateOfBus!
+
+            dateFormatter.dateFormat = "EEEE MMM dd - hh:mm a"
+            let displayDate: String = dateFormatter.stringFromDate(dateOfBus!)
+            
+            lblBusTime.text = displayDate
+            
+        }
+        else{
+            
+            timeOfNotification = editReminder?.notificationTime
+        
+            lblBusLocation.text = editReminder?.busLocation
+            
+            if(editReminder?.repeat == true){
+                switchRepeat.on = true
+            }
+            else{
+                switchRepeat.on = false
+            }
+                
+            let bbtnCreate = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "tappedCreate")
+            self.navigationItem.rightBarButtonItem = bbtnCreate
+            
+            
+            let date = editReminder?.notificationTime
+            
+            datePicker.setDate(date!, animated: true)
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            dayOfWeek = dateFormatter.stringFromDate(timeOfNotification!)
+            
+            //extract day of bus departue
+            
+            var today = NSDate()
+            
+            dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            var todaysDayOfTheWeek: String = dateFormatter.stringFromDate(today)
+            
+            if(todaysDayOfTheWeek == dayOfWeek){
+                
+                dateFormatter.dateFormat = "dd/MM/yy "
+                let todayDateString = dateFormatter.stringFromDate(today)
+                
+                let timeOfBus = editReminder?.busTime
+                let busStringDate = todayDateString + timeOfBus!
+                
+                dateFormatter.dateFormat = "dd/MM/yy hh:mm a"
+                
+                let busDate = dateFormatter.dateFromString(busStringDate)
+                
+                dateOfBus = busDate
+                
+            }
+            else{
+                
+                dateFormatter.dateFormat = "EEEE"
+                
+                var incrementDay: String = todaysDayOfTheWeek
+                var incrementDate: NSDate = today
+                
+                while (incrementDay != dayOfWeek){
+                    
+                    incrementDate = incrementDate.dateByAddingTimeInterval(60*60*24)
+                    incrementDay = dateFormatter.stringFromDate(incrementDate)
+                    
+                }
+                
+                dateFormatter.dateFormat = "dd/MM/yy "
+                let todayDateString = dateFormatter.stringFromDate(incrementDate)
+                
+                let timeOfBus = editReminder?.busTime
+                let busStringDate = todayDateString + timeOfBus!
+                
+                dateFormatter.dateFormat = "dd/MM/yy hh:mm a"
+                
+                let busDate = dateFormatter.dateFromString(busStringDate)
+                
+                dateOfBus = busDate
+                
+            }
+            
+            datePicker.date = dateOfBus!
+            
+            dateFormatter.dateFormat = "EEEE MMM dd - hh:mm a"
+            let displayDate: String = dateFormatter.stringFromDate(dateOfBus!)
+            
+            lblBusTime.text = displayDate
+            
+            
         }
         
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        var dayString: String = dateFormatter.stringFromDate(datePicker.date)
+        lblSwitch.text = "Repeat Every \(dayOfWeek!)"
         
-        lblSwitch.text = "Repeat Every \(dayString)"
-        
-        
+        timeOfNotification = dateOfBus
     }
     
     
@@ -85,6 +223,7 @@ class CreateReminderViewController: UITableViewController {
         
         lblSwitch.text = "Repeat Every \(dayString)"
         
+        timeOfNotification = datePicker.date
         
     }
     
@@ -97,11 +236,14 @@ class CreateReminderViewController: UITableViewController {
             
         }
         
-        var newDate = datePicker.date;
-        
         let shouldRepeat = switchRepeat.on
         
-        var newReminder: Reminder = Reminder(notificationTime: newDate, busLocation: lblBusLocation.text!, busTime: lblBusTime.text!, UUID: NSUUID().UUIDString,repeat: shouldRepeat)
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        let notificationBusTime: String = dateFormatter.stringFromDate(dateOfBus!)
+        
+        
+        var newReminder: Reminder = Reminder(notificationTime: timeOfNotification!, busLocation: lblBusLocation.text!, busTime: notificationBusTime, UUID: NSUUID().UUIDString,repeat: shouldRepeat)
         
         ReminderList.sharedInstance.addItem(newReminder)
         
@@ -111,24 +253,15 @@ class CreateReminderViewController: UITableViewController {
     
     func setReminderTimeWithTime(minutes: Double){
         
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        var time: NSDate = dateFormatter.dateFromString(busTime!)!
+        var newBusDate: NSDate = dateOfBus!.dateByAddingTimeInterval(-60*minutes)
         
-        var newTime = time.dateByAddingTimeInterval(-60*minutes)
+        datePicker.setDate(newBusDate, animated:true)
         
-        var requiredTime: String? = dateFormatter.stringFromDate(newTime)
+        timeOfNotification = newBusDate
         
-        dateFormatter.dateFormat = "MM:dd:yyyy"
-        var requiredDay: String? = dateFormatter.stringFromDate(dateOfInterest!)
+        self.tappedCreate()
         
-        let finalDateString: String? = requiredDay! + ":" + requiredTime!
         
-        dateFormatter.dateFormat = "MM:dd:yyyy:HH:mm"
-        
-        let finalDate: NSDate? = dateFormatter.dateFromString(finalDateString!)
-        
-        datePicker.setDate(finalDate!, animated: true)
     }
     
     @IBAction func tappedRemind30MinutesBefore(sender: AnyObject) {
@@ -147,6 +280,64 @@ class CreateReminderViewController: UITableViewController {
         
         self.setReminderTimeWithTime(120);
         
+    }
+    @IBAction func tappedRemindOnSpecificTime(sender: AnyObject) {
+        
+        pickerVisible = !pickerVisible
+        self.tvCreateReminder.reloadData()
+
+        
+    }
+    
+    // MARK: - Table view data source
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 2 && indexPath.row == 4 {
+            pickerVisible = !pickerVisible
+            tableView.reloadData()
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+       
+        if(indexPath.section == 1){
+            if(indexPath.row == 5){
+                if (pickerVisible == false){
+                    return 0.0
+                }
+                else{
+                    return 193.0
+                }
+            }
+            else if (indexPath.row == 0){
+                return 80.0
+            }
+            else if (indexPath.row == 4){
+                return 44.0
+            }
+            else{
+                if (pickerVisible == false){
+                    return 44.0
+                }
+                else{
+                    return 0.0
+                }
+            }
+        }
+        
+        
+        if (indexPath.section == 2){
+            if(self.isNewReminder == true){
+                return 0.0
+            }
+            else{
+                return 44.0
+            }
+        }
+
+        return 44.0
     }
     
 }

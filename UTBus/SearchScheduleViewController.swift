@@ -8,90 +8,39 @@
 
 import UIKit
 
-class SearchScheduleViewController: UIViewController {
+class SearchScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var pickerDate: UIDatePicker!
-    @IBOutlet weak var btnSetTodaysDate: UIButton!
+    
+    //MARK: - IBOUTLETS
+
     @IBOutlet weak var segControlRoute: UISegmentedControl!
     @IBOutlet weak var segControlLocation: UISegmentedControl!
-    @IBOutlet weak var btnSearch: UIButton!
+    
+    @IBOutlet weak var tvDaySelector: UITableView!
+    
+    //MARK: - Variables
     
     var todaysDate: NSString?
+    
+    var daysOfTheWeek: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    
+    var selectedDay: String = "Monday"
+    
+    //MARK: - Internal Logic
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set up UIDatePickers
+        //set up day selector tableview
         
-        pickerDate.addTarget(self, action: Selector("pickerChangedDate"), forControlEvents: UIControlEvents.ValueChanged)
-
-        //set up UI components
+        tvDaySelector.delegate = self
+        tvDaySelector.dataSource = self
         
-        btnSetTodaysDate.layer.cornerRadius = 10
-        btnSetTodaysDate.layer.borderColor = UIColor.blackColor().CGColor
-        btnSetTodaysDate.layer.borderWidth = 3.0
-        
-        btnSetTodaysDate.backgroundColor = UIColor.whiteColor()
-        btnSetTodaysDate.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        
-        btnSearch.layer.cornerRadius = 10;
-        btnSearch.backgroundColor =  UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0);
-        
-        btnSetTodaysDate.alpha = 0.0;
-        btnSetTodaysDate.enabled = false;
-        
-        //selected date
-        
-        let currentDate = pickerDate.date;
-        
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
-        var dateString = dateFormatter.stringFromDate(currentDate)
-        
-        todaysDate = dateString;
-        
+        tvDaySelector.separatorStyle = UITableViewCellSeparatorStyle.None
+    
         //customized segmented control
         
         segControlRoute.setBackgroundImage(UIImage(contentsOfFile: "blue_segment.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
-        
-    }
-    
-    func pickerChangedDate(){
-        
-        var newDate = pickerDate.date;
-        
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
-        var dateString = dateFormatter.stringFromDate(newDate)
-        
-        
-        if (dateString == todaysDate){
-            
-            UIView.animateWithDuration(0.5, animations: {
-                self.btnSetTodaysDate.alpha = 0.0
-                self.btnSetTodaysDate.enabled = false;
-            })
-            
-        }
-        else{
-            
-            UIView.animateWithDuration(0.5, animations: {
-                self.btnSetTodaysDate.alpha = 1.0
-                self.btnSetTodaysDate.enabled = true;
-            })
-           
-        }
-        
-        
-    }
-    
-    @IBAction func tappedButtonSetTodaysDate(sender: AnyObject) {
-        
-        let date = NSDate()
-        
-        pickerDate.setDate(date, animated: true)
-        
-        self.pickerChangedDate()
         
     }
 
@@ -123,10 +72,34 @@ class SearchScheduleViewController: UIViewController {
             
             vc.currentRoute = segControlRoute.titleForSegmentAtIndex(indexRoute)!
             vc.currentLocation = segControlLocation.titleForSegmentAtIndex(indexLocation)!
-            vc.dateOfInterest = pickerDate.date
+            vc.selectedDay = selectedDay
             
             
         }
+    }
+    
+//MARK: - TableView Delegate and DataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return daysOfTheWeek.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("day_cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = daysOfTheWeek[indexPath.row];
+        
+        return cell;
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedDay = daysOfTheWeek[indexPath.row]
+        self.performSegueWithIdentifier("show_detail_schedule", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 }
