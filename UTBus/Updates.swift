@@ -4,19 +4,24 @@ class Updates: UIViewController{
 
     @IBOutlet weak var service: UITextView!
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loading.hidesWhenStopped=true
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             // do some task
+            self.loading.startAnimating()
             let url = NSURL(string: "https://m.utm.utoronto.ca/shuttle.php")
             var error: NSError?
             let html = NSString(contentsOfURL: url!, encoding: NSUTF8StringEncoding, error: &error)
             
             dispatch_async(dispatch_get_main_queue()) {
                 // update some UI
+                self.loading.stopAnimating()
                 if (error != nil) {
                     self.service.text =  "Something went wrong..."
                 } else {
