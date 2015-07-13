@@ -262,7 +262,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZhV-GV-hLN" id="wfd-EW-ffd">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-7y-NVL">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-7y-NVL">
                                                     <rect key="frame" x="8" y="7" width="359" height="30"/>
                                                     <state key="normal" title="Remind 30 Minutes Before ">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,6 +273,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="SmZ-7y-NVL" secondAttribute="centerY" constant="-0.25" id="J00-4E-lLM"/>
                                                 <constraint firstItem="SmZ-7y-NVL" firstAttribute="leading" secondItem="wfd-EW-ffd" secondAttribute="leadingMargin" id="fD8-Cc-hv3"/>
                                                 <constraint firstItem="SmZ-7y-NVL" firstAttribute="trailing" secondItem="wfd-EW-ffd" secondAttribute="trailingMargin" id="vh0-16-efw"/>
                                             </constraints>
@@ -283,7 +284,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pqu-jl-iaN" id="eLO-Kj-tfg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-TD-2Kg">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-TD-2Kg">
                                                     <rect key="frame" x="8" y="7" width="359" height="30"/>
                                                     <state key="normal" title="Remind 1 Hour Before">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -295,6 +296,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="UNE-TD-2Kg" firstAttribute="trailing" secondItem="eLO-Kj-tfg" secondAttribute="trailingMargin" id="M4H-AF-B56"/>
+                                                <constraint firstAttribute="centerY" secondItem="UNE-TD-2Kg" secondAttribute="centerY" constant="-0.25" id="hLz-33-klB"/>
                                                 <constraint firstItem="UNE-TD-2Kg" firstAttribute="leading" secondItem="eLO-Kj-tfg" secondAttribute="leadingMargin" id="kI6-4U-FSC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -304,7 +306,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lpj-Pb-fb6" id="7Md-rX-ghu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-YU-yar">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-YU-yar">
                                                     <rect key="frame" x="8" y="7" width="359" height="30"/>
                                                     <state key="normal" title="Remind 2 Hours Before">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -316,16 +318,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Aaf-YU-yar" firstAttribute="trailing" secondItem="7Md-rX-ghu" secondAttribute="trailingMargin" id="23x-Xh-juG"/>
+                                                <constraint firstAttribute="centerY" secondItem="Aaf-YU-yar" secondAttribute="centerY" constant="-0.25" id="cgN-ms-Ctt"/>
                                                 <constraint firstItem="Aaf-YU-yar" firstAttribute="leading" secondItem="7Md-rX-ghu" secondAttribute="leadingMargin" id="yGE-wi-24O"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="q34-D4-VbS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="q34-D4-VbS">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q34-D4-VbS" id="hbl-7X-rRo">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2un-TH-PuM">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2un-TH-PuM">
                                                     <rect key="frame" x="8" y="5" width="359" height="30"/>
                                                     <state key="normal" title="Remind On Specific Time">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,10 +337,16 @@
                                                         <action selector="tappedRemindOnSpecificTime:" destination="jOF-w9-A7Y" eventType="touchUpInside" id="JeD-Gx-qlP"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCi-Bb-Ycd">
+                                                    <rect key="frame" x="342" y="8" width="25" height="25"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="TCi-Bb-Ycd" firstAttribute="trailing" secondItem="hbl-7X-rRo" secondAttribute="trailingMargin" id="2T0-ed-EFW"/>
+                                                <constraint firstAttribute="centerY" secondItem="TCi-Bb-Ycd" secondAttribute="centerY" constant="1.25" id="9sM-yn-dl8"/>
                                                 <constraint firstItem="2un-TH-PuM" firstAttribute="trailing" secondItem="hbl-7X-rRo" secondAttribute="trailingMargin" id="R6v-6k-J7Z"/>
                                                 <constraint firstItem="2un-TH-PuM" firstAttribute="leading" secondItem="hbl-7X-rRo" secondAttribute="leadingMargin" id="ad4-9f-xEv"/>
+                                                <constraint firstAttribute="centerY" secondItem="2un-TH-PuM" secondAttribute="centerY" constant="1.75" id="vPA-P4-hBS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -405,8 +414,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="850"/>
                     <connections>
+                        <outlet property="cellRemindOnSpecificTime" destination="q34-D4-VbS" id="Ms4-jh-iZ8"/>
                         <outlet property="datePicker" destination="O27-lb-2VX" id="c9g-ie-Xe9"/>
                         <outlet property="datePickerCell" destination="2ZJ-8C-t5c" id="0uJ-Dh-RB2"/>
+                        <outlet property="ivArrow" destination="TCi-Bb-Ycd" id="BA3-Fv-H75"/>
                         <outlet property="lblBusLocation" destination="WG4-Nh-xkf" id="M5t-2E-20l"/>
                         <outlet property="lblBusTime" destination="CX6-qS-nk0" id="UIV-fh-Ip6"/>
                         <outlet property="lblSwitch" destination="NZT-N9-KWw" id="Hu5-w0-mkW"/>

@@ -46,6 +46,9 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
     @IBOutlet weak var deleteReminderCell: UITableViewCell!
     @IBOutlet var tvCreateReminder: UITableView!
     @IBOutlet weak var datePickerCell: UITableViewCell!
+    @IBOutlet weak var cellRemindOnSpecificTime: UITableViewCell!
+    
+    @IBOutlet weak var ivArrow: UIImageView!
     //MARK: - Methods
     
     override func viewDidLoad() {
@@ -55,6 +58,8 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
         self.tvCreateReminder.delegate = self
         
         self.navigationItem.title = "Reminder"
+        
+        ivArrow.image = UIImage(named: "arrow_right")
         
         if(isNewReminder == true){
             
@@ -284,6 +289,14 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
     @IBAction func tappedRemindOnSpecificTime(sender: AnyObject) {
         
         pickerVisible = !pickerVisible
+        
+        if(pickerVisible == true){
+            ivArrow.image = UIImage(named: "arrow_down")
+        }
+        else{
+            ivArrow.image = UIImage(named: "arrow_right")
+        }
+        
         self.tvCreateReminder.reloadData()
 
         
