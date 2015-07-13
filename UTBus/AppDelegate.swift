@@ -40,6 +40,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(application: UIApplication,
+        handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
+        reply: (([NSObject : AnyObject]!) -> Void)!) {
+            if let userInfo = userInfo, request = userInfo["request"] as? String {
+                if request == "UTSG" {
+                    
+                    let temp=Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: Parser.getDay())
+                    let times=Parser.getFuture(temp!)
+        
+                    reply(["UTSG": NSKeyedArchiver.archivedDataWithRootObject(times)])
+                    
+                    return
+                }
+                else if request == "UTM"{
+                    let temp=Parser.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: Parser.getDay())
+                    let times=Parser.getFuture(temp!)
+                    
+                    reply(["UTM": NSKeyedArchiver.archivedDataWithRootObject(times)])
+                    
+                    return
+                }
+                else{
+                    let temp=Parser.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: Parser.getDay())
+                    let times=Parser.getFuture(temp!)
+                    
+                    reply(["Sheridan": NSKeyedArchiver.archivedDataWithRootObject(times)])
+                    
+                    return
+                }
+            }
+            
+            reply([:])
+    }
+    
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         NSNotificationCenter.defaultCenter().postNotificationName("ReminderListShouldRefresh", object: self)
     }

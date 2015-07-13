@@ -29,18 +29,18 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         case 0:
             
             schedule =
-                getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay())!)
+                Parser.getFuture(Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: Parser.getDay())!)
         
-            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay())!)
+            schedule2 = Parser.getFuture(Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: Parser.getDay())!)
             
             label1.text="Departing from Instructional Centre"
             label2.text="Departing from Hart House"
             
         case 1:
             
-            schedule = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: getDay())!)
+            schedule = Parser.getFuture(Parser.getArrayOfTimesForDay("Sheridan Route", location: "Deerfield Hall North", day: Parser.getDay())!)
            
-            schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: getDay())!)
+            schedule2 = Parser.getFuture(Parser.getArrayOfTimesForDay("Sheridan Route", location: "Sheridan", day: Parser.getDay())!)
             
             label1.text="Departing from Deerfield Hall North"
             label2.text="Departing from Sheridan"
@@ -58,49 +58,15 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         schedule =
-            getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: getDay())!)
+            Parser.getFuture(Parser.getArrayOfTimesForDay("St.George Route", location: "Instructional Centre", day: Parser.getDay())!)
         
-        schedule2 = getFuture(getDay(), times: Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: getDay())!)
+        schedule2 = Parser.getFuture(Parser.getArrayOfTimesForDay("St.George Route", location: "Hart House", day: Parser.getDay())!)
         
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView2.delegate = self
         tableView2.dataSource = self
-    }
-    
-    
-    func getDay() -> String{
-        let date = NSDate()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let day = dateFormatter.stringFromDate(date)
-        
-        return day
-    }
-    
-    func getFuture(day:String, times: NSArray) ->NSArray{
-        var nextTimes = [String]()
-        
-        let date = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "HH:mm"
-        let currentTime = formatter.stringFromDate(date)
-        
-        var count=0
-        
-        for var index=0; index<times.count; ++index{
-            let temp: AnyObject = times[index]
-            let realTime = temp["time"]
-            let final = realTime as! String
-            
-            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<5 {
-                nextTimes.append(final)
-                ++count
-            }
-        }
-    
-        return nextTimes as NSArray
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
