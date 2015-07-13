@@ -587,7 +587,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9MW-9E-VlN">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9MW-9E-VlN">
                                 <rect key="frame" x="177" y="324" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -598,6 +598,8 @@
                             <constraint firstAttribute="centerY" secondItem="Lrp-b2-94D" secondAttribute="centerY" constant="-7.5" id="JYR-BQ-cXY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lrp-b2-94D" secondAttribute="trailing" constant="-16" id="Nc9-De-9Cc"/>
                             <constraint firstItem="Lrp-b2-94D" firstAttribute="top" secondItem="FO7-bE-Kpv" secondAttribute="bottom" id="adK-ke-20c"/>
+                            <constraint firstAttribute="centerX" secondItem="9MW-9E-VlN" secondAttribute="centerX" constant="0.5" id="fIb-uP-st3"/>
+                            <constraint firstAttribute="centerY" secondItem="9MW-9E-VlN" secondAttribute="centerY" constant="-0.5" id="gV2-Ug-gka"/>
                             <constraint firstAttribute="centerX" secondItem="Lrp-b2-94D" secondAttribute="centerX" id="hxE-BR-ab9"/>
                         </constraints>
                     </view>
