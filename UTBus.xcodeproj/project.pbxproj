@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		9023310D1B4B0336006520F5 /* Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023310C1B4B0336006520F5 /* Updates.swift */; };
 		9062AAF21B41DFD40088753B /* routeSheridan.json in Resources */ = {isa = PBXBuildFile; fileRef = 9062AAF11B41DFD40088753B /* routeSheridan.json */; };
-		908B89DF1B46F3DE008F5897 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B89DE1B46F3DE008F5897 /* TableController.swift */; };
+		9082F56A1B4DBB2500428040 /* DetailRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9082F5691B4DBB2500428040 /* DetailRowController.swift */; };
+		908B89DF1B46F3DE008F5897 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B89DE1B46F3DE008F5897 /* RowController.swift */; };
 		9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EEC11B41ABA7001EB895 /* Pin.swift */; };
 		9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099EECB1B41D2BB001EB895 /* InterfaceController.swift */; };
 		9099EECE1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EECD1B41D2BB001EB895 /* Images.xcassets */; };
@@ -18,7 +19,7 @@
 		9099EEDC1B41D2BB001EB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099EEDB1B41D2BB001EB895 /* Images.xcassets */; };
 		9099EEDF1B41D2BB001EB895 /* UTBus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		909D09AF1B4D940100095E20 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909D09AE1B4D940100095E20 /* Parser.swift */; };
-		909D09B11B4DA6E900095E20 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909D09B01B4DA6E900095E20 /* Detail.swift */; };
+		909FAB1C1B4DB4C800608002 /* DetailContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909FAB1B1B4DB4C800608002 /* DetailContoller.swift */; };
 		90B0E3571B4D861A00C8D3F2 /* routeStGeorge.json in Resources */ = {isa = PBXBuildFile; fileRef = BC6FF7151B2F5A710037334B /* routeStGeorge.json */; };
 		BC0881BA1B2F4D550051F7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */; };
 		BC0881BF1B2F4D550051F7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0881BD1B2F4D550051F7F9 /* Main.storyboard */; };
@@ -79,7 +80,8 @@
 /* Begin PBXFileReference section */
 		9023310C1B4B0336006520F5 /* Updates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updates.swift; sourceTree = "<group>"; };
 		9062AAF11B41DFD40088753B /* routeSheridan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routeSheridan.json; sourceTree = "<group>"; };
-		908B89DE1B46F3DE008F5897 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		9082F5691B4DBB2500428040 /* DetailRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRowController.swift; sourceTree = "<group>"; };
+		908B89DE1B46F3DE008F5897 /* RowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		9099EEC11B41ABA7001EB895 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		9099EEC71B41D2BB001EB895 /* UTBus WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "UTBus WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9099EECA1B41D2BB001EB895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		9099EED91B41D2BB001EB895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		9099EEDB1B41D2BB001EB895 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		909D09AE1B4D940100095E20 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		909D09B01B4DA6E900095E20 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Detail.swift; path = "UTBus WatchKit Extension/Detail.swift"; sourceTree = SOURCE_ROOT; };
+		909FAB1B1B4DB4C800608002 /* DetailContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContoller.swift; sourceTree = "<group>"; };
 		BC0881B41B2F4D550051F7F9 /* UTBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0881B81B2F4D550051F7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,8 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				9099EECB1B41D2BB001EB895 /* InterfaceController.swift */,
-				908B89DE1B46F3DE008F5897 /* TableController.swift */,
-				909D09B01B4DA6E900095E20 /* Detail.swift */,
+				908B89DE1B46F3DE008F5897 /* RowController.swift */,
+				909FAB1B1B4DB4C800608002 /* DetailContoller.swift */,
+				9082F5691B4DBB2500428040 /* DetailRowController.swift */,
 				9099EECD1B41D2BB001EB895 /* Images.xcassets */,
 				9099EEC91B41D2BB001EB895 /* Supporting Files */,
 			);
@@ -205,9 +208,9 @@
 				BC0881B91B2F4D550051F7F9 /* AppDelegate.swift */,
 				BC0881BD1B2F4D550051F7F9 /* Main.storyboard */,
 				9023310C1B4B0336006520F5 /* Updates.swift */,
+				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF000E1B41E5A5002E8FF4 /* Reminder Tab */,
 				BC8643A11B3DC11D004BC339 /* Reminders */,
-				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
 				909D09AE1B4D940100095E20 /* Parser.swift */,
@@ -443,8 +446,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908B89DF1B46F3DE008F5897 /* TableController.swift in Sources */,
+				908B89DF1B46F3DE008F5897 /* RowController.swift in Sources */,
 				9099EECC1B41D2BB001EB895 /* InterfaceController.swift in Sources */,
+				909FAB1C1B4DB4C800608002 /* DetailContoller.swift in Sources */,
+				9082F56A1B4DBB2500428040 /* DetailRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +465,6 @@
 				BC8643A01B3DBE38004BC339 /* ReminderList.swift in Sources */,
 				BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */,
 				9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */,
-				909D09B11B4DA6E900095E20 /* Detail.swift in Sources */,
 				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
 				BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */,
 				BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */,

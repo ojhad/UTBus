@@ -29,6 +29,38 @@ class Parser{
         }
         
         return nil
+    }
+    
+    class func getDay() -> String{
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let day = dateFormatter.stringFromDate(date)
         
+        return day
+    }
+    
+    class func getFuture(times: NSArray) ->NSArray{
+        var nextTimes = [String]()
+        
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let currentTime = formatter.stringFromDate(date)
+        
+        var count=0
+        
+        for var index=0; index<times.count; ++index{
+            let temp: AnyObject = times[index]
+            let realTime = temp["time"]
+            let final = realTime as! String
+            
+            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<5 {
+                nextTimes.append(final)
+                ++count
+            }
+        }
+        
+        return nextTimes as NSArray
     }
 }
