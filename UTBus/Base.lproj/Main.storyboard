@@ -446,6 +446,81 @@
             </objects>
             <point key="canvasLocation" x="-72.5" y="-236.5"/>
         </scene>
+        <!--About Page View Controller-->
+        <scene sceneID="XKK-aU-hrH">
+            <objects>
+                <viewController id="ZQs-Wf-BcW" customClass="AboutPageViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dbK-sT-6eN"/>
+                        <viewControllerLayoutGuide type="bottom" id="YM7-El-1ck"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uxb-6A-4ry">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This app was developed by University Of Toronto students in MADLab." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-N9-HUx">
+                                <rect key="frame" x="16" y="89" width="343" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlW-90-dko">
+                                <rect key="frame" x="16" y="199" width="343" height="131"/>
+                                <string key="text">The MADLab is a student-centric facility, at the heart of the downtown campus, devoted to accelerating mobile software development at The University of Toronto. The Lab hosts equipment, collaborative workspace, user groups and workshops, and is open to all U of T students, staff and faculty.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcn-G7-Jtr">
+                                <rect key="frame" x="105" y="338" width="164" height="30"/>
+                                <state key="normal" title="Go To MADLab Website">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGoToMADLabWeb:" destination="ZQs-Wf-BcW" eventType="touchUpInside" id="xie-qF-Ts1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-HH-q2E">
+                                <rect key="frame" x="16" y="404" width="343" height="84"/>
+                                <string key="text">Icons for this app were taken from Icons8.com which are distributed under the license called Creative Commons Attribution-NoDerivs 3.0 Unported.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-TA-Ebe">
+                                <rect key="frame" x="112" y="496" width="150" height="30"/>
+                                <state key="normal" title="Go To Icons8 Website">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGoToIcons8Website:" destination="ZQs-Wf-BcW" eventType="touchUpInside" id="V7s-Qu-MDi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bgh-HH-q2E" secondAttribute="centerX" id="7lX-7Y-G84"/>
+                            <constraint firstItem="ZlW-90-dko" firstAttribute="trailing" secondItem="Uxb-6A-4ry" secondAttribute="trailingMargin" id="7xl-PZ-1j3"/>
+                            <constraint firstItem="SB5-N9-HUx" firstAttribute="top" secondItem="dbK-sT-6eN" secondAttribute="bottom" constant="25" id="AVM-mD-37T"/>
+                            <constraint firstItem="bgh-HH-q2E" firstAttribute="top" secondItem="Dcn-G7-Jtr" secondAttribute="bottom" constant="36" id="HIc-iw-Fn7"/>
+                            <constraint firstItem="ZlW-90-dko" firstAttribute="top" secondItem="SB5-N9-HUx" secondAttribute="bottom" constant="44" id="NYt-hz-Sxf"/>
+                            <constraint firstAttribute="centerX" secondItem="Dcn-G7-Jtr" secondAttribute="centerX" constant="0.5" id="QJ4-k0-AGh"/>
+                            <constraint firstItem="SB5-N9-HUx" firstAttribute="leading" secondItem="Uxb-6A-4ry" secondAttribute="leadingMargin" id="RSt-Dd-NJb"/>
+                            <constraint firstAttribute="centerX" secondItem="GyJ-TA-Ebe" secondAttribute="centerX" constant="0.5" id="X6o-gp-yMP"/>
+                            <constraint firstItem="GyJ-TA-Ebe" firstAttribute="top" secondItem="bgh-HH-q2E" secondAttribute="bottom" constant="8" id="hIb-va-j7D"/>
+                            <constraint firstItem="bgh-HH-q2E" firstAttribute="leading" secondItem="Uxb-6A-4ry" secondAttribute="leadingMargin" id="hzW-TX-i6c"/>
+                            <constraint firstItem="SB5-N9-HUx" firstAttribute="trailing" secondItem="Uxb-6A-4ry" secondAttribute="trailingMargin" id="mwB-Pu-Y0b"/>
+                            <constraint firstItem="bgh-HH-q2E" firstAttribute="trailing" secondItem="Uxb-6A-4ry" secondAttribute="trailingMargin" id="oRB-NR-RWt"/>
+                            <constraint firstItem="ZlW-90-dko" firstAttribute="leading" secondItem="Uxb-6A-4ry" secondAttribute="leadingMargin" id="sC8-mA-Kmn"/>
+                            <constraint firstItem="Dcn-G7-Jtr" firstAttribute="top" secondItem="ZlW-90-dko" secondAttribute="bottom" constant="8" id="yhn-cL-fR6"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ssm-57-uPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481.5" y="-1223.5"/>
+        </scene>
         <!--Upcoming Schedule-->
         <scene sceneID="bU2-Cm-jsl">
             <objects>
@@ -548,6 +623,11 @@
                     <tabBarItem key="tabBarItem" title="Today" image="Bus Filled-25" id="gIJ-IE-ZxF"/>
                     <navigationItem key="navigationItem" title="Upcoming Schedule" id="dbd-5B-9aG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IFC-BR-yTc"/>
+                        <barButtonItem key="leftBarButtonItem" title="About" id="iIL-Qh-Yd3">
+                            <connections>
+                                <segue destination="ZQs-Wf-BcW" kind="show" id="eNq-P9-hgb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Advertising-25" id="l5b-1Q-zUy">
                             <connections>
                                 <segue destination="25y-ac-qq5" kind="show" id="aEt-uZ-SbQ"/>
