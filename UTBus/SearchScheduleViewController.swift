@@ -11,10 +11,8 @@ import UIKit
 class SearchScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    //MARK: - IBOUTLETS
-
-    @IBOutlet weak var segControlRoute: UISegmentedControl!
-    @IBOutlet weak var segControlLocation: UISegmentedControl!
+    var selectedRoute: String?
+    var selectedLocation: String?
     
     @IBOutlet weak var tvDaySelector: UITableView!
     
@@ -31,32 +29,14 @@ class SearchScheduleViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = selectedLocation
+        
         //set up day selector tableview
         
         tvDaySelector.delegate = self
         tvDaySelector.dataSource = self
         
         tvDaySelector.separatorStyle = UITableViewCellSeparatorStyle.None
-    
-        //customized segmented control
-        
-        segControlRoute.setBackgroundImage(UIImage(contentsOfFile: "blue_segment.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
-        
-    }
-
-    @IBAction func changedSegmentedControlRoute(sender: AnyObject) {
-        switch segControlRoute.selectedSegmentIndex
-        {
-        case 0:
-            segControlLocation.setTitle("Instructional Centre (UTM)", forSegmentAtIndex: 0)
-            segControlLocation.setTitle("Hart House (UTSG)", forSegmentAtIndex: 1)
-        case 1:
-            segControlLocation.setTitle("Deerfield Hall North", forSegmentAtIndex: 0)
-            segControlLocation.setTitle("Sheridan", forSegmentAtIndex: 1)
-            
-        default:
-            break;
-        }
         
     }
     
@@ -66,12 +46,8 @@ class SearchScheduleViewController: UIViewController, UITableViewDelegate, UITab
             
             var vc: ScheduleTableViewController = segue.destinationViewController as! ScheduleTableViewController
             
-            let indexRoute = segControlRoute.selectedSegmentIndex
-            let indexLocation = segControlLocation.selectedSegmentIndex
-
-            
-            vc.currentRoute = segControlRoute.titleForSegmentAtIndex(indexRoute)!
-            vc.currentLocation = segControlLocation.titleForSegmentAtIndex(indexLocation)!
+            vc.currentRoute = selectedRoute!
+            vc.currentLocation = selectedLocation!
             vc.selectedDay = selectedDay
             
             

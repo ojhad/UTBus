@@ -252,7 +252,19 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
         
         ReminderList.sharedInstance.addItem(newReminder)
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.showAlert("Create Reminder", message: "Successfully created reminder!");
+        
+        
+    }
+    
+    func removeCheckmarkFromAllCells(){
+        
+        for i in 0..<3{
+            
+            var cell: UITableViewCell? = self.tvCreateReminder.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 1))
+            cell!.accessoryType = UITableViewCellAccessoryType.None
+            
+        }
         
     }
     
@@ -264,29 +276,34 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
         
         timeOfNotification = newBusDate
         
-        self.tappedCreate()
-        
-        
     }
     
-    @IBAction func tappedRemind30MinutesBefore(sender: AnyObject) {
+    func tappedRemind30MinutesBefore(){
         
         self.setReminderTimeWithTime(30);
         
+        self.removeCheckmarkFromAllCells()
+        
     }
     
-    @IBAction func tappedRemind1HourBefore(sender: AnyObject) {
+    func tappedRemind1HourBefore(){
         
         self.setReminderTimeWithTime(60);
         
+        self.removeCheckmarkFromAllCells()
+        
     }
     
-    @IBAction func tappedRemind2HoursBefore(sender: AnyObject) {
+    func tappedRemind2HoursBefore(){
         
         self.setReminderTimeWithTime(120);
         
+        self.removeCheckmarkFromAllCells()
+        
     }
-    @IBAction func tappedRemindOnSpecificTime(sender: AnyObject) {
+    func tappedRemindOnSpecificTime(sender: AnyObject) {
+        
+        self.removeCheckmarkFromAllCells()
         
         pickerVisible = !pickerVisible
         
@@ -313,22 +330,41 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
-        /*println("SElected row!")
         
-        if indexPath.section == 2 {
-            ReminderList.sharedInstance.removeItem(editReminder!)
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
+        if indexPath.section == 1{
+            if indexPath.row == 0{
+                self.tappedRemind30MinutesBefore()
+                self.removeCheckmarkFromAllCells()
+                
+                var cell: UITableViewCell? = self.tvCreateReminder.cellForRowAtIndexPath(indexPath)
+                cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+
+            }
+            else if indexPath.row == 1{
+                self.tappedRemind1HourBefore()
+                self.removeCheckmarkFromAllCells()
+                
+                var cell: UITableViewCell? = self.tvCreateReminder.cellForRowAtIndexPath(indexPath)
+                cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+
+            }
+            else if indexPath.row == 2{
+                self.tappedRemind2HoursBefore()
+                self.removeCheckmarkFromAllCells()
+                
+                var cell: UITableViewCell? = self.tvCreateReminder.cellForRowAtIndexPath(indexPath)
+                cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+
+            }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)*/
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
        
         if(indexPath.section == 1){
-            if(indexPath.row == 5){
+            if(indexPath.row == 4){
                 if (pickerVisible == false){
                     return 0.0
                 }
@@ -336,10 +372,10 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
                     return 193.0
                 }
             }
-            else if (indexPath.row == 0){
-                return 80.0
+            else if (indexPath.row == 5){
+                return 50.0//80.0
             }
-            else if (indexPath.row == 4){
+            else if (indexPath.row == 3){
                 return 44.0
             }
             else{
@@ -363,6 +399,47 @@ class CreateReminderViewController: UITableViewController, UITableViewDelegate, 
         }
 
         return 44.0
+    }
+    
+    
+    // MARK: - Alert
+    
+    func showAlert(title: String, message: String){
+        
+        let attributedTitle = NSAttributedString(string: title, attributes: [
+            NSFontAttributeName : UIFont.systemFontOfSize(18),
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+            ])
+        
+        let attributedMessage = NSAttributedString(string: message, attributes: [
+            NSFontAttributeName : UIFont.systemFontOfSize(14),
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+            ])
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .Alert)
+        
+        alert.setValue(attributedTitle, forKey: "attributedTitle")
+        alert.setValue(attributedMessage, forKey: "attributedMessage")
+
+        
+        let defaultActionHandler = { (action:UIAlertAction!) -> Void in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: defaultActionHandler)
+        
+        alert.addAction(defaultAction)
+        
+        var subView = alert.view.subviews.first as! UIView
+        var contentView = subView.subviews.first as! UIView
+        contentView.backgroundColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
+        contentView.layer.cornerRadius = 5;
+
+        alert.view.tintColor = UIColor.whiteColor();
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
     
 }

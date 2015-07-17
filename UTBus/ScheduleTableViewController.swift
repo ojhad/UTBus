@@ -29,8 +29,8 @@ class ScheduleTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.navigationItem.title = currentLocation
-        
+        self.navigationItem.title = selectedDay
+                
         /*var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE"
         var dayString: String = dateFormatter.stringFromDate(dateOfInterest!)
@@ -92,8 +92,8 @@ class ScheduleTableViewController: UITableViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
-        let defaultActionHandler = { (action:UIAlertAction!) -> Void in
-            self.navigationController?.popToRootViewControllerAnimated(true)
+        let defaultActionHandler = { (action:UIAlertAction!) -> Void in            
+            self.navigationController?.popViewControllerAnimated(true)
         }
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: defaultActionHandler)

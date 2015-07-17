@@ -34,6 +34,7 @@
 		BC8163BF1B3DE5E3005DB95E /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC8163BE1B3DE5E3005DB95E /* locations.plist */; };
 		BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86439B1B3DB49F004BC339 /* Reminder.swift */; };
 		BC8643A01B3DBE38004BC339 /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86439F1B3DBE38004BC339 /* ReminderList.swift */; };
+		BCAC72131B597EAC001180B1 /* RoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC72121B597EAC001180B1 /* RoutesTableViewController.swift */; };
 		BCAF000C1B41E59B002E8FF4 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF000A1B41E59B002E8FF4 /* ReminderTableViewCell.swift */; };
 		BCAF000D1B41E59B002E8FF4 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAF000B1B41E59B002E8FF4 /* ReminderTableViewCell.xib */; };
 		BCB816691B386F7300360DC4 /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */; };
@@ -112,6 +113,7 @@
 		BC8163BE1B3DE5E3005DB95E /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		BC86439B1B3DB49F004BC339 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		BC86439F1B3DBE38004BC339 /* ReminderList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
+		BCAC72121B597EAC001180B1 /* RoutesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesTableViewController.swift; sourceTree = "<group>"; };
 		BCAF000A1B41E59B002E8FF4 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		BCAF000B1B41E59B002E8FF4 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
 		BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				BC6FF7171B2F5B0A0037334B /* HomeViewController.swift */,
 				BCAF000E1B41E5A5002E8FF4 /* Reminder Tab */,
 				BC8643A11B3DC11D004BC339 /* Reminders */,
+				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
 				BCAF00091B41BEAD002E8FF4 /* Schedule Tab */,
 				BC8163BC1B3DE473005DB95E /* MapViewController.swift */,
 				909D09AE1B4D940100095E20 /* Parser.swift */,
@@ -265,9 +268,9 @@
 		BCAF00091B41BEAD002E8FF4 /* Schedule Tab */ = {
 			isa = PBXGroup;
 			children = (
+				BCAC72121B597EAC001180B1 /* RoutesTableViewController.swift */,
 				BCB816681B386F7300360DC4 /* SearchScheduleViewController.swift */,
 				BCF70EF71B41B424003191E8 /* ScheduleTableViewController.swift */,
-				BC37A56C1B38960300BD3439 /* CreateReminderViewController.swift */,
 			);
 			name = "Schedule Tab";
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				BC8163BD1B3DE473005DB95E /* MapViewController.swift in Sources */,
 				9099EEC21B41ABA7001EB895 /* Pin.swift in Sources */,
 				BC6FF7181B2F5B0A0037334B /* HomeViewController.swift in Sources */,
+				BCAC72131B597EAC001180B1 /* RoutesTableViewController.swift in Sources */,
 				BC2D9EAB1B543E5900734BDE /* AboutPageViewController.swift in Sources */,
 				BC37A56D1B38960300BD3439 /* CreateReminderViewController.swift in Sources */,
 				BC86439C1B3DB49F004BC339 /* Reminder.swift in Sources */,
