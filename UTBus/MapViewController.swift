@@ -49,22 +49,19 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             })
             
             if i==0{
-                let pin = Pin(title: "Hart House",
-                    locationName: "UTSG",
+                let pin = Pin(title: "UTSG",
                     coordinate:
                     CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
                 self.Map.addAnnotation(pin)
             }
             else if i==1{
-                let pin = Pin(title: "Instructional Centre",
-                    locationName: "UTM",
+                let pin = Pin(title: "UTM",
                     coordinate:
                     CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
                 self.Map.addAnnotation(pin)
             }
             else{
                 let pin = Pin(title: "Sheridan College",
-                    locationName: "Sheridan",
                     coordinate:
                     CLLocationCoordinate2D(latitude: coordinates[i].latitude, longitude: coordinates[i].longitude))
                 self.Map.addAnnotation(pin)
@@ -149,11 +146,11 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             })
             
             var coords = CLLocationCoordinate2DMake(coordinates[0].latitude, coordinates[0].longitude)
-            var address = [kABPersonAddressStreetKey as String: "Hart House"]
+            var address = [kABPersonAddressStreetKey as String: "UTSG"]
             
-            if view.annotation.title == "Instructional Centre"{
+            if view.annotation.title == "UTM"{
                 coords = CLLocationCoordinate2DMake(coordinates[1].latitude, coordinates[1].longitude)
-                address = [kABPersonAddressStreetKey as String: "Instructional Centre"]
+                address = [kABPersonAddressStreetKey as String: "UTM"]
                 
             }
             else if view.annotation.title == "Sheridan College"{
