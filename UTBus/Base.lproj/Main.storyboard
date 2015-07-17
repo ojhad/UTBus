@@ -129,58 +129,6 @@
             </objects>
             <point key="canvasLocation" x="1311.5" y="868.5"/>
         </scene>
-        <!--Map-->
-        <scene sceneID="4KF-l3-2EI">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cHm-Eo-fgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="477-Vh-oKD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="Map Filled-25" id="v8M-cp-h1B"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OCy-FX-P2N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="6Kx-3P-tcp" kind="relationship" relationship="rootViewController" id="kPY-zX-ReK"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-1022" y="970"/>
-        </scene>
-        <!--Map of Routes-->
-        <scene sceneID="DjX-9H-Qk2">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jPv-0o-xhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="6Kx-3P-tcp" customClass="MapViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QCA-HA-OnX"/>
-                        <viewControllerLayoutGuide type="bottom" id="b06-FJ-Vim"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xMg-DH-d7f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-3G-srO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="aVa-3G-srO" firstAttribute="top" secondItem="QCA-HA-OnX" secondAttribute="bottom" id="0q8-Jf-3D0"/>
-                            <constraint firstAttribute="trailing" secondItem="aVa-3G-srO" secondAttribute="trailing" id="RZE-1M-Dss"/>
-                            <constraint firstItem="aVa-3G-srO" firstAttribute="bottom" secondItem="b06-FJ-Vim" secondAttribute="top" id="Tvl-bb-z41"/>
-                            <constraint firstItem="aVa-3G-srO" firstAttribute="leading" secondItem="xMg-DH-d7f" secondAttribute="leading" id="z7h-rI-5eV"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="Map Filled-25" id="Rdp-fE-z0f"/>
-                    <navigationItem key="navigationItem" title="Map of Routes" id="wlO-ih-k57"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="Map" destination="aVa-3G-srO" id="axm-FI-6ZS"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-611.5" y="1973.5"/>
-        </scene>
         <!--Create Reminder View Controller-->
         <scene sceneID="u4Y-WG-1AM">
             <objects>
@@ -672,7 +620,6 @@
                     <connections>
                         <segue destination="iKU-qN-o9c" kind="relationship" relationship="viewControllers" id="Ito-LH-8rr"/>
                         <segue destination="GaS-p7-gRb" kind="relationship" relationship="viewControllers" id="GoH-V7-2ZR"/>
-                        <segue destination="477-Vh-oKD" kind="relationship" relationship="viewControllers" id="naR-fW-5Ih"/>
                         <segue destination="BNA-i2-zYY" kind="relationship" relationship="viewControllers" id="Crz-fi-XHj"/>
                     </connections>
                 </tabBarController>
@@ -765,7 +712,6 @@
         <image name="Calendar Filled-50" width="50" height="50"/>
         <image name="Clock-25" width="25" height="25"/>
         <image name="Info-25" width="25" height="25"/>
-        <image name="Map Filled-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BF0-iI-mmR"/>
