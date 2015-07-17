@@ -48,16 +48,13 @@ class Parser{
         formatter.dateFormat = "HH:mm"
         let currentTime = formatter.stringFromDate(date)
         
-        var count=0
-        
         for var index=0; index<times.count; ++index{
             let temp: AnyObject = times[index]
             let realTime = temp["time"]
             let final = realTime as! String
             
-            if currentTime.compare(final) == NSComparisonResult.OrderedAscending && count<5 {
+            if currentTime.compare(final) == NSComparisonResult.OrderedAscending {
                 nextTimes.append(final)
-                ++count
             }
         }
         
