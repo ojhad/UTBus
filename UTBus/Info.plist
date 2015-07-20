@@ -4,8 +4,6 @@
 <dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location Requiered</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
