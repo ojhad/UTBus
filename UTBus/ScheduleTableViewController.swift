@@ -90,20 +90,38 @@ class ScheduleTableViewController: UITableViewController {
     
     func showAlert(title: String, message: String){
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let attributedTitle = NSAttributedString(string: title, attributes: [
+            NSFontAttributeName : UIFont.systemFontOfSize(18),
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+            ])
         
-        let defaultActionHandler = { (action:UIAlertAction!) -> Void in            
-            self.navigationController?.popViewControllerAnimated(true)
+        let attributedMessage = NSAttributedString(string: message, attributes: [
+            NSFontAttributeName : UIFont.systemFontOfSize(14),
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+            ])
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .Alert)
+        
+        alert.setValue(attributedTitle, forKey: "attributedTitle")
+        alert.setValue(attributedMessage, forKey: "attributedMessage")
+        
+        
+        let defaultActionHandler = { (action:UIAlertAction!) -> Void in
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: defaultActionHandler)
         
         alert.addAction(defaultAction)
         
+        var subView = alert.view.subviews.first as! UIView
+        var contentView = subView.subviews.first as! UIView
+        contentView.backgroundColor = UIColor(red:0.0, green:0.18, blue:0.4, alpha:1.0)
+        contentView.layer.cornerRadius = 5;
         
+        alert.view.tintColor = UIColor.whiteColor();
         
         presentViewController(alert, animated: true, completion: nil)
-
         
     }
 

@@ -19,6 +19,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         var background: UIImageView = UIImageView.new()
         background.frame = self.view.frame
         background.backgroundColor = UIColor.blackColor()
@@ -28,7 +29,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         self.view.addSubview(background)
         self.view.sendSubviewToBack(background)
         
-        
+                
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,6 +47,16 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tvReminders.separatorStyle = UITableViewCellSeparatorStyle.None
         
         tvReminders.registerNib(UINib(nibName: "ReminderTableViewCell", bundle: nil), forCellReuseIdentifier: "reminderCell")
+        
+        // for iOS 7
+        if(tvReminders.respondsToSelector(Selector("setSeparatorInset:"))){
+            tvReminders.separatorInset = UIEdgeInsetsZero
+        }
+        
+        // for iOS 8
+        if(tvReminders.respondsToSelector(Selector("setLayoutMargins:"))){
+            tvReminders.layoutMargins = UIEdgeInsetsZero;
+        }
     
 
     }
@@ -99,21 +110,21 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         var item: Reminder = currentReminders[indexPath.row]
         
-        cell.lblTitle.text = "Departing \(item.busLocation) at \(item.busTime)"
+        cell.lblTitle.text = "Departing \(item.busLocation)" + "\r\n" + "At \(item.busTime)"
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "'Set For' MMM dd 'at' h:mm a"
+        dateFormatter.dateFormat = "'Reminder Set For' MMM dd 'at' h:mm a"
         cell.lblSubtitle.text = dateFormatter.stringFromDate(item.notificationTime)
-        
-        
-        cell.contentView.backgroundColor = UIColor.clearColor()
-        cell.backgroundView?.backgroundColor = UIColor.clearColor()
-        cell.backgroundColor = UIColor.clearColor()
         
         var whiteCard: UIImageView = UIImageView.new()
         whiteCard.frame = CGRectMake(5, 5, 361, 58)
         
         cell.addSubview(whiteCard)
+        
+        // for iOS 8
+        if(cell.respondsToSelector(Selector("setLayoutMargins:"))){
+            cell.layoutMargins = UIEdgeInsetsZero;
+        }
         
         
         return cell
@@ -128,7 +139,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         if (item.isOverdue) { // the current time is later than the to-do item's deadline
             customCell.lblSubtitle.textColor = UIColor.redColor()
         } else {
-            customCell.lblSubtitle.textColor = UIColor.blackColor()
+            customCell.lblSubtitle.textColor = UIColor.darkGrayColor()
         }
 
     }
@@ -139,6 +150,10 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.performSegueWithIdentifier("edit_reminder", sender: self)
 
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
     }
 
     /*

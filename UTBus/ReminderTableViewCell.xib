@@ -7,46 +7,51 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reminderCell" id="KGk-i7-Jjw" customClass="ReminderTableViewCell" customModule="UTBus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reminderCell" rowHeight="27" id="KGk-i7-Jjw" customClass="ReminderTableViewCell" customModule="UTBus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEW-za-JEC">
-                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEW-za-JEC">
+                        <rect key="frame" x="5" y="2" width="365" height="75.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="YV0-2O-Dih">
-                        <rect key="frame" x="16" y="21" width="320" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Q2-w4-gkd">
-                        <rect key="frame" x="16" y="41" width="351" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="16" y="55" width="338" height="14"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="YV0-2O-Dih">
+                        <rect key="frame" x="16" y="8" width="338" height="40.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="1Q2-w4-gkd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="I8J-0i-Zfp"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="1Q2-w4-gkd" secondAttribute="trailing" constant="-33" id="fZY-pD-GJ7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="TEW-za-JEC" secondAttribute="trailing" constant="-33" id="kLc-sq-PPh"/>
-                    <constraint firstItem="TEW-za-JEC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mtH-RR-2z9"/>
-                    <constraint firstItem="YV0-2O-Dih" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="taW-a8-H4p"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="YV0-2O-Dih" secondAttribute="trailing" constant="-2" id="zpG-lf-3Ge"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TEW-za-JEC" secondAttribute="bottom" constant="-6" id="0fc-00-Top"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TEW-za-JEC" secondAttribute="trailing" constant="-36" id="1PL-Dp-JgP"/>
+                    <constraint firstItem="YV0-2O-Dih" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="2Xm-jq-c9o"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Q2-w4-gkd" secondAttribute="trailing" constant="-20" id="7Nj-48-Ywp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YV0-2O-Dih" secondAttribute="trailing" constant="-20" id="WIM-B6-vpA"/>
+                    <constraint firstItem="TEW-za-JEC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-3" id="bls-d2-mam"/>
+                    <constraint firstItem="1Q2-w4-gkd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="iQn-Rg-Lyh"/>
+                    <constraint firstAttribute="centerY" secondItem="TEW-za-JEC" secondAttribute="centerY" id="ub2-im-xvi"/>
+                    <constraint firstItem="TEW-za-JEC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="yk2-hS-lci"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="lblSubtitle" destination="1Q2-w4-gkd" id="b9M-aq-FhR"/>
+                <outlet property="lblBackground" destination="TEW-za-JEC" id="rb2-E4-CvM"/>
+                <outlet property="lblSubtitle" destination="1Q2-w4-gkd" id="6JB-r1-e8q"/>
                 <outlet property="lblTitle" destination="YV0-2O-Dih" id="N20-Lt-19k"/>
             </connections>
+            <point key="canvasLocation" x="353.5" y="342"/>
         </tableViewCell>
     </objects>
 </document>

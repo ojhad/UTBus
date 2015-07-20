@@ -49,7 +49,7 @@ class SearchScheduleViewController: UIViewController, UITableViewDelegate, UITab
             vc.currentRoute = selectedRoute!
             vc.currentLocation = selectedLocation!
             vc.selectedDay = selectedDay
-            
+            3
             
         }
     }

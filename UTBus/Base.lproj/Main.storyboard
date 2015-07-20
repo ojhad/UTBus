@@ -721,7 +721,7 @@
             </objects>
             <point key="canvasLocation" x="-90.5" y="1710.5"/>
         </scene>
-        <!--Personal Schedule-->
+        <!--Reminders-->
         <scene sceneID="aGs-T6-fOO">
             <objects>
                 <viewController id="RBA-JQ-LOO" customClass="RemindersViewController" customModule="UTBus" customModuleProvider="target" sceneMemberID="viewController">
@@ -741,7 +741,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="dEE-5d-7bR" secondAttribute="trailing" constant="-16" id="3PJ-wo-neQ"/>
                             <constraint firstItem="dEE-5d-7bR" firstAttribute="leading" secondItem="Zzu-CI-wgI" secondAttribute="leadingMargin" constant="-16" id="D6z-0I-x2U"/>
@@ -749,7 +749,7 @@
                             <constraint firstItem="ahi-1E-hvw" firstAttribute="top" secondItem="rMI-xv-H4k" secondAttribute="bottom" constant="8" id="gr5-bH-COR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Personal Schedule" id="1us-Fx-zKi"/>
+                    <navigationItem key="navigationItem" title="Reminders" id="1us-Fx-zKi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tvReminders" destination="dEE-5d-7bR" id="mxR-GO-m1m"/>
@@ -770,6 +770,6 @@
         <image name="Info-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BF0-iI-mmR"/>
+        <segue reference="NIE-as-7cL"/>
     </inferredMetricsTieBreakers>
 </document>
